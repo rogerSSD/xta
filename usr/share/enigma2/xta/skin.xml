@@ -1171,7 +1171,7 @@
   			<convert type="MenuEntryCompare">XTMainMenu</convert>
   			<convert type="ConditionalShowHide" />
   		</widget>
-  		<widget source="menu" render="Pixmap" pixmap="xta/menu/sub.png" position="450,330" size="300,300" alphatest="blend" >
+  		<widget source="menu" render="Pixmap" pixmap="xta/menu/xta.png" position="450,330" size="300,300" alphatest="blend" >
   			<convert type="MenuEntryCompare">subtitle_selection</convert>
   			<convert type="ConditionalShowHide" />
   		</widget>
@@ -1356,78 +1356,78 @@
 		<widget name="lab1" position="65,370" halign="center" size="460,80" zPosition="1" font="Regular;20" valign="top" transparent="1" />
 	</screen>
     
-	<!-- XTA Panel Info (OK) -->
+		<!-- XTA Panel Info (OK) -->
 	<screen name="XTInfo" position="0,0" size="1280,720" title="System Info" flags="wfNoBorder">
 		<ePixmap pixmap="xta/menu/xtmenufull.png" position="0,0" size="1280,720" zPosition="-2" />
 		<eLabel position="44, 70" size="505, 549" backgroundColor="#10000000" zPosition="1" />
   		<eLabel text="Xtrend System Info Panel" position="65, 35" size="1180,24" font="Regular;22" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
 		<ePixmap position="545,70" size="7,552" pixmap="xta/bars/menuline.png" zPosition="2" alphatest="blend" />
 		<!-- XTA Panel Info 1 -->
-		<ePixmap pixmap="xta/pictures/mem.png"  position="163,80" size="40,80" zPosition="2" backgroundColor="#000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/root.png" position="264,80" size="40,80" zPosition="2" backgroundColor="#000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/swap.png" position="359,80" size="40,80" zPosition="2" backgroundColor="#000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/summ.png" position="457,80" size="40,80" zPosition="2" backgroundColor="#000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/mem.png"  position="163,80" size="40,80" zPosition="2" backgroundColor="#000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/root.png" position="264,80" size="40,80" zPosition="2" backgroundColor="#000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/swap.png" position="359,80" size="40,80" zPosition="2" backgroundColor="#000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/summ.png" position="457,80" size="40,80" zPosition="2" backgroundColor="#000000" alphatest="blend" />
 		<widget name="mem_labels" font="Regular;17" position="50,135"  zPosition="5" size="100,110" valign="top" halign="left" backgroundColor="#00000000" foregroundColor="un666666" transparent="1" />
 		<widget name="ram"        font="Regular;17" position="163,135" zPosition="3" size="90,110" valign="top" halign="left" backgroundColor="#00000000" transparent="1" />
 		<widget name="root"       font="Regular;17" position="264,135" zPosition="3" size="90,110" valign="top" halign="left" backgroundColor="#00000000" transparent="1" />
 		<widget name="swap"       font="Regular;17" position="359,135" zPosition="4" size="90,110" valign="top" halign="left" backgroundColor="#00000000" transparent="1" />
 		<widget name="mem_tot"    font="Regular;17" position="454,135" zPosition="5" size="90,110" valign="top" halign="left" backgroundColor="#00000000" transparent="1" />
-		<widget name="membar"      position="148,155" size="5,75" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="0" backgroundColor="#00000000" transparent="1" />
-		<widget name="rootbar"     position="249,155" size="5,75" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="0" backgroundColor="#00000000" transparent="1" />
-		<widget name="swapbar"     position="342,155" size="5,75" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="0" backgroundColor="#00000000" transparent="1" />
-		<widget name="memtotalbar" position="437,155" size="5,75" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="0" backgroundColor="#00000000" transparent="1" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="148,155" size="5,75" zPosition="1" backgroundColor="#00000000" alphatest="blend" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="249,155" size="5,75" zPosition="1" backgroundColor="#00000000" alphatest="blend" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="342,155" size="5,75" zPosition="1" backgroundColor="#00000000" alphatest="blend" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="437,155" size="5,75" zPosition="1" backgroundColor="#00000000" alphatest="blend" />
+		<widget name="membar"      position="148,155" size="5,75" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="0" backgroundColor="#00000000" transparent="1" />
+		<widget name="rootbar"     position="249,155" size="5,75" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="0" backgroundColor="#00000000" transparent="1" />
+		<widget name="swapbar"     position="342,155" size="5,75" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="0" backgroundColor="#00000000" transparent="1" />
+		<widget name="memtotalbar" position="437,155" size="5,75" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="0" backgroundColor="#00000000" transparent="1" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="148,155" size="5,75" zPosition="1" backgroundColor="#00000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="249,155" size="5,75" zPosition="1" backgroundColor="#00000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="342,155" size="5,75" zPosition="1" backgroundColor="#00000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="437,155" size="5,75" zPosition="1" backgroundColor="#00000000" alphatest="blend" />
 		<!-- XTA Panel Info 2 -->
-		<ePixmap pixmap="xta/pictures/hdd.png"    position="163,270" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/usbmem.png" position="264,270" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/usbmem.png" position="359,270" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/usbmem.png" position="454,270" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/hdd.png"    position="163,270" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/usbmem.png" position="264,270" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/usbmem.png" position="359,270" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/usbmem.png" position="454,270" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
 		<widget name="space_labels" font="Regular;17" position="50,325" zPosition="5" size="100,110" valign="top" halign="left" backgroundColor="un31000000" foregroundColor="un666666" transparent="1" />
 		<widget name="hdd"          font="Regular;17" position="163,325" zPosition="3" size="90,110" valign="top" halign="left" backgroundColor="un31000000" transparent="1" />
 		<widget name="usb"          font="Regular;17" position="264,325" zPosition="4" size="90,110" valign="top" halign="left" backgroundColor="un31000000" transparent="1" />
 		<widget name="usb1"         font="Regular;17" position="359,325" zPosition="5" size="90,110" valign="top" halign="left" backgroundColor="un31000000" transparent="1" />
 		<widget name="usb2"         font="Regular;17" position="454,325" zPosition="5" size="90,110" valign="top" halign="left" backgroundColor="un31000000" transparent="1" />
-		<widget name="hddbar"  position="148,340" size="5,75" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
-		<widget name="usbbar"  position="249,340" size="5,75" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
-		<widget name="usb1bar" position="342,340" size="5,75" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
-		<widget name="usb2bar" position="435,340" size="5,75" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="148,340" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="249,340" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="342,340" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="435,340" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
+		<widget name="hddbar"  position="148,340" size="5,75" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
+		<widget name="usbbar"  position="249,340" size="5,75" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
+		<widget name="usb1bar" position="342,340" size="5,75" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
+		<widget name="usb2bar" position="435,340" size="5,75" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="148,340" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="249,340" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="342,340" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="435,340" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
 		<!-- XTA Panel Info 3 -->
 		<widget name="HDDCPULabels"   font="Regular;17" position="50,460"  size="100,110" halign="left" valign="top" noWrap="1"  zPosition="5" backgroundColor="un31000000" foregroundColor="un666666" transparent="1" />
 		<widget name="usb3"           font="Regular;17" position="163,460" zPosition="5" size="90,110" valign="top" halign="left" backgroundColor="un31000000" transparent="1" />
 		<widget name="hddtemperature" font="Regular;17" position="229,460" zPosition="2" size="110,100" valign="top" halign="center" backgroundColor="un31000000" transparent="1" />
 		<widget name="cpusys"         font="Regular;17" position="327,460" zPosition="2" size="110,100" valign="top" halign="center" backgroundColor="un31000000" transparent="1" />
 		<widget name="cpuusr"         font="Regular;17" position="423,460" zPosition="2" size="110,90" valign="top" halign="center" backgroundColor="un31000000" transparent="1" />
-		<ePixmap pixmap="xta/pictures/hdd_temp.png" position="264,510" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/summ.png"     position="359,510" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/summ.png"     position="454,510" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
-		<widget name="usb3bar"    position="148,480" size="5,75" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
-		<widget name="hddtempbar" position="246,500" size="5,44" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
-		<widget name="cpusysbar"  position="341,500" size="5,44" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
-		<widget name="cpuusrbar"  position="436,500" size="5,44" pixmap="~/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="148,480" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="246,500" size="5,44" zPosition="1" backgroundColor="un31000000" alphatest="on" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="341,500" size="5,44" zPosition="1" backgroundColor="un31000000" alphatest="on" />
-		<ePixmap pixmap="~/pictures/bar_back.png" position="436,500" size="5,44" zPosition="1" backgroundColor="un31000000" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/hdd_temp.png" position="264,510" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/summ.png"     position="359,510" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/summ.png"     position="454,510" size="40,80" zPosition="2" backgroundColor="un31000000" alphatest="blend" />
+		<widget name="usb3bar"    position="148,480" size="5,75" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
+		<widget name="hddtempbar" position="246,500" size="5,44" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
+		<widget name="cpusysbar"  position="341,500" size="5,44" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
+		<widget name="cpuusrbar"  position="436,500" size="5,44" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar.png" orientation="orBottomToTop" zPosition="2" backgroundColor="un41000000" transparent="1" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="148,480" size="5,75" zPosition="1" backgroundColor="un31000000" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="246,500" size="5,44" zPosition="1" backgroundColor="un31000000" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="341,500" size="5,44" zPosition="1" backgroundColor="un31000000" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/bar_back.png" position="436,500" size="5,44" zPosition="1" backgroundColor="un31000000" alphatest="on" />
 		<eLabel text="Services:" font="Regular;17" position="50,583" zPosition="3" size="100,100" valign="top" halign="left" backgroundColor="un31000000" foregroundColor="un666666" transparent="1" />
-		<widget name="ftp_on"    position="150,585" size="40,80" pixmap="xta/pictures/ftp_on.png" zPosition="2" alphatest="blend" />
-		<widget name="telnet_on" position="226,585" size="40,80" pixmap="xta/pictures/telnet_on.png" zPosition="2" alphatest="blend" />
-		<widget name="ssh_on"    position="302,585" size="40,80" pixmap="xta/pictures/ssh_on.png" zPosition="2" alphatest="blend" />
-		<widget name="smb_on"    position="378,585" size="40,80" pixmap="xta/pictures/smb_on.png" zPosition="2" alphatest="blend" />
-		<widget name="nfs_on"    position="454,585" size="40,80" pixmap="xta/pictures/nfs_on.png" zPosition="2" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/ftp.png"    position="150,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/telnet.png" position="226,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/ssh.png"    position="302,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/smb.png"    position="378,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
-		<ePixmap pixmap="xta/pictures/nfs.png"    position="454,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
+		<widget name="ftp_on"    position="150,585" size="40,80" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/ftp_on.png" zPosition="2" alphatest="blend" />
+		<widget name="telnet_on" position="226,585" size="40,80" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/telnet_on.png" zPosition="2" alphatest="blend" />
+		<widget name="ssh_on"    position="302,585" size="40,80" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/ssh_on.png" zPosition="2" alphatest="blend" />
+		<widget name="smb_on"    position="378,585" size="40,80" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/smb_on.png" zPosition="2" alphatest="blend" />
+		<widget name="nfs_on"    position="454,585" size="40,80" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/nfs_on.png" zPosition="2" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/ftp.png"    position="150,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/telnet.png" position="226,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/ssh.png"    position="302,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/smb.png"    position="378,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/nfs.png"    position="454,585" size="40,80" zPosition="1" backgroundColor="un31000000" alphatest="blend" />
 		<!-- XTA Panel Time -->
-		<widget name="uptime"    position="560,80"  size="32,32" zPosition="2" pixmap="~/pictures/clock.png" transparent="1" alphatest="on" />
+		<widget name="uptime"    position="560,80"  size="32,32" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/clock.png" transparent="1" alphatest="on" />
 		<eLabel text="Uptime:"   position="610,80"  size="150,25" font="Regular;20" halign="left" foregroundColor="blue" transparent="1" />
 		<widget name="utday"     position="560,110" size="100,25" font="Regular;17" valign="top" halign="left"  zPosition="2" backgroundColor="un333333" foregroundColor="blue" transparent="1" />
 		<widget name="utdayval"  position="640,110" size="100,25" font="Regular;17" valign="top" halign="right" zPosition="2" backgroundColor="un333333" transparent="1" />
@@ -1464,18 +1464,18 @@
 		<eLabel position="560, 460" size="673, 1" backgroundColor="#303030" zPosition="1" />
 		<eLabel position="560, 462" size="673, 1" backgroundColor="#101010" zPosition="1" />
 		<!-- XTA Panel Audio/Video -->
-		<widget name="key1" position="560,505" size="32,32" zPosition="2" pixmap="~/pictures/key_1.png" transparent="1" alphatest="on" />
-		<eLabel text="E2 Settings" position="595,505" size="200,100" font="Regular;19" halign="left" foregroundColor="white" transparent="1" />
-		<widget name="key2" position="560,545" size="32,32" zPosition="2" pixmap="~/pictures/key_2.png" transparent="1" alphatest="on" />
-		<eLabel text="Service Info" position="595,545" size="200,100" font="Regular;19" halign="left" foregroundColor="white" transparent="1" />
-		<widget name="key3" position="560,585" size="32,32" zPosition="2" pixmap="~/pictures/key_3.png" transparent="1" alphatest="on" />
-		<eLabel text="Dmesg Info" position="595,585" size="200,100" font="Regular;19" halign="left" foregroundColor="white" transparent="1" />
-		<widget name="key4" position="850,505" size="32,32" zPosition="2" pixmap="~/pictures/key_4.png" transparent="1" alphatest="on" />
-		<eLabel text="Top Process Info" position="885,505" size="180,100" font="Regular;17" halign="left" foregroundColor="white" transparent="1" />
-		<widget name="key5" position="850,545" size="32,32" zPosition="2" pixmap="~/pictures/key_5.png" transparent="1" alphatest="on" />
-		<eLabel text="Process info" position="885,545" size="140,100" font="Regular;17" halign="left" foregroundColor="white" transparent="1" />
-		<widget name="key6" position="850,585" size="32,32" zPosition="2" pixmap="~/pictures/key_6.png" transparent="1" alphatest="on" />
-		<eLabel text="About" position="885,585" size="100,100" font="Regular;17" halign="left" foregroundColor="white" transparent="1" />
+		<widget name="key1" position="560,505" size="35,35" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/key_1.png" transparent="1" alphatest="on" />
+		<eLabel text="E2 Settings" position="605,505" size="200,100" font="Regular;19" halign="left" foregroundColor="white" transparent="1" />
+		<widget name="key2" position="560,545" size="35,35" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/key_2.png" transparent="1" alphatest="on" />
+		<eLabel text="Service Info" position="605,545" size="200,100" font="Regular;19" halign="left" foregroundColor="white" transparent="1" />
+		<widget name="key3" position="560,585" size="35,35" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/key_3.png" transparent="1" alphatest="on" />
+		<eLabel text="Dmesg Info" position="605,585" size="200,100" font="Regular;19" halign="left" foregroundColor="white" transparent="1" />
+		<widget name="key4" position="850,505" size="35,35" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/key_4.png" transparent="1" alphatest="on" />
+		<eLabel text="Top Process Info" position="895,505" size="180,100" font="Regular;17" halign="left" foregroundColor="white" transparent="1" />
+		<widget name="key5" position="850,545" size="35,35" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/key_5.png" transparent="1" alphatest="on" />
+		<eLabel text="Process info" position="895,545" size="140,100" font="Regular;17" halign="left" foregroundColor="white" transparent="1" />
+		<widget name="key6" position="850,585" size="35,35" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/XTPanel/pictures/key_6.png" transparent="1" alphatest="on" />
+		<eLabel text="About" position="895,585" size="100,100" font="Regular;17" halign="left" foregroundColor="white" transparent="1" />
    		<ePixmap position="50,659" size="1200,50" pixmap="xta/buttons/4colors.png" zPosition="2" alphatest="blend" />
 		<widget name="key_redtxt"    position="100,667" font="Regular;19" zPosition="2" size="200,100" halign="left" backgroundColor="black" transparent="1" />
 		<widget name="key_greentxt"  position="340,667" font="Regular;19" zPosition="2" size="200,100" halign="left" backgroundColor="black" transparent="1" />
