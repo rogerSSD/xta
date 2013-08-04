@@ -449,20 +449,6 @@
 		<eLabel position="77,352" size="208,1" backgroundColor="#101010" />
 
 
-
-
-
-
-
-
-		<widget name="hddtemperature" font="Regular;17" position="429,460" zPosition="2" size="110,100" valign="top" halign="center" backgroundColor="un31000000" transparent="1" />
-		<widget name="cpusys"         font="Regular;17" position="527,460" zPosition="2" size="110,100" valign="top" halign="center" backgroundColor="un31000000" transparent="1" />
-		<widget name="cpuusr"         font="Regular;17" position="623,460" zPosition="2" size="110,90" valign="top" halign="center" backgroundColor="un31000000" transparent="1" />
-
-
-
-
-
 		<!-- EMU Info -->
 		<eLabel name="cam" position="32,425" size="44,20" halign="left" text="CAM" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
 		<widget source="session.CurrentService" render="Label" position="80,425" size="180,20" font="Regular;17" zPosition="1" backgroundColor="background" transparent="1">
