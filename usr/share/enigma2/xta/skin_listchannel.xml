@@ -1,0 +1,206 @@
+<skin>
+	<!-- Channel selection TV (OK) --> 
+	<screen name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder">
+		<panel name="4Buttons" />
+		<panel name="LitePigTemplate" />
+
+  		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/xtmenufull.png"  />
+  		<ePixmap position="100,150" size="480,375" pixmap="xta/menu/X.png" zPosition="-1" />
+  		<widget source="Title" render="Label" zPosition="1" position="60,34" size="730,24" halign="center" font="Regular;22" foregroundColor="white" transparent="1" backgroundColor="transpBlack" />
+  		<!-- ePixmap pixmap="xta/menu/xtLogo.png" position="1090,600" size="162,110" zPosition="2" alphatest="blend" /-->
+		<!-- Lista Canali  --> 
+  		<ePixmap position="760,90"  zPosition="2" size="29,480" pixmap="xta/bars/maxbar.png" alphatest="blend" transparent="1" />
+  		<ePixmap position="760,570" zPosition="2" size="29,3"   pixmap="xta/bars/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="55,90" size="730,480" scrollbarMode="showOnDemand" foregroundColorServiceNotAvail="#303030" zPosition="2" serviceItemHeight="30"
+				serviceNumberFont="Regular;20" serviceNameFont="Regular;20" serviceInfoFont="Regular;19"  colorServiceNameFont="#0x09abf1" colorServiceDescription="#a1daff" colorServiceDescriptionSelected="white" 
+				picServiceEventProgressbar="xta/bars/progress_back.png" selectionPixmap="xta/bars/slider50.png" transparent="1" />
+                <!-- ProgressBar -->
+		<ePixmap position="800,330" size="120,15" pixmap="xta/bars/ch_progressbw.png" alphatest="blend" transparent="1"  zPosition="3" />
+		<widget source="ServiceEvent" render="Progress" pixmap="xta/bars/ch_progresscl.png" position="800,330" size="119,13" zPosition="4"  backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<eLabel text="Menu - Info" position="1020,326" size="200,22" font="Regular;20"  halign="right" foregroundColor="#404040" backgroundColor="black" zPosition="0" transparent="1" />
+		<!-- Event Time -->
+		<widget source="ServiceEvent" render="Label" position="935,326" size="70,26" zPosition="2" halign="left" font="Regular;19" foregroundColor="white" backgroundColor="black"  transparent="1" >
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="995,326" zPosition="1" size="70,26" font="Regular;19" foregroundColor="blue" backgroundColor="black"  halign="right" transparent="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<!-- Nome Canale - Service Name -->
+		<widget source="ServiceEvent" render="Label" position="800,355" zPosition="1" size="430,26" font="Regular;19" halign="center" foregroundColor="yellow" backgroundColor="black" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="800,380" size="430,26" zPosition="2" halign="center" font="Regular;19" foregroundColor="blue" backgroundColor="transpBlack" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>	
+		<widget source="ServiceEvent" render="Label" position="795,410" zPosition="2" halign="center" size="435,205" font="Regular;19" transparent="1" foregroundColor="#a1daff" backgroundColor="transpBlack" >
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<eLabel position="65,580" size="725,1" backgroundColor="#202020" />
+		<eLabel position="65,582" size="725,1" backgroundColor="#101010" />
+		<eLabel text="Next Event :" position="65,595" size="120,22" font="Regular;19"  halign="left" foregroundColor="yellow" backgroundColor="black" zPosition="0" transparent="1" />
+		<widget source="ServiceEvent" render="TimeNextEvent" position="200,595" zPosition="3" halign="left" font="Regular;19" size="400,60" noWrap="1" foregroundColor="#f0ed00" backgroundColor="black" transparent="1" />
+		<widget source="ServiceEvent" render="NameNextEvent" position="65,620" zPosition="3" halign="left" font="Regular;20" size="670,60" noWrap="1" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+		<ePixmap pixmap="xta/icons/icon_norec_light.png" position="1030,667" size="44,26" zPosition="2" alphatest="blend" />
+		<widget source="session.RecordState" 	render="Pixmap" pixmap="xta/icons/icon_rec_light.png" position="1030,667" size="44,26" zPosition="5" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+	</screen>
+
+	<!-- Channel selection TV (OK) --> 
+	<screen name="xxxChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder">
+		<panel name="GenericLayoutTvTemplate" />
+		<panel name="4Buttons" />
+		<panel name="SmallPigTemplate" />
+		<eLabel text="Menu - Info" position="1020,36" size="200,22" font="Regular;20"  halign="right" foregroundColor="#404040" backgroundColor="black" zPosition="0" transparent="1" />
+		<!-- Lista Canali  --> 
+		<widget name="list" position="55,90" size="570,480" scrollbarMode="showOnDemand" foregroundColorServiceNotAvail="#303030" zPosition="2" serviceItemHeight="30"
+				serviceNumberFont="Regular;20" serviceNameFont="Regular;20" serviceInfoFont="Regular;19"  colorServiceNameFont="#0x09abf1" colorServiceDescription="#a1daff" colorServiceDescriptionSelected="white" 
+				picServiceEventProgressbar="xta/bars/progress_back.png" selectionPixmap="xta/bars/slider50.png" transparent="1" />
+                <!-- ProgressBar -->
+		<ePixmap position="635,419" size="120,15" pixmap="xta/bars/ch_progressbw.png" alphatest="blend" transparent="1"  zPosition="3" />
+		<widget source="ServiceEvent" render="Progress" pixmap="xta/bars/ch_progresscl.png" position="636,419" size="119,13" zPosition="4"  backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<!-- Event Time -->
+		<widget source="ServiceEvent" render="Label" position="770,415" size="100,26" zPosition="2" halign="left" font="Regular;19" foregroundColor="white" backgroundColor="black"  transparent="1" >
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="825,415" zPosition="1" size="70,26" font="Regular;19" foregroundColor="blue" backgroundColor="black"  halign="right" transparent="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<!-- Nome Canale - Service Name -->
+		<widget source="ServiceEvent" render="Label" position="910,415" zPosition="1" size="330,26" font="Regular;19" halign="left" foregroundColor="#606060" backgroundColor="black" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="635,443" size="600,26" zPosition="2" halign="center" font="Regular;20" foregroundColor="blue" backgroundColor="transpBlack" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>	
+		<widget source="ServiceEvent" render="Label" position="625,478" zPosition="2" halign="center" size="605,140" font="Regular;19" transparent="1" foregroundColor="#a1daff" backgroundColor="transpBlack" >
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<eLabel position="65,580" size="565,1" backgroundColor="#202020" />
+		<eLabel position="65,582" size="565,1" backgroundColor="#101010" />
+		<eLabel text="Next Event :" position="65,595" size="120,22" font="Regular;19"  halign="left" foregroundColor="yellow" backgroundColor="black" zPosition="0" transparent="1" />
+		<widget source="ServiceEvent" render="TimeNextEvent" position="200,595" zPosition="3" halign="left" font="Regular;19" size="400,60" noWrap="1" foregroundColor="#f0ed00" backgroundColor="black" transparent="1" />
+		<widget source="ServiceEvent" render="NameNextEvent" position="65,620" zPosition="3" halign="left" font="Regular;20" size="670,60" noWrap="1" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+		<ePixmap pixmap="xta/icons/icon_norec_light.png" position="1030,667" size="44,26" zPosition="2" alphatest="blend" />
+		<widget source="session.RecordState" 	render="Pixmap" pixmap="xta/icons/icon_rec_light.png" position="1030,667" size="44,26" zPosition="5" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+	</screen>
+
+	<!-- Channel selection TV (OK) --> 
+	<screen name="yyyChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder">
+    		<ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/listch2.png"  />
+    		<widget source="Title" render="Label" position="65, 23" size="660,50" font="Regular;22" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1090,600" size="162,110" zPosition="2" alphatest="blend" />
+		<panel name="4Buttons" />
+		<eLabel text="Menu - Info" position="1040,23" size="200,22" font="Regular;20"  halign="right" foregroundColor="#404040" backgroundColor="black" zPosition="0" transparent="1" />
+		<!-- Lista Canali  --> 
+  		<ePixmap position="850,70" zPosition="4" size="29,450" pixmap="xta/bars/maxbar.png" alphatest="blend" transparent="1" />
+  		<ePixmap position="850,520" zPosition="4" size="29,3" pixmap="xta/bars/endbar.png" alphatest="blend" transparent="1" />
+		<eLabel position="62,54" size="102,380" backgroundColor="#20000000" />
+		<widget name="list" position="75,70" size="800,450" scrollbarMode="showOnDemand" foregroundColorServiceNotAvail="#303030" zPosition="2" serviceItemHeight="30"
+				serviceNumberFont="Regular;20" serviceNameFont="Regular;20" serviceInfoFont="Regular;19"  colorServiceNameFont="#0x09abf1" colorServiceDescription="#a1daff" colorServiceDescriptionSelected="white" 
+				picServiceEventProgressbar="xta/bars/progress_back.png" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+		<eLabel position="850,54" size="430,380" backgroundColor="#20000000" />
+		<widget source="ServiceEvent" render="Label" position="890,68" zPosition="1" size="350,26" font="Regular;24" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+                <!-- ProgressBar -->
+		<ePixmap position="890,110" size="120,15" pixmap="xta/bars/ch_progressbw.png" alphatest="blend" transparent="1"  zPosition="3" />
+		<widget source="ServiceEvent" render="Progress" pixmap="xta/bars/ch_progresscl.png" position="890,110" size="119,13" zPosition="4"  backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<!-- Event Time -->
+		<widget source="ServiceEvent" render="Label" position="1030,106" size="100,26" zPosition="2" halign="left" font="Regular;19" foregroundColor="white" backgroundColor="black"  transparent="1" >
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="1100,106" zPosition="1" size="70,26" font="Regular;19" foregroundColor="blue" backgroundColor="black"  halign="right" transparent="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="890,145" size="350,26" zPosition="2" halign="left" font="Regular;20" foregroundColor="#a1daff" backgroundColor="black" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>	
+		<eLabel position="890,180" size="350,1" backgroundColor="#202020" />
+		<eLabel position="890,182" size="350,1" backgroundColor="#101010" />
+		<eLabel text="Next Event :" position="890,210" size="120,22" font="Regular;20"  halign="left" foregroundColor="white" backgroundColor="black" zPosition="0" transparent="1" />
+		<widget source="ServiceEvent" render="TimeNextEvent" position="1020,210" zPosition="3" halign="left" font="Regular;20" size="200,60" noWrap="1" foregroundColor="#f0ed00" backgroundColor="black" transparent="1" />
+		<widget source="ServiceEvent" render="NameNextEvent" position="890,250"  zPosition="3" halign="left" font="Regular;18" size="350,90" noWrap="1" foregroundColor="#a1daff" backgroundColor="black" transparent="1" />
+		<eLabel position="890,290" size="350,1" backgroundColor="#202020" />
+		<eLabel position="890,292" size="350,1" backgroundColor="#101010" />
+		<!-- Nome Canale - Service Name -->
+		<widget source="ServiceEvent" render="Label" position="65,540" zPosition="2" halign="left" size="1180,100" font="Regular;19" transparent="1" foregroundColor="#a1daff" backgroundColor="black" >
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<ePixmap pixmap="xta/icons/icon_norec_light.png" position="1030,667" size="44,26" zPosition="2" alphatest="blend" />
+		<widget source="session.RecordState" 	render="Pixmap" pixmap="xta/icons/icon_rec_light.png" position="1030,667" size="44,26" zPosition="5" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+		<!-- Crypt Info -->			
+		<ePixmap position="890,337" size="28,15" zPosition="1" pixmap="xta/icons/ico_crypt_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="890,337" size="28,15" zPosition="2" pixmap="xta/icons/ico_crypt_on.png" alphatest="blend">
+			<convert type="ServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Provider Info -->
+		<widget source="session.CurrentService" render="Label" position="940,330" size="300,28" zPosition="2" font="Regular;22" backgroundColor="black" halign="left" foregroundColor="yellow" transparent="1" >
+			<convert type="ServiceName">Provider</convert>
+		</widget>
+		<!-- HD Info -->			
+		<ePixmap position="890,380" size="29,20" zPosition="1" pixmap="xta/icons/ico_hd_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="890,380" size="29,20" zPosition="2" pixmap="xta/icons/ico_hd_on.png" alphatest="blend">
+			<convert type="ServiceInfo">VideoWidth</convert>
+			<convert type="ValueRange">721,1980</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Wide Info -->			
+		<ePixmap position="950,380" size="36,20" zPosition="1" pixmap="xta/icons/ico_format_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="950,380" size="36,20" zPosition="2" pixmap="xta/icons/ico_format_on.png" alphatest="blend">
+			<convert type="ServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Dolby Info -->			
+		<ePixmap position="1040,380" size="57,20" zPosition="1" pixmap="xta/icons/ico_dolby_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="1040,380" size="57,20" zPosition="2" pixmap="xta/icons/ico_dolby_on.png" alphatest="blend">
+			<convert type="ServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- TeleText Info -->			
+		<ePixmap position="1120,380" size="33,20" zPosition="1" pixmap="xta/icons/ico_txt_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="1120,380" size="33,20" zPosition="2" pixmap="xta/icons/ico_txt_on.png" alphatest="blend">
+			<convert type="ServiceInfo">HasTelext</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- HBBTv Info -->			
+		<ePixmap position="1180,380" size="49,20" zPosition="1" pixmap="xta/icons/ico_hbbtv_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="1180,380" size="49,20" zPosition="2" pixmap="xta/icons/ico_hbbtv_on.png" alphatest="blend">
+			<convert type="ServiceInfo">HasHBBTV</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<eLabel position="890,420" size="350,1" backgroundColor="#202020" />
+		<eLabel position="890,422" size="350,1" backgroundColor="#101010" />
+		<!-- EMU Info -->
+		<eLabel name="cam" position="890,440" size="44,20" halign="left" text="CAM" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="935,440" size="310,20" font="Regular;17" zPosition="1" backgroundColor="background" transparent="1">
+			<convert type="CamName">
+			</convert>
+		</widget>
+		<!-- Crypto/Sat Info -->
+		<eLabel name="emu" position="890,470" size="44,20" halign="left" text="EMU" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="945,470" size="300,20" font="Regular;17" backgroundColor="black" foregroundColor="#505050" transparent="1" halign="left" valign="center">
+			<convert type="XTAExtraInfo">CryptoInfo</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="890,500" size="360,25" font="Regular;17" backgroundColor="black" transparent="1" halign="left" valign="center" foregroundColor="yellow">
+			<convert type="CryptoInfo">VerboseInfo</convert>
+		</widget>
+	</screen>
+</skin>

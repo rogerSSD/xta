@@ -1,0 +1,795 @@
+<skin>
+	<!-- PLUGIN *** AutoBouquetMaker(1) Providers Setup (OK) --> 
+	<screen name="AutoBouquetsMaker_ProvidersSetup" position="0,0" size="1280,720"  flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+ 		<panel name="DarkLineBox" /> 
+		<panel name="2Buttons" />
+		<widget name="config" position="65,90" size="675,480" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+		<widget name="pleasewait" position="70,100" size="680,230" font="Regular;19" halign="center" valign="center" transparent="1" zPosition="2" />
+		<widget name="description" position="65,595" size="680,50" font="Regular;19" halign="left" transparent="1" zPosition="1" />
+	</screen>
+
+	<!-- PLUGIN *** AutoBouquetsMaker(2) Menu Screen -->
+	<screen name="AutoBouquetsMaker_Menu" position="0,0" size=" 1280,720" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+ 		<panel name="DarkLineBox" /> 
+		<widget source="list" render="Listbox" position="65,90" size="680,450" font="Regular;20" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" foregroundColorSelected="blue">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+				MultiContentEntryPixmapAlphaTest(pos = (0,0), size = (0, 0), png = 0),
+				MultiContentEntryText(pos = (5, 2), size = (670, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+				],
+				"fonts": [gFont("Regular", 22)],
+				"itemHeight": 30
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- PLUGIN *** AutoBouquetsMaker(3) Configure Screen -->
+	<screen name="AutoBouquetsMaker_Setup" position="0,0" size="1280,720" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+ 		<panel name="DarkLineBox" /> 
+		<panel name="2Buttons" />
+		<widget name="config" position="65,90" size="675,480" scrollbarMode="showOnDemand" itemHeight ="40" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+		<widget name="pleasewait" position="70,100" size="680,230" font="Regular;19" halign="center" valign="center" transparent="1" zPosition="2" />
+		<widget name="description" position="65,595" size="680,50" font="Regular;19" halign="left" transparent="1" zPosition="1" />
+	</screen>
+
+	<!-- PLUGIN ***  AutoBouquetsMaker(4) Hide Screen -->
+	<screen name="AutoBouquetsMaker_HideSections" position="0,0" size="1280,720" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+ 		<panel name="DarkLineBox200" /> 
+		<panel name="2Buttons" />
+		<widget source="list" render="Listbox" position="65,90" size="680,450" font="Regular;20" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" foregroundColorSelected="blue" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (5, 3), size = (32, 32), png = 0),
+					MultiContentEntryText(pos = (47, 2), size = (400, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (515, 2), size = (160, 30), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+  
+	<!-- PLUGIN ***  AutoBouquetsMaker(5) Hide Screen -->
+	<screen name="AutoBouquetsMaker_KeepBouquets" position="0,0" size="1280,720" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+ 		<panel name="DarkLineBox" /> 
+		<panel name="2Buttons" />
+		<widget source="list" render="Listbox" position="65,90" size="680,440" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" foregroundColorSelected="blue" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (10, 0), size = (32, 32), png = 0),
+					MultiContentEntryText(pos = (47, 0), size = (400, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (450, 0), size = (120, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- PLUGIN ***  AutoBouquetsMaker(6)Ordering -->
+	<screen name="AutoBouquetsMaker_Ordering" position="0,0" size="1280,700" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+ 		<panel name="DarkLineBox" /> 
+		<panel name="4Buttons" />
+		<widget source="list" render="Listbox" position="65,90" size="680,400" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (5, 1), size = (680, 32), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+		<widget name="pleasewait" position="70,100" size="580,140" font="Regular;20" halign="center" valign="center" transparent="1" zPosition="1" />
+	</screen>
+
+	<!-- PLUGIN ***  AutoBouquetsMaker(7) Log View -->
+	<screen name="AutoBouquetsMakerLogView" position="0,0" size="1280,720" title="Backup Log" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+ 		<panel name="DarkLineBox" /> 
+		<widget name="list" position="65,90" size="675,500" font="Regular;20" itemHeight="40" transparent="1" />
+	</screen>
+
+	<!-- PLUGIN ***  AutoBouquetsMaker(8) About -->
+	<screen name="AutoBouquetsMaker_About" position="0,0" size="1280,720" title="CrossEPG - About">
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="1Buttons" />
+		<widget name="about" position="65,90" size="680,430" font="Regular;19" transparent="1" />
+		<widget name="oealogo" position="550,500" size="200,135" zPosition="4" transparent="1" alphatest="blend" />
+	</screen>
+
+
+	<!-- PLUGIN *** PicturePlayer (OK) -->
+	<screen name="picshow" position="0,0" size="1280,720" title="PicturePlayer" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="4ButtonsW" />
+		<panel name="ScrollBarTemplate300" /> 
+		<widget name="filelist" position="65,80" size="667,300" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/menu/slider30.png" backgroundColor="black" transparent="1" />
+		<widget name="thn" position="65, 410" size="320,200" zPosition="4" alphatest="on" />
+		<widget source="label" render="Label" position="400,410" size="260,220" font="Regular;20" backgroundColor="black" transparent="1" />
+	</screen>
+  
+	<!-- PLUGIN *** PicturePlayer Pic_Exif (OK) -->
+	<screen name="Pic_Exif" position="0,0" size=" 1280,720" title="Info" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="1ButtonsW" />
+		<panel name="ScrollBarTemplate480" /> 
+		<widget source="menu" render="Listbox" position="65,90" size="667,480" scrollbarMode="showOnDemand" selectionDisabled="1" backgroundColor="background" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [  
+					MultiContentEntryText(pos = (10, 5), size = (350, 30), flags = RT_HALIGN_LEFT, text = 0), 
+					MultiContentEntryText(pos = (360, 7), size = (310, 30), flags = RT_HALIGN_LEFT, text = 1)], 
+					"fonts": [gFont("Regular", 22)], 
+					"itemHeight": 30 
+				}
+			</convert>
+		</widget>
+	</screen>
+
+      	<!-- PLUGIN *** FanSetup (OK) -->
+	<screen name="FanSetupScreen" position="0,0" size="1280,720" title="Fan Setup" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<widget name="powerstatus" position="95,90" size="180,22" font="Regular;20" zPosition="1" foregroundColor="blue" transparent="1" />
+		<widget name="daemon0" alphatest="on" pixmap="xta/buttons/button_off.png" position="68,94"   size="15,16" zPosition="10" transparent="1"/>
+		<widget name="daemon1" alphatest="on" pixmap="xta/buttons/button_green.png" position="68,94" size="15,16" zPosition="10" transparent="1"/>
+		<ePixmap pixmap="xta/skin_default/def-bar.png" position="65,130" zPosition="1" size="667,2" />
+		<widget name="config" position="65,160" size="667,190" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
+  		<ePixmap  position="50,659" size="900,50" pixmap="xta/buttons/3colorsb.png" zPosition="2" alphatest="blend" />
+		<widget name="cancel"  position="100,666" size="200,22" halign="left" zPosition="1" font="Regular;20" transparent="1" backgroundColor="black" />
+		<widget name="ok"      position="340,666" size="200,22" halign="left" zPosition="1" font="Regular;20" transparent="1" backgroundColor="black" />
+		<widget name="hddtemp" position="580,666"  size="200,22" halign="left" zPosition="1" font="Regular;20" transparent="1" backgroundColor="black" />
+	</screen>
+
+      	<!-- PLUGIN *** HDMI Cec (OK) -->
+	<screen name="HdmiCECSetupScreen" position="0,0" size="1280,720" title="HDMI CEC setup" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="4ButtonsW" />
+		<widget name="config" position="65,90" size="670,350"  scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
+		<ePixmap pixmap="xta/skin_default/def-bar.png" position="65,480" zPosition="1" size="667,2" />
+		<widget source="current_address" render="Label" position="65,505" size="670,30" zPosition="10" font="Regular;21" halign="left" valign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+		<widget source="fixed_address"   render="Label" position="65,535" size="670,30" zPosition="10" font="Regular;21" halign="left" valign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+	</screen>
+
+      	<!-- PLUGIN *** OSD3 Setup Screen (OK) -->
+	<screen name="OSD3DSetupScreen" position="0,0" size="1280,720" title="OSD 3D setup" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="2Buttons" />
+		<widget name="config" position="65,90" size="667,190" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
+		<widget name="cancel"  position="100,666" size="200,22" halign="left" zPosition="1" font="Regular;20" transparent="1" backgroundColor="black" />
+		<widget name="ok"      position="340,666" size="200,22" halign="left" zPosition="1" font="Regular;20" transparent="1" backgroundColor="black" />
+	</screen>
+
+      	<!-- PLUGIN *** OSD3 Screen Screen (OK) -->
+	<screen name="OSDScreenPosition" position="0,0" size="e,e" title="OSD Screen position" backgroundColor="blue">
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="2Buttons" />
+		<widget name="config" position="65,90" size="667,190" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
+		<widget name="cancel"  position="100,666" size="200,22" halign="left" zPosition="1" font="Regular;20" transparent="1" backgroundColor="black" />
+		<widget name="ok"      position="340,666" size="200,22" halign="left" zPosition="1" font="Regular;20" transparent="1" backgroundColor="black" />
+	</screen>'
+
+
+	<!-- ########### CCCam Info ############ --> 
+
+	<!-- PLUGIN *** CCcam Main Menu (OK) -->
+	<screen name="CCcamInfoMain" position="0,0" size="1280,720" title="Info Main" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<widget name="menu" position="65,90" size="667,450" scrollbarMode="showOnDemand" zPosition="1" itemHeight="30" selectionPixmap="xta/bars/slider30.png" backgroundColor="Black" transparent="1" />
+	</screen>
+
+	<!-- PLUGIN *** CCcam General Info (OK) -->
+	<screen name="CCcamInfoInfoScreen" position="0,0" size="1280,720" title="CCcam General Info" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<widget name="text" position="65,90" size="667,450" font="Regular;20" backgroundColor="transpBlack" transparent="1" />
+	</screen>
+	
+	<!-- PLUGIN *** CCcam Server Info (OK) -->
+ 	<screen name="CCcamInfoServerMenu" position="0,0" size="1280,720" title="CCcam Server View" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="ScrollBarTemplate300" />
+		<widget name="list" position="65,90" size="667,300" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+		<eLabel position="65,425" size="537,1" backgroundColor="#202020" />
+		<eLabel position="65,427" size="537,1" backgroundColor="#404040" />
+		<widget name="info" position="65,450" size="667,340" font="Regular;20" foregroundColor="bluette" backgroundColor="transpBlack" transparent="1" />
+ 	</screen>
+
+	<!-- PLUGIN *** CCcam Shares Info (OK) -->
+	<screen name="CCcamInfoSubMenu" position="0,0" size="1280,720" title="CCcam Client Info" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="ScrollBarTemplate300" />
+		<widget name="list" position="65,90" size="667,300" zPosition="1" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+		<eLabel position="65,425" size="537,1" backgroundColor="#202020" />
+		<eLabel position="65,427" size="537,1" backgroundColor="#404040" />
+		<widget name="info" position="65,450" size="667,340" font="Regular;20" foregroundColor="bluette" backgroundColor="transpBlack" transparent="1" />
+	</screen>
+ 
+	<!-- PLUGIN *** CCcam Share View (OK) -->
+ 	<screen name="CCcamShareViewMenu" position="0,0" size="1280,720" title="CCcam Share View" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<widget name="list" position="65,90" size="667,510" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+ 		<widget name="uphops"    position="65,440" size="260,25" font="Regular;22" foregroundColor="bluette" transparent="1" backgroundColor="black" />
+ 		<widget name="cards"     position="65,480" size="260,25" font="Regular;22" transparent="1" backgroundColor="black" />
+ 		<widget name="providers" position="65,520" size="260,25" font="Regular;22" transparent="1" foregroundColor="bluette" backgroundColor="black" />
+ 		<widget name="reshare"   position="65,560" size="260,25" font="Regular;22" transparent="1" backgroundColor="black" />
+		<widget name="title"     position="65,620" size="520,25" halign="left" font="Regular;20" zPosition="4" foregroundColor="yellow" backgroundColor="black" transparent="1" />	
+	</screen>
+ 
+	<!-- PLUGIN *** CCcam Remote Box Info -->
+ 	<screen name="CCcamInfoRemoteBoxMenu" position="0,0" size="1280,720" title="CCcam Remote Box Info" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="4Buttons" />
+		<widget name="list" position="65,90" size="667,420" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider80.png" backgroundColor="black" transparent="1" />
+	</screen>
+ 
+	<!-- PLUGIN *** CCcam Extended Shared -->
+ 	<screen name="CCcamInfoShareInfo" position="0,0" size="1280,720" title="CCcam Info Shared" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="4Buttons" />
+		<widget name="list" position="65,90" size="667,480" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider80.png" backgroundColor="black" transparent="1" />
+	</screen>
+
+	<!-- PLUGIN *** CCcam Ecm Info Selection -->
+ 	<screen name="CCcamInfoEcmInfoSelection" position="0,0" size="1280,720" title="CCcam Ecm Info Selection" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<widget name="list" position="65,90" size="667,510" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
+ 	</screen>
+
+	<!-- PLUGIN *** CCcam Ecm Info Config Menu -->
+ 	<screen name="CCcamInfoConfigMenu" position="0,0" size="1280,720" title="CCcam Info Config Menu" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<widget name="config" position="65,90" size="667,160" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+ 	</screen>
+
+	<!-- PLUGIN *** CCcam Ecm Info SubMenu -->
+	<screen nae="CCcamInfoSubMenu" position="center,center" size="500,420" title="CCcam Info SubMenu" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<widget name="list" position="65,90" size="520,240" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+		<widget name="info" position="65,450" size="667,165" font="Regular;20" transparent="1" />
+	</screen>
+
+	<!-- PLUGIN *** CCcam Ecm Info Selection -->
+	<screen name="CCcamInfoEcmInfoSelection" position="0,0" size="1280,720" title="CCcam Ecm Info Selection" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<widget name="list" position="65,90" size="667,510" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+	</screen>
+
+	<!-- PLUGIN *** CCcam Info Config Menu -->
+	<screen name="CCcamInfoMenuConfig" position="0,0" size="1280,720" title="CCcam Info Menu Config" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="3Buttons" />
+		<widget name="list" position="65,90" size="667,510" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider50.png" transparent="1" />
+	</screen>
+
+	<!-- PLUGIN *** CCcam Info Config Switcher -->
+	<screen name="CCcamInfoConfigSwitcher" position="0,0" size="1280,720" title="CCcam Info Config Switcher" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="3Buttons" />
+		<widget name="list" position="65,90" size="667,500" scrollbarMode="showOnDemand" tselectionPixmap="xta/bars/slider50.png" transparent="1" />
+	</screen>
+
+
+
+	<!-- ########### CCCamOscam Info v0.3 ############ -->
+
+	<!-- CCcamOscamInfo Text List -->
+        <screen name="CCcamOScamTextList" position="0,0" size="1280,720" title="Cam Server Info" backgroundColor="transparent" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+                <widget name="list" position="60,90" size="1165,600" itemHeight="30" scrollbarMode="showOnDemand" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Cams Info -->
+        <screen name="CCcamOScamSelectCam" position="0,0" size="1280,720" title="Cams Info" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+                <widget name="list" position="60,90" size="1165,500" itemHeight="30" scrollbarMode="showOnDemand" transparent="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Config Screen -->
+        <screen name="CCcamOscamInfoConfigScreen" position="0,0" size="1280,720" title="CamInfo Config" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="4Buttons" />
+	        <widget name="config" position="60,90" size="750,500" scrollbarMode="showOnDemand" transparent="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+        
+	<!-- CCcamOscamInfo Start -->
+        <screen name="CCcamOScamStart" position="0,0" size="1280,720" title="CamInfo Start" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+                <widget name="list" position="60,90" size="1165,450" itemHeight="30" scrollbarMode="showOnDemand" transparent="1" />
+                <widget name="footer" position="60,595" size="1165,100" scrollbarMode="showOnDemand" transparent="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Home Info -->
+        <screen name="CCcamOscamInfoTextScreen" position="0,0" size="1280,720" title="Cam Info Home" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="xta/menu/ico_emulator.png" position="920,425" size="256,256" zPosition="2" alphatest="blend" />
+            	<widget name="text" position="60,90" size="720,400" font="Regular;20" transparent="1" backgroundColor="transpBlack" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+
+	<!-- CCcamOscamInfo Client Screen -->
+        <screen name="CCcamClientsScreen" position="0,0" size="1280,720" title="Cam Client Screen"  flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+		<widget name="header" position="60,90" size="1165,25" scrollbarMode="showOnDemand" transparent="1" />
+            	<widget name="clients" position="60,120" size="1165,390" transparent="1" />
+                <widget name="footer" position="60,543" size="1185,100" scrollbarMode="showOnDemand" transparent="1" />
+   	        <widget name= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonGreenText"  position="340,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonYellowText" position="580,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonBlueText"   position="820,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Server Screen -->
+        <screen name="CCcamServersAllgemeinScreen" position="0,0" size="1280,720" title="Cam Server Info" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+		<widget name="header" position="60,90" size="1080,25" scrollbarMode="showOnDemand" transparent="1" />
+            	<widget name="servers" position="60,120" size="1165,390" transparent="1" />
+                <widget name="footer" position="60,571" size="1165,100" scrollbarMode="showOnDemand" transparent="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+ 
+	<!-- CCcamOscamInfo Server Details Screen -->
+       <screen name="CCcamServersDetailScreen" position="0,0" size="1280,720" title="Cam Server Details" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+            	<widget name="header2" position="60,90" size="1165,25" backgroundColor="black" transparent="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#000000" zPosition="1" />
+		<eLabel position="60,121" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<widget name="servers" position="60,140" size="1165,420" backgroundColor="black" transparent="1" />
+		<eLabel position="60,580" size="1165,1" backgroundColor="#000000" zPosition="1" />
+		<eLabel position="60,581" size="1165,1" backgroundColor="#202020" zPosition="1" />
+        	<widget name="footer" position="60,585" size="1165,30" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<eLabel position="60,610" size="1165,1" backgroundColor="#000000" zPosition="1" />
+		<eLabel position="60,611" size="1165,1" backgroundColor="#202020" zPosition="1" />
+            	<widget name="header1" position="60,620" size="1165,25" font="Regular;22" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Providers -->
+	<screen name="CCcamProvidersScreen" position="0,0" size="1280,720" title="Cam Server Details" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+            	<widget name="header_menu" position="60,90" size="1165,25" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<widget name="header_info" position="210,90" size="1165,25" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<eLabel position="190,75" size="2,535" backgroundColor="#404040" zPosition="1" />
+		<eLabel position="190,75" size="1,535" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#404040" zPosition="1" />
+	        <widget name="menu" position="60,130" size="120,400" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<widget name="info" position="210,130" size="1010,400" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<eLabel position="60,610" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,611" size="1165,1" backgroundColor="#404040" zPosition="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Shares -->
+	<screen name="CCcamSharesScreen" position="0,0" size="1280,720" title="Cam Server Details" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+            	<widget name="header_menu" position="60,90" size="1165,25" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<widget name="header_info" position="210,90" size="1165,25" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<eLabel position="190,75" size="2,535" backgroundColor="#404040" zPosition="1" />
+		<eLabel position="190,75" size="1,535" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#404040" zPosition="1" />
+	        <widget name="menu" position="60,130" size="120,400" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<widget name="info" position="210,130" size="1010,400" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<eLabel position="60,610" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,611" size="1165,1" backgroundColor="#404040" zPosition="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Pairs -->
+	<screen name="CCcamPairsScreen" position="0,0" size="1280,720" title="Cam Server Details" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+            	<widget name="header" position="60,90" size="1165,25" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,121" size="1165,1" backgroundColor="#404040" zPosition="1" />
+            	<widget name="pairs" position="60,130" size="1165,420" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1"  />
+	        <widget name="details" position="60,620" size="1165,30" scrollbarMode="showOnDemand" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+ 
+	<!-- CCcamOscamInfo Ping Server -->
+	<screen name="CCcamPingServersScreen" position="0,0" size="1280,720" title="Cam Server Ping" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+		<widget name="header" position="60,90" size="1165,25" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#000000" zPosition="1" />
+		<eLabel position="60,121" size="1165,1" backgroundColor="#202020" zPosition="1" />
+                <widget name="menu" position="60,130" size="1165,420" itemHeight="30" scrollbarMode="showOnDemand" transparent="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Entitlements -->
+	<screen name="CCcamEntitlementsScreen" position="0,0" size="1280,720" title="Entitlements Details" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+             	<widget name="header" position="60,90" size="1165,25" backgroundColor="black" transparent="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,121" size="1165,1" backgroundColor="#404040" zPosition="1" />
+            	<widget name="menu" position="60,130" size="1165,420" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1"  />
+	        <widget name="info" position="60,600" size="1165,90" font="Regular;20" foregroundColor="yellow" backgroundColor="black" transparent="1"  />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo ECM Info -->
+	<screen name="CCcamECMInfoScreen" position="0,0" size="1280,720" title="Entitlements Details" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+		<eLabel position="190,75" size="2,535" backgroundColor="#404040" zPosition="1" />
+		<eLabel position="190,75" size="1,535" backgroundColor="#202020" zPosition="1" />
+	        <widget name="menu" position="60,90" size="120,400" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<widget name="info" position="210,90" size="1010,400" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<eLabel position="60,610" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,611" size="1165,1" backgroundColor="#404040" zPosition="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo EcmLine Enable -->
+	<screen name="EnableDisableClineFlineScreen" position="0,0" size="1280,720" title="CLine Options" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+		<widget name="header" position="60,90" size="1165,30" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1"  />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,121" size="1165,1" backgroundColor="#404040" zPosition="1" />
+            	<widget name="menu" position="60,130" size="1165,420" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonGreenText"  position="340,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonYellowText" position="580,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonBlueText"   position="820,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+		<eLabel text="Menu - Info" position="1120,666" size="200,21" font="Regular;20" zPosition="1" halign="LEFT" backgroundColor="BLACK" foregroundColor="white" transparent="1" />
+        </screen>
+ 
+	<!-- CCcamOscamInfo Enable Backup Cline -->
+        <screen name="EnableDisableClineFlineBackupScreen" position="0,0" size="1280,720" title="Enabled Cline Backup" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="xta/menu/ico_emulator.png" position="920,425" size="256,256" zPosition="2" alphatest="blend" />
+	        <widget name="menu" position="60,90" size="720,390" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonGreenText"  position="340,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonYellowText" position="580,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonBlueText"   position="820,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Oscam General Info -->
+        <screen name="OscamGeneralScreen" position="0,0" size="1280,720" title="OsCam General Info"  flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+	        <widget name="text_oscam" position="60,90" size="1165,25" font="Regular;22" foregroundColor="yellow" transparent="1" />
+       		<widget name="menu_oscam" position="60,120" size="1165,100" scrollbarMode="showOnDemand" transparent="1" />
+		<eLabel position="60,250" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,251" size="1165,1" backgroundColor="#404040" zPosition="1" />
+	        <widget name="text_cw" position="60,280" size="1165,25" font="Regular;22" foregroundColor="yellow" transparent="1" />
+       		<widget name="menu_cw" position="60,310" size="1165,100" scrollbarMode="showOnDemand" transparent="1" />
+		<eLabel position="60,440" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,441" size="1165,1" backgroundColor="#404040" zPosition="1" />
+		<widget name="text_user" position="60,470" size="1165,25" font="Regular;22" foregroundColor="yellow" transparent="1" />
+	        <widget name="menu_user" position="60,500" size="1165,100" scrollbarMode="showOnDemand" transparent="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+        
+	<!-- CCcamOscamInfo Oscam Clients -->
+	<screen name="OscamClientServerScreen" position="0,0" size="1280,720" title="Entitlements Details" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+            	<widget name="header" position="60,90" size="1165,30" scrollbarMode="showOnDemand" foregroundColor="yellow" transparent="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,121" size="1165,1" backgroundColor="#404040" zPosition="1" />
+            	<widget name="servers" position="60,150" size="1165,390" scrollbarMode="showOnDemand" transparent="1" />
+		<eLabel position="30,420" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="30,421" size="1165,1" backgroundColor="#404040" zPosition="1" />
+	        <widget name="footer" position="60,570" size="1165,100" scrollbarMode="showOnDemand" foregroundColor="yellow" transparent="1" />
+   	        <widget name= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonGreenText"  position="340,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonYellowText" position="580,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonBlueText"   position="820,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+        
+	<!-- CCcamOscamInfo Oscam Proxy -->
+	<screen name="EnableDisableClientsReadersProxysScreen" position="0,0" size="1280,720" title="Entitlements Details" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+            	<widget name="header" position="60,90" size="1165,30" scrollbarMode="showOnDemand" foregroundColor="yellow" transparent="1" />
+		<eLabel position="60,120" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,121" size="1165,1" backgroundColor="#404040" zPosition="1" />
+            	<widget name="menu" position="60,150" size="1165,390" scrollbarMode="showOnDemand" transparent="1" />
+		<eLabel position="30,420" size="1165,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="30,421" size="1165,1" backgroundColor="#404040" zPosition="1" />
+   	        <widget name= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonGreenText"  position="340,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonYellowText" position="580,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonBlueText"   position="820,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo Oscam Server Restart -->
+        <screen name="OscamRestatServer" position="0,0" size="1280,720" title="Restart Oscam Server" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="xta/menu/ico_emulator.png" position="920,425" size="256,256" zPosition="2" alphatest="blend" />
+	        <widget name="menu" position="60,90" size="720,390" scrollbarMode="showOnDemand" transparent="1" />
+   	        <widget name= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonGreenText"  position="340,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonYellowText" position="580,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+   	        <widget name= "ButtonBlueText"   position="820,666" font="Regular;20" size="165,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+        </screen>
+
+	<!-- CCcamOscamInfo TextList -->
+	<screen name="OScamTextList" position="0,0" size="1280,720" title="Entitlements Details" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="4Buttons" />
+           	<widget name="list" position="60,90" size="1165,480" scrollbarMode="showOnDemand" transparent="1" />
+	        <widget render="Label" source= "ButtonRedText"    position="100,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonGreenText"  position="340,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonYellowText" position="580,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	        <widget render="Label" source= "ButtonBlueText"   position="820,666" font="Regular;20" size="200,21" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+	</screen>
+
+	<!-- ########### MyTube Player ############ -->
+
+	<!-- Mytube Player -->
+	<screen name="MyTubePlayer" position="0,550" size="1280,150" title="MyTube Player" backgroundColor="transparent" flags="wfNoBorder">
+		<!-- Background -->
+		<ePixmap position="0,2" zPosition="-1" size="1280,150" pixmap="xta/mp-infobar-bg.png"/>
+		<!-- Date -->
+		<widget source="global.CurrentTime" render="Label" position="100,17" size="125,22" font="Regular;19"  backgroundColor="black" foregroundColor="white" transparent="1" >
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<!-- Time -->
+		<ePixmap position="1100,21" zPosition="2" size="22,22" pixmap="xta/icons/clock.png" alphatest="on" />
+		<widget source="global.CurrentTime" render="Label" position="1130,17" size="200,26" zPosition="2" font="Regular;19"  foregroundColor="grey" backgroundColor="black" transparent="1">
+			<convert type="ClockToText">Format %H:%M:%S</convert>
+		</widget>
+		<!-- Title -->
+		<ePixmap pixmap="xta/icons/icon_event.png" position="206,57" size="20,13" alphatest="on" />
+		<widget source="session.CurrentService" render="Label" position="260,50" size="810,25" zPosition="2" font="Regular;22" halign="center" noWrap="1" foregroundColor="white" transparent="1" backgroundColor="background">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<!-- Audio icon (is there multichannel audio?) -->
+		<ePixmap position="206,97" size="100,20" pixmap="xta/icons/ico_dolby_off.png" alphatest="blend" /> 
+		<widget source="session.CurrentService" render="Pixmap" pixmap="xta/icons/ico_dolby_on.png" position="206,97" size="100,20" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<!-- Videoformat icon (16:9?) -->
+		<ePixmap position="290,97" size="100,20" pixmap="xta/icons/ico_format_off.png" alphatest="blend" /> 
+		<widget source="session.CurrentService" render="Pixmap" pixmap="xta/icons/ico_format_on.png" position="290,97" zPosition="4" size="100,18" alphatest="blend" >
+			<convert type="ServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- VideoFormat -->
+		<eLabel text="Res" font="Regular;20" position="400,95" size="50,20"  foregroundColor="grey" backgroundColor="black" transparent="1"/>
+		<widget source="session.CurrentService" render="Label" font="Regular;20" position="440,95" size="55,20" halign="right"  foregroundColor="white" backgroundColor="black" transparent="1">
+			<convert type="ServiceInfo">VideoWidth</convert>
+		</widget>
+		<eLabel text="x" font="Regular;16" position="505,97" size="15,22" halign="center"  backgroundColor="black" transparent="1"/>
+		<widget source="session.CurrentService" render="Label" font="Regular;20" position="530,95" size="55,22"   foregroundColor="white" backgroundColor="black" transparent="1">
+			<convert type="ServiceInfo">VideoHeight</convert>
+		</widget>		
+		<!-- HDTV icon -->
+		<ePixmap position="350,96" size="100,24" pixmap="xta/icons/ico_hd_off.png" alphatest="blend" /> 
+		<widget source="session.CurrentService" render="Pixmap" pixmap="xta/icons/ico_hd_on.png" position="350,96" size="50,24" zPosition="4" alphatest="blend">
+			<convert type="ServiceInfo">VideoWidth</convert>
+			<convert type="ValueRange">721,1980</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- movie length -->
+		<widget source="session.CurrentService" render="Label" position="1150,50" size="120,26" font="Regular;22"  foregroundColor="yellow" backgroundColor="black" transparent="1" >
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+		<!-- Time/Movie -->
+		<widget source="session.CurrentService" render="Label" position="208,50" size="100,26" font="Regular;22"  foregroundColor="#538eff"  backgroundColor="black" transparent="1" >
+			<convert type="ServicePosition">Position,ShowHours</convert>
+		</widget>
+		<widget source="session.CurrentService" render="PositionGauge" position="210,76" size="890,14" zPosition="2" pointer="xta/buttons/pointerdvd.png:890,0" transparent="1" >
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+		<!-- Remaining time -->
+		<widget source="session.CurrentService" render="Label" position="975,50" size="120,26" font="Regular;22" halign="right"  foregroundColor="#538eff" backgroundColor="black" transparent="1" >
+			<convert type="ServicePosition">Remaining,Negate,ShowHours</convert>
+		</widget>
+		<!-- Recorder -->
+		<eLabel text="Rec" position="1130,95" size="80,22" font="Regular;20"  halign="right" foregroundColor="#404040" backgroundColor="black" zPosition="0" transparent="1" />
+		<ePixmap pixmap="xta/icons/icon_norec_light.png" position="1140,95" size="44,26" zPosition="2" alphatest="blend" />
+		<widget source="session.RecordState" 	render="Pixmap" pixmap="xta/icons/icon_rec_light.png" position="1140,95" size="44,26" zPosition="5" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+	</screen>
+
+	<!-- MyTubePlayer MainScreen -->
+	<screen name="MyTubePlayerMainScreen" position="0,0" size="1280,720" title="MyTube Player MainScreen" flags="wfNoBorder" >
+  		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/xtmenufull.png" />
+  		<widget source="Title" render="Label" zPosition="1" position="60,34" size="1130,28" halign="center" font="Regular;22" foregroundColor="blue" transparent="1" backgroundColor="black" />
+		<panel name="3Buttons" />
+		<eLabel text="Menu - Info" position="1010,37" size="200,21" font="Regular;20" zPosition="1" halign="right" backgroundColor="black" foregroundColor="#404040" transparent="1" />
+		<widget name="config" position="60,90" size="1160,28" zPosition="3" scrollbarMode="showNever"  itemHeight="25" />
+  		<ePixmap position="1195,130" zPosition="4" size="29,480" pixmap="xta/bars/maxbar.png" alphatest="blend" transparent="1" />
+  		<ePixmap position="1195,610" zPosition="4" size="29,3"   pixmap="xta/bars/endbar.png" alphatest="blend" transparent="1" />
+		<widget source="feedlist" render="Listbox" position="60,130" size="1160,480" zPosition="1" scrollbarMode="showOnDemand" transparent="1" >
+			<convert type="TemplatedMultiContent">
+			{"templates":
+				{"default": (80,[
+						MultiContentEntryPixmapAlphaTest(pos = (2, 2), size = (100, 75), png = 4), # index 4 is the thumbnail
+						MultiContentEntryText(pos = (120, 1),  size = (790, 25), font=0, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 1), # index 1 is the Title
+						MultiContentEntryText(pos = (120, 29), size = (790, 22), font=1, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 5), # index 5 is the Published Date
+						MultiContentEntryText(pos = (120, 54), size = (790, 22), font=1, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 6), # index 6 is the Views Count
+						MultiContentEntryText(pos = (930, 29), size = (200, 22), font=1, flags = RT_HALIGN_RIGHT | RT_VALIGN_TOP| RT_WRAP, text = 7), # index 7 is the duration
+						MultiContentEntryText(pos = (930, 54), size = (200, 22), font=1, flags = RT_HALIGN_RIGHT | RT_VALIGN_TOP| RT_WRAP, text = 8), # index 8 is the ratingcount
+					]),
+				"state": (80,[
+						MultiContentEntryText(pos = (10, 10), size = (790, 28), font=2, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (10, 40), size = (790, 50), font=3, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 1), # index 2 is the description
+					])
+				},
+				"fonts": [gFont("Regular", 20),gFont("Regular", 20),gFont("Regular", 22),gFont("Regular", 20)],
+				"itemHeight": 80
+			}
+			</convert>
+		</widget>
+		<eLabel text="Press   Menu-Info  for other options" position="60,622" size="800,21" font="Regular;19" zPosition="1"  foregroundColor="yellow" backgroundColor="black" transparent="1" />
+		<widget name="thumbnail" position="0,0" size="100,75" alphatest="on"/> # fake entry for dynamic thumbnail resizing, currently there is no other way doing this.
+		<widget name="HelpWindow" position="60,485"  size="1,1" zPosition="10" transparent="1" alphatest="blend" />	
+		<widget name="VKeyIcon" position="0,0" size="0,0"/>
+		<ePixmap position="845,658" zPosition="4" size="285,41" pixmap="xta/buttons/nocolors.png" alphatest="blend" transparent="1" />
+		<eLabel text="Virtual Keyoard" position="900,666" zPosition="2" size="300,40" font="Regular;19"  backgroundColor="black" transparent="1" />
+		<widget name="ButtonBlue" position="865,667" size="51,35" alphatest="blend" zPosition="5" pixmap="xta/buttons/bluepanel.png" />
+	</screen>
+
+	<!-- MyTubePlayer MyTubeSettingsScreen -->
+	<screen name="MyTubeSettingsScreen" position="0,0" size="1280,720" title="MyTubeSettingsScreen" flags="wfNoBorder" >
+    		<ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/xtmenu.png"  />
+    		<widget source="Title" render="Label" position="70, 34" size="660,50" font="Regular;22" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+		<ePixmap pixmap="xta/menu/ico_mytube.png" position="980,435" size="300,325" zPosition="-1" alphatest="blend" />
+		<widget name="config" zPosition="2" position="60,90" size="680,500" scrollbarMode="showOnDemand"  transparent="1" />
+		<panel name="1Buttons" />
+	</screen>
+
+	<!-- MyTubePlayer MyTubeSuggestionsListScreen -->
+	<screen name="MyTubeSuggestionsListScreen" title="MyTube ListScreen" position="60,130" size="1135,482" zPosition="2" flags="wfNoBorder" >
+		<eLabel position="0,0" size="1120,490" zPosition="-1" backgroundColor="#23000000" />
+		<widget source="suggestionslist" render="Listbox" position="0,0" zPosition="2" size="1135,488" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (5, 1), size = (420, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (440, 1), size = (1100, 24), font=1, flags = RT_HALIGN_RIGHT, text = 1), # index 1 are the rtesults
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 19)],
+				"itemHeight": 30
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- MyTubePlayer MyTubeHistoryScreen -->
+	<screen name="MyTubeHistoryScreen" title="MyTube History" position="60,130" size="1135,482" zPosition="2" backgroundColor="transparent" flags="wfNoBorder" >
+		<eLabel position="0,0" size="1120,490" zPosition="-1" backgroundColor="#23000000" />
+		<widget source="historylist" render="Listbox" position="0,0" zPosition="7" size="1135,488" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (5, 1), size = (1130, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 19)],
+				"itemHeight": 30
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- MyTubePlayer MyTubeTasksScreen - Active Download -->
+	<screen name="MyTubeTasksScreen" position="0,0" size="1280,720" title="MyTubeTasksScreen" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="1Buttons" />
+		<widget source="tasklist" render="Listbox" position="60,100" size="765,500" zPosition="7" scrollbarMode="showOnDemand" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (10, 3), size = (210, 24), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 1 is the name
+						MultiContentEntryText(pos = (230, 3), size = (160, 24), font=1, flags = RT_HALIGN_RIGHT, text = 2), # index 2 is the state
+						MultiContentEntryProgress(pos = (400, 3), size = (110, 24), percent = -3), # index 3 should be progress 
+						MultiContentEntryText(pos = (520, 3), size = (110, 24), font=1, flags = RT_HALIGN_RIGHT, text = 4), # index 4 is the percentage
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 18)],
+				"itemHeight": 36
+				}
+			</convert>
+		</widget>
+	</screen>	
+	
+	<!-- MyTubePlayer MyTubeVideoHelpScreen -->
+	<screen name="MyTubeVideoHelpScreen" position="0,0" size="1280,720" title="MyTube Player HelpScreen" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="1Buttons" />
+		<widget name="detailtext" position="60,100" size="765,500" zPosition="10" font="Regular;20" transparent="1"  valign="top" backgroundColor="darkgrey" />
+	</screen>
+
+	<!-- MyTubePlayer MyTubeVideoInfoScreen -->
+	<screen name="MyTubeVideoInfoScreen" position="0,0" size="1280,720" title="MyTube Player MainScreen" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="1Buttons" />
+		<widget name="author" position="60,100" size="300,25" zPosition="10" font="Regular;22" transparent="1"  valign="top" />
+		<widget name="duration" position="60,130" size="300,25" zPosition="10" font="Regular;22" transparent="1"  valign="top" />
+		<widget name="published" position="60,160" size="300,25" zPosition="10" font="Regular;22" transparent="1"  valign="top" />
+		<widget name="views" position="60,190" size="300,25" zPosition="10" font="Regular;22" transparent="1"  valign="top" />
+		<widget name="tags" position="400,100" size="390,100" zPosition="10" font="Regular;22" transparent="1" halign="right" valign="top" foregroundColor="bluette" />
+		<widget name="detailtext" position="60,250" size="770,250" zPosition="10" font="Regular;20"  foregroundColor="bluette" backgroundColor="black" transparent="1" />
+		<widget source="infolist" render="Listbox" position="60,500" size="755,135" zPosition="6" scrollbarMode="showNever" selectionDisabled="1" transparent="1" >
+			<convert type="TemplatedMultiContent">
+			{"templates":
+				{"default": (135,[
+						MultiContentEntryPixmapAlphaTest(pos = (10, 0), size = (180, 135), png = 0), # index 0 is the thumbnail
+						MultiContentEntryPixmapAlphaTest(pos = (190, 0), size = (180, 135), png = 1), # index 0 is the thumbnail
+						MultiContentEntryPixmapAlphaTest(pos = (370, 0), size = (180, 135), png = 2), # index 0 is the thumbnail
+						MultiContentEntryPixmapAlphaTest(pos = (550, 0), size = (180, 135), png = 3), # index 0 is the thumbnail							
+					]),
+				"state": (135,[
+						MultiContentEntryText(pos = (0, 35), size = (730, 65), font=2, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER| RT_WRAP, text = 0), # index 0 is the name
+					])
+				},
+				"fonts": [gFont("Regular", 20),gFont("Regular", 14),gFont("Regular", 28)],
+				"itemHeight": 135
+			}
+			</convert>
+		</widget>
+		<widget name="starsbg" position="710,450" size="120,20" pixmap="xta/skin_default/starsbar_empty.png"  zPosition="5" transparent="1" alphatest="on" />
+		<widget name="stars" position="710,450" size="120,20" pixmap="xta/skin_default/starsbar_filled.png" zPosition="6" transparent="1" />
+		<widget name="thumbnail" position="500,110" size="120,135" alphatest="on"/> # fake entry for dynamic thumbnail resizing, currently there is no other way doing this.
+	</screen>
+</skin>
