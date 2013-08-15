@@ -177,7 +177,20 @@
 		<widget name="ok"      position="340,666" size="200,22" halign="left" zPosition="1" font="Regular;20" transparent="1" backgroundColor="black" />
 	</screen>'
 
-
+	<!-- PLUGIN *** CDInfo (OK) -->
+	<screen name="CDInfo" position="0,0" size="1280,720" title="CDInfo" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="3Buttonsb" />
+		<eLabel text="CD Info" position="60, 80" size="1140,40" font="Regular;30" halign="left" foregroundColor="blue" backgroundColor="black" transparent="1" />
+		<widget source="info" render="Label" position="60,120" size="1140,50" font="Regular;20" backgroundColor="black" transparent="1" />
+		<eLabel position="60,160" size="1138,1" backgroundColor="#202020" />
+		<eLabel position="60,160" size="1140,1" backgroundColor="#202020" />
+		<widget name="config" position="60,190" size="1140,270" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/menu/slider30.png" backgroundColor="black" transparent="1" />
+		<eLabel position="60,488" size="1138,1" backgroundColor="#202020" />
+		<eLabel position="60,490" size="1140,1" backgroundColor="#202020" />
+		<widget source="info2" render="Label" position="60,530" size="1140,90" font="Regular;20" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+	</screen>
+  
 	<!-- ########### CCCam Info ############ --> 
 
 	<!-- PLUGIN *** CCcam Main Menu (OK) -->
@@ -278,7 +291,47 @@
 		<widget name="list" position="65,90" size="667,500" scrollbarMode="showOnDemand" tselectionPixmap="xta/bars/slider50.png" transparent="1" />
 	</screen>
 
+	<!-- PLUGIN *** DVDPlayer -->
+	<screen name="FileBrowser" position="0,0" size="1280,720" title="DVD File Browser" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="3ButtonsW" />
+		<widget name="filelist" position="60,90" size="667,450" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/menu/slider30.png" backgroundColor="black" transparent="1" />
+	</screen>
+  
+	<!-- PLUGIN *** DVDPlayer -->
+	<screen name="DVDPlayer" position="70,580" size="1140,110" title="InfoBar" flags="wfNoBorder">
+		<ePixmap position="0,0" zPosition="-1" size="1140,110" pixmap="xta/mp-infobar-bg.png" />
+		<widget name="chapterLabel" position=" 20,15" size="60,24" font="Regular;20" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+		<widget name="audioLabel" position=" 80,15" size="60,24" font="Regular;20" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+		<widget name="subtitleLabel" position="140,15" size="60,24" font="Regular;20" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="200,11" size="690,36" font="Regular;26" valign="top" noWrap="1" backgroundColor="black" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="890,12" size=" 80,25" font="Regular;23" halign="right" backgroundColor="black" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="980,12" size="140,25" font="Regular;23" halign="right" backgroundColor="black" foregroundColor="grey" transparent="1">
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Progress" position="10,49" size="1120,8" zPosition="1" pixmap="xta/bars/progress.png" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position=" 20,75" size="150,28" font="Arial;24" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1">
+			<convert type="ServicePosition">Position,ShowHours</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="970,75" size="150,28" font="Arial;24" halign="right" foregroundColor="black" backgroundColor="grey" transparent="1">
+			<convert type="ServicePosition">Remaining,ShowHours</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="420,75" size="300,24" font="Regular;22" halign="center" foregroundColor="black" backgroundColor="grey" transparent="1">
+			<convert type="ServicePosition">Length,ShowHours</convert>
+		</widget>
+	</screen>
 
+	<!-- PLUGIN *** WebInterface -->
+		<panel name="GenericLayoutLiteTemplate" />
+		<panel name="2ButtonsW" />
+		<widget name="config" position="60,90" size="667,450" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/menu/slider30.png" backgroundColor="black" transparent="1" />
+	</screen>
 
 	<!-- ########### CCCamOscam Info v0.3 ############ -->
 
