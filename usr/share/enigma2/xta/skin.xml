@@ -2863,7 +2863,6 @@
 	<!-- Parental Control Change Pin (OK) -->
 	<screen name="ParentalControlChangePin" position="0,0" size=" 1280,720" title="Change pin code" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="ScrollBarTemplate450" /> 
 		<widget name="config" position="65,90" size="667,450" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" black="background" transparent="1" />
 	</screen>
 
