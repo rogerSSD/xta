@@ -199,7 +199,7 @@
 	</screen>
 
  	<!-- About (OK) -->
-	<screen name="Subtitles" position="center,center" size=" 840,605" title="Subtitle selection" flags="wfNoBorder">
+	<screen name="Subtitles" position="0,0" size=" 1280,720" title="Subtitle selection" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
  		<panel name="1Buttons" /> 
 		<widget name="config" position="65,90" size="680,480" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
@@ -691,7 +691,7 @@
 	</screen>
 
 	<!-- AutoBouquet Menu (OK) --> 
-	<screen name="AutoBouquetsMenu" position="center,center" size="1100,605" title="AutoBouquets Setup" flags="wfNoBorder">
+	<screen name="AutoBouquetsMenu" position="0,0" size="1280,720" title="AutoBouquets Setup" flags="wfNoBorder">
 		<ePixmap position="0,0" zPosition="-10" size="1100,605" pixmap="xta/menu/xtmenu.png" />
 		<panel name="2Buttons" />
 		<widget name="config" position="60,90" size="680,300" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" />
@@ -1213,7 +1213,7 @@
 	</screen>
 
 	<!-- TimeShift Selection (OK) -->
-	<screen name="TimerSelection" position="center,center" size="1100,605" title="Timer selection" flags="wfNoBorder" backgroundColor="transparent" >
+	<screen name="TimerSelection" position="0,0" size="1280,720" title="Timer selection" flags="wfNoBorder" backgroundColor="transparent" >
 		<ePixmap position="0,0" zPosition="-10" size="1100,605" pixmap="xta/menu/xtmenu.png" />
 		<eLabel text="Timer Selection" position="60, 90" size="680,43" font="Regular;35" halign="right" backgroundColor="white" transparent="1" />
 		<widget name="timerlist" position="60,140" size="680,450" itemHeight="75" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider75.png" backgroundColor="black" transparent="1" />
@@ -1381,7 +1381,7 @@
 	</screen>
 
 	<!-- EPG XMLTV Log Importer (OK) -->
-	<screen name="XMLTVImportLog" position="center,center" size="560,400" >
+	<screen name="XMLTVImportLog" position="0,0" size="1280,720" title="XMLTVI Import Log" flags="wfNoBorder" >
  		<panel name="GenericLayoutLiteTemplate" /> 
 		<panel name="4Buttons" />
 		<panel name="ScrollBarTemplate510" /> 
@@ -1844,7 +1844,8 @@
 		<panel name="1ButtonsW" /> 
 		<panel name="DarkLineBox" /> 
 		<widget source="IF" render="Label" position=" 65, 90" size="440,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" />
-		<widget source="Statustext" render="Label" position=" 610, 90" size="160,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" />
+		<!-- widget source="Statustext" render="Label" position=" 610, 90" size="160,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" /-->
+		<eLabel text="Link:"  position="610,90" size="160,28" font="Regular;24" halign="left" foregroundColor="blue" transparent="1" />
 		<widget name="statuspic" position="705, 93" size=" 35,27" pixmaps="xta/buttons/green.png,xta/buttons/grey.png" transparent="1" alphatest="on" />
   		<eLabel position="65, 120" size="530, 1" backgroundColor="#303030" />
   		<eLabel position="65, 122" size="530, 1" backgroundColor="#202020" />
@@ -2849,7 +2850,7 @@
 	</screen>
 
 	<!-- Sat Positioner RotorNim Selection (OK) -->
-	<screen name="RotorNimSelection" position="140,165" size="400,130" title="select Slot" flags="wfNoBorder" >
+	<screen name="RotorNimSelection" position="0,0" size="1280,720" title="select Slot" flags="wfNoBorder" >
 		<panel name="GenericLayoutLiteTemplate" /> 
 		<panel name="DarkLineBox200" /> 
 		<widget name="nimlist" position="60,90" size="640,210"  scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" transparent="1"  />
@@ -2876,7 +2877,6 @@
 	<!-- Parental Control Setup (OK) -->
 	<screen name="ParentalControlSetup" position="0,0" size=" 1280,720" title="Parental control setup" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="ScrollBarTemplate450" /> 
 		<widget name="config" position="65,90" size="667,450" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
 	</screen>
   
