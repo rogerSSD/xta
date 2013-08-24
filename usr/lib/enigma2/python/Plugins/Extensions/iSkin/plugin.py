@@ -55,7 +55,15 @@ class ConfigSkin(Screen, ConfigListScreen):
                                 "red": self.close,								
                                 "cancel": self.close
                                 }, -1)   
-                                
+								
+         import gettext
+         def _(txt):
+	              t = gettext.dgettext("iSkin", txt)
+	             if t == txt:
+		         print "[iSkin] fallback to default translation for", txt
+		,        t = gettext.gettext(txt)
+	             return t                        
+				 
         def MyConfigList(self):	
                 mdom = xml.etree.cElementTree.parse(os.path.dirname(sys.modules[__name__].__file__) + "/Config/SkinSetup.xml")
                 config.Skin = ConfigSubsection()			 
