@@ -199,7 +199,7 @@
 	</screen>
 
  	<!-- About (OK) -->
-	<screen name="Subtitles" position="0,0" size=" 1280,720" title="Subtitle selection" flags="wfNoBorder">
+	<screen name="Subtitles" position="center,center" size=" 840,605" title="Subtitle selection" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
  		<panel name="1Buttons" /> 
 		<widget name="config" position="65,90" size="680,480" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
@@ -246,7 +246,7 @@
 			<convert type="RemainingToText">InMinutes</convert>
 		</widget>
 		<!-- Event Next -->
-		<widget source="session.Event_Next" render="Label" position="160,660" size="79,30" font="Regular;24" halign="right" foregroundColor="#404040" backgroundColor="black" transparent="1">
+		<widget source="session.Event_Next" render="Label" position="160,663" size="79,30" font="Regular;24" halign="right" foregroundColor="#404040" backgroundColor="black" transparent="1">
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText">Default</convert>
 		</widget>
@@ -691,7 +691,7 @@
 	</screen>
 
 	<!-- AutoBouquet Menu (OK) --> 
-	<screen name="AutoBouquetsMenu" position="0,0" size="1280,720" title="AutoBouquets Setup" flags="wfNoBorder">
+	<screen name="AutoBouquetsMenu" position="center,center" size="1100,605" title="AutoBouquets Setup" flags="wfNoBorder">
 		<ePixmap position="0,0" zPosition="-10" size="1100,605" pixmap="xta/menu/xtmenu.png" />
 		<panel name="2Buttons" />
 		<widget name="config" position="60,90" size="680,300" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" />
@@ -1213,7 +1213,7 @@
 	</screen>
 
 	<!-- TimeShift Selection (OK) -->
-	<screen name="TimerSelection" position="0,0" size="1280,720" title="Timer selection" flags="wfNoBorder" backgroundColor="transparent" >
+	<screen name="TimerSelection" position="center,center" size="1100,605" title="Timer selection" flags="wfNoBorder" backgroundColor="transparent" >
 		<ePixmap position="0,0" zPosition="-10" size="1100,605" pixmap="xta/menu/xtmenu.png" />
 		<eLabel text="Timer Selection" position="60, 90" size="680,43" font="Regular;35" halign="right" backgroundColor="white" transparent="1" />
 		<widget name="timerlist" position="60,140" size="680,450" itemHeight="75" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider75.png" backgroundColor="black" transparent="1" />
@@ -1381,7 +1381,7 @@
 	</screen>
 
 	<!-- EPG XMLTV Log Importer (OK) -->
-	<screen name="XMLTVImportLog" position="0,0" size="1280,720" title="XMLTVI Import Log" flags="wfNoBorder" >
+	<screen name="XMLTVImportLog" position="center,center" size="560,400" >
  		<panel name="GenericLayoutLiteTemplate" /> 
 		<panel name="4Buttons" />
 		<panel name="ScrollBarTemplate510" /> 
@@ -1803,7 +1803,6 @@
 	<screen name="Setup" position="0,0" size=" 1280,720" title="AV Settings" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
 		<panel name="2ButtonsW" /> 
-		<panel name="DarkLineBox200" /> 
 		<widget name="config" position="65,90" size="675,480" font="Regular;20" itemHeight="30" enableWrapAround="1" selectionPixmap="xta/bars/slider30.png" transparent="1" />
 	</screen>
   
@@ -1844,8 +1843,7 @@
 		<panel name="1ButtonsW" /> 
 		<panel name="DarkLineBox" /> 
 		<widget source="IF" render="Label" position=" 65, 90" size="440,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" />
-		<!-- widget source="Statustext" render="Label" position=" 610, 90" size="160,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" /-->
-		<eLabel text="Link:"  position="610,90" size="160,28" font="Regular;24" halign="left" foregroundColor="blue" transparent="1" />
+		<widget source="Statustext" render="Label" position=" 610, 90" size="160,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" />
 		<widget name="statuspic" position="705, 93" size=" 35,27" pixmaps="xta/buttons/green.png,xta/buttons/grey.png" transparent="1" alphatest="on" />
   		<eLabel position="65, 120" size="530, 1" backgroundColor="#303030" />
   		<eLabel position="65, 122" size="530, 1" backgroundColor="#202020" />
@@ -1894,8 +1892,10 @@
 	<!-- XTA Network Test (OK) -->
 	<screen name="NetworkAdapterTest" position="0,0" size="1280,720" title="Network test..." flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="3ButtonsW" /> 
-		<panel name="DarkLineBox200" /> 
+		<panel name="4ButtonsW" /> 
+  		<eLabel position="550, 70" size="203, 410" backgroundColor="#10101010" zPosition="-1" />
+  		<ePixmap position="550,70" size="7,405" pixmap="xta/bars/menuline.png" zPosition="2" alphatest="blend" />
+
 		<widget name="AdapterInfo"      position="65,93" size="20,20" pixmaps="xta/buttons/greypanel.png,xta/buttons/bluepanel.png" zPosition="1" alphatest="blend" />
 		<widget name="AdapterInfo_OK"   position="65,93" size="20,20" pixmap="xta/buttons/greenpanel.png" zPosition="2" alphatest="blend" />
 		<widget name="Adaptertext"      position="100, 90" size="400,25" zPosition="1" font="Regular;22" backgroundColor="black" transparent="1" />
@@ -1929,11 +1929,15 @@
 		<widget name="DNStext"       position="100,410" size="400,25" zPosition="1" font="Regular;22" backgroundColor="black" transparent="1" />
 		<widget name="DNS"           position="100,440" size="400,25" zPosition="1" font="Regular;22" foregroundColors="#8c8c93,#f23d21,#1cff1c" backgroundColor="black" transparent="1" />
 		<widget name="DNSInfo_Text"  position="530,410" size="200,25" zPosition="2" font="Regular;22" halign="right" valign="center" foregroundColors="blue,#404040,#ffffff" backgroundColor="black" transparent="1" />
-		<eLabel position="65,475" size="480, 1" backgroundColor="#202020" />
-		<eLabel position="65,477" size="480, 1" backgroundColor="#101010" />
-		<widget name="EditSettings_Text"  position="530,480" size="300,34" zPosition="2" font="Regular;17" halign="center" valign="center" foregroundColors="blue,#404040,#ffffff" backgroundColor="black" transparent="1" />
-		<widget name="EditSettingsButton" position="65,780"  size="20,20" pixmaps="xta/buttons/greypanel.png,xta/buttons/bluepanel.png" zPosition="2" alphatest="blend" />
-		<widget name="InfoText"           position="50,480"  size="500,170" zPosition="25" font="Regular;17" halign="center" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+		<eLabel position="55,475" size="696, 1" backgroundColor="#202020" />
+		<eLabel position="55,477" size="696, 1" backgroundColor="#101010" />
+		<widget name="EditSettings_Text"  position="820,661" size="230,34" zPosition="2" font="Regular;19" halign="left" valign="center" foregroundColors="#404040,#606060,#ffffff" backgroundColor="black" transparent="1" />
+		<widget name="EditSettingsButton" position="788,667" size="20,20" pixmaps="xta/buttons/greypanel.png,xta/buttons/bluepanel.png" zPosition="6" alphatest="blend" />
+		<ePixmap position="788,667" size="20,20" pixmap="xta/buttons/greypanel.png" zPosition="5" alphatest="blend" />
+
+  		<eLabel position="55,478" size="698, 171" backgroundColor="#20000000" zPosition="-1" />
+		<widget name="InfoText" position="60,480"  size="680,170" zPosition="25" font="Regular;17" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+
 	</screen>
 
 	<!-- XTA Network Adapter Selection (OK) -->
@@ -2342,15 +2346,14 @@
       	<!-- XTA Update Image  (OK) -->
 	<screen name="UpdatePlugin" position="center,center" size=" 615,247" title="Software Update..." flags="wfNoBorder" >
 		<ePixmap position="0,0" zPosition="-1" size="612,247" pixmap="xta/menu/fr_download.png" />
-		<widget source="Title" render="Label" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
-		<widget name="status" position="20,20" size="570,100" font="Regular;20" halign="center" valign="center" foregroundColor="#538eff" backgroundColor="#25062748" transparent="1"  zPosition="5" />
+		<eLabel text="Software Update..." position="10,15" size="590,25" font="Regular;20" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+		<widget name="status" position="20,20" size="570,100" font="Regular;20" halign="center" valign="center" foregroundColor="#538eff" backgroundColor="#25062748" transparent="1"  zPosition="10" />
 		<ePixmap position="95,140" zPosition="1" size="635,21" pixmap="xta/bars/br_downgr.png" alphatest="blend" transparent="1" />
 		<widget name="slider" position="95,140" zPosition="2" size="635,10" pixmap="xta/bars/upd_cl.png" transparent="1" />
 		<widget name="activityslider" position="95,140" zPosition="3" size="635,21" pixmap="xta/bars/br_downco.png" transparent="1" />
-		<widget name="package" position="10,180" size="590,40"  font="Regular;20" halign="center" valign="center" backgroundColor="#25062748" transparent="1" />
-		<eLabel text="Software Update..." position="10,70" size="590,25" font="Regular;20" halign="center" backgroundColor="black" transparent="1" />
+		<widget name="package" position="10,180" size="590,40"  font="Regular;20" halign="center" valign="center" backgroundColor="#25062748" transparent="1" zPosition="10" />
 	</screen>
-  
+
       	<!-- XTA XT Support Forum (OK) -->
 	<screen name="XtrendMain" position="0,0" size="1280,720" title="Xtrend Support Forum" flags="wfNoBorder" >
 		<panel name="GenericLayoutFullTemplate" /> 
@@ -2440,21 +2443,29 @@
 		<widget name="info" position="65,90" zPosition="4" size="680,300" font="Regular;18" foregroundColor="white" halign="left" valign="center" transparent="1" />
 	</screen>
 	
-      	<!-- XTA IPK Installer (OK) -->
-	<screen name="noIpkinstall" position="0,0" size="1280,720" title="Addon Install" flags="wfNoBorder" >
+      	<!-- XTA Get Ipk (OK) -->
+ 	<screen name="Getipk" position="0,0" size="1280,720" title="Addon Install" flags="wfNoBorder" >
 		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="DarkLineBox" /> 
 		<panel name="3Buttons" /> 
- 		<widget name="list" position="65,90" size="680,350" backgroundColor="black" transparent="1" />
- 		<widget name="info" position="65,620" zPosition="4" size="680,25" font="Regular;20" foregroundColor="#ffffff" transparent="1" halign="left" valign="center" />
- 	</screen>
+		<widget name="list" position="65,90" size="673,360" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" />
+		<widget name="info" position="65,120" zPosition="4" size="645,450" font="Regular;22" foregroundColor="yellow" transparent="1" halign="left" backgroundColor="black" />
+  	</screen>
+
+      	<!-- XTA Get Ipk (OK) -->
+	<screen NAME="Getipk2" position="0,0" size="1280,720" title="Install status" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" /> 
+		<panel name="ScrollBarTemplate500" /> 
+		<panel name="1Buttons" /> 
+		<widget name="list" position="65,90" size="673,400" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider50.png" transparent="1" itemHeight="30" />
+		<widget name="info" position="65,620" zPosition="4" size="680,25" font="Regular;20" foregroundColor="yellow" transparent="1" halign="left" backgroundColor="black" />
+	</screen>
 
       	<!-- XTA IPK Get (OK) -->
 	<screen name="noGetipk" position="0,0" size="1280,720" title="Install status" flags="wfNoBorder" >
 		<panel name="GenericLayoutLiteTemplate" /> 
 		<panel name="DarkLineBox" /> 
 		<panel name="4Buttons" /> 
- 		<widget name="list" position="65,90" size="680,350" scrollbarMode="showOnDemand" backgroundColor="black" transparent="1" zPosition="5" />
+ 		<widget name="list" position="65,90" size="680,360" backgroundColor="black" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" transparent="1" zPosition="5" />
  		<widget name="info" position="65,620" zPosition="4" size="680,25" font="Regular;20" foregroundColor="#ffffff" transparent="1" halign="left" valign="center" />
 	</screen>
 
@@ -2480,36 +2491,27 @@
 		<widget position="580,666" size="210,22" name="key_yellow" font="Regular;19" halign="left" foregroundColor="white" backgroundColor="black" zPosition="1" transparent="1" />
   	</screen>
     
-      	<!-- XTA Get Ipk (OK) -->
- 	<screen name="Getipk" position="0,0" size="1280,720" title="Play Options" flags="wfNoBorder" >
-		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="3Buttons" /> 
-		<panel name="ScrollBarTemplate500" /> 
-		<widget name="list" position="65,90" size="673,400" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider50.png" transparent="1" itemHeight="30" />
-		<widget name="info" position="65,620" zPosition="4" size="680,25" font="Regular;20" foregroundColor="yellow" transparent="1" halign="left" backgroundColor="black" />
-  	</screen>
-
-      	<!-- XTA Get Ipk (OK) -->
-	<screen NAME="Getipk2" position="0,0" size="1280,720" title="Install status" flags="wfNoBorder" >
-		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="ScrollBarTemplate500" /> 
-		<panel name="1Buttons" /> 
-		<widget name="list" position="65,90" size="673,400" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider50.png" transparent="1" itemHeight="30" />
-		<widget name="info" position="65,620" zPosition="4" size="680,25" font="Regular;20" foregroundColor="yellow" transparent="1" halign="left" backgroundColor="black" />
-	</screen>
-
       	<!-- XTA Get Ipk List (OK) -->
 	<screen name="Getipklist" position="0,0" size="1280,720" title="Get Ipk List" flags="wfNoBorder" >
 		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="ScrollBarTemplate500" /> 
+		<!-- panel name="ScrollBarTemplate500" /--> 
 		<panel name="1Buttons" /> 
 		<!-- widget name="text" position="100,20" size="200,30" font="Regular;20" halign="left" /-->
-		<widget name="list" position="65,90" size="673,400" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider50.png" transparent="1" itemHeight="30" />
+		<widget name="list" position="65,90" size="673,400" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider30.png" transparent="1" itemHeight="30" zPosition="5" />
+		<widget name="info" position="65,90" zPosition="4" size="680,25" font="Regular;22" foregroundColor="yellow" transparent="1" halign="left" backgroundColor="black" />
 		<ePixmap position="65,627" size="25,25" pixmap="skin_default/buttons/button_red.png" zPosition="2" alphatest="blend" />
 		<eLabel text="= Already Installed" position="105,622" size="300,22" font="Regular;20" halign="left" backgroundColor="black" transparent="1" />
-		<widget name="info" position="65,90" zPosition="4" size="680,25" font="Regular;24" foregroundColor="yellow" transparent="1" halign="left" backgroundColor="black" />
 	</screen>
  
+      	<!-- XTA IPK Installer (OK) -->
+	<screen name="noIpkinstall" position="0,0" size="1280,720" title="Addon Install" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" /> 
+		<panel name="DarkLineBox" /> 
+		<panel name="3Buttons" /> 
+ 		<widget name="list" position="65,90" size="680,350" foregroundColor="#ffffff" backgroundColor="black" transparent="1" />
+ 		<widget name="info" position="65,620" zPosition="4" size="680,25" font="Regular;20" foregroundColor="#ffffff" transparent="1" halign="left" valign="center" />
+ 	</screen>
+
       	<!-- XTA Backup Selection (OK) -->
 	<screen name="BackupSelection" position="0,0" size="1280,720" title="Select files/folders to backup" flags="wfNoBorder" >
 		<panel name="GenericLayoutLiteTemplate" /> 
@@ -2688,12 +2690,12 @@
  	<!-- IPKG Installing Software (OK) -->
 	<screen name="Ipkg" position="center,center" size="612, 247" title="Installing Software..." flags="wfNoBorder">
  		<ePixmap position="0,0" zPosition="-1" size="612,247" pixmap="xta/menu/fr_download.png" />
-		<widget source="Title" render="Label" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
- 		<widget name="status" position="20,20" size="570,100" font="Regular;20" halign="center" valign="center" foregroundColor="#538eff" backgroundColor="#25062748" transparent="1" />
+		<eLabel text="Software Instal..." position="10,15" size="590,25" font="Regular;20" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+ 		<widget name="status" position="20,20" size="570,100" font="Regular;20" halign="center" valign="center" foregroundColor="#538eff" backgroundColor="#25062748" transparent="1" zPosition="10" />
  		<ePixmap position="95,140" zPosition="1" size="635,21" pixmap="xta/bars/br_downgr.png" alphatest="blend" transparent="1" />
  		<widget name="slider" position="95,140" zPosition="2" size="635,10" pixmap="xta/bars/upd_cl.png" transparent="1" />
  		<widget name="activityslider" position="95,140" zPosition="3" size="635,21" pixmap="xta/bars/br_downco.png" transparent="1" />
- 		<widget name="package" position="10,180" size="590,40"  font="Regular;20" halign="center" valign="center" backgroundColor="#25062748" transparent="1" />
+ 		<widget name="package" position="10,180" size="590,40"  font="Regular;20" halign="center" valign="center" backgroundColor="#25062748" transparent="1" zPosition="10" />
 	</screen>
  
  	<!-- IPKG Installer (OK) -->
@@ -2850,7 +2852,7 @@
 	</screen>
 
 	<!-- Sat Positioner RotorNim Selection (OK) -->
-	<screen name="RotorNimSelection" position="0,0" size="1280,720" title="select Slot" flags="wfNoBorder" >
+	<screen name="RotorNimSelection" position="140,165" size="400,130" title="select Slot" flags="wfNoBorder" >
 		<panel name="GenericLayoutLiteTemplate" /> 
 		<panel name="DarkLineBox200" /> 
 		<widget name="nimlist" position="60,90" size="640,210"  scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" transparent="1"  />
@@ -2877,6 +2879,7 @@
 	<!-- Parental Control Setup (OK) -->
 	<screen name="ParentalControlSetup" position="0,0" size=" 1280,720" title="Parental control setup" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
+		<panel name="ScrollBarTemplate450" /> 
 		<widget name="config" position="65,90" size="667,450" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
 	</screen>
   

@@ -13,6 +13,14 @@ from Screens.MessageBox import MessageBox
 from time import *
 import  re, os,sys, xml.etree.cElementTree,glob
 
+import gettext
+def _(txt):
+	t = gettext.dgettext("iSkin", txt)
+	if t == txt:
+		print "[iSkin] fallback to default translation for", txt
+		t = gettext.gettext(txt)
+	return t
+	
 class ConfigSkin(Screen, ConfigListScreen):
 
         def __init__(self, session,selection):
@@ -31,7 +39,7 @@ class ConfigSkin(Screen, ConfigListScreen):
                 Screen.__init__(self, session)      
                 self["Key_Red"] = Label(_("Exit"))		
                 self["Key_Green"] = Label(_("Ok"))				
-                self['title'] = Label("Select Skin "+selection )                                    
+                self['title'] = Label(_("Select Skin ")+selection )                                    
                 self['cover'] = Pixmap()	                                
                 self.isMoving = False	                                
                 self.Loop = eTimer()
@@ -55,15 +63,7 @@ class ConfigSkin(Screen, ConfigListScreen):
                                 "red": self.close,								
                                 "cancel": self.close
                                 }, -1)   
-								
-         import gettext
-         def _(txt):
-	              t = gettext.dgettext("iSkin", txt)
-	             if t == txt:
-		         print "[iSkin] fallback to default translation for", txt
-		,        t = gettext.gettext(txt)
-	             return t                        
-				 
+                                
         def MyConfigList(self):	
                 mdom = xml.etree.cElementTree.parse(os.path.dirname(sys.modules[__name__].__file__) + "/Config/SkinSetup.xml")
                 config.Skin = ConfigSubsection()			 
@@ -260,14 +260,15 @@ class MenuStart(Screen):
 def Main(session, **kwargs):
         session.open(MenuStart)       
 		
+    		
 def setup(menuid):
-    if config.skin.primary_skin.value == 'xta/skin.xml': 
+    #if config.skin.primary_skin.value == 'xta/skin.xml': 
         if menuid == 'setup':
             return [(_('XtrendSkins') + " " + _('Setup'), Main,'MenuStart',45)]
         else:			
             return []
-    else:
-        return []		
+    #else:
+        #return []		
 
 def Plugins(**kwargs):
         return PluginDescriptor(name = 'Skin Selection', description = 'For changing skin of mmark', where = PluginDescriptor.WHERE_MENU, fnc=setup)	
@@ -276,4 +277,4 @@ def Plugins(**kwargs):
 def Plugins(**kwargs):
         return PluginDescriptor(name = 'Skin Selection', description = 'For changing skin of mmark', icon = 'SkinSelection.png', where = [PluginDescriptor.WHERE_EXTENSIONSMENU,PluginDescriptor.WHERE_PLUGINMENU], fnc = Main)
 """
-                                                
+                                            
