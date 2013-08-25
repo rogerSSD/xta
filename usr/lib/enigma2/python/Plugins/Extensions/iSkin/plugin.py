@@ -262,13 +262,13 @@ def Main(session, **kwargs):
 		
     		
 def setup(menuid):
-    #if config.skin.primary_skin.value == 'xta/skin.xml': 
-        if menuid == 'setup':
-            return [(_('XtrendSkins') + " " + _('Setup'), Main,'MenuStart',45)]
+    if config.skin.primary_skin.value == 'xta/skin.xml': 
+        if menuid == 'mainmenu':
+            return [(_('XTAskin') + " " + _('Setup'), Main,'MenuStart',45)]
         else:			
             return []
-    #else:
-        #return []		
+    else:
+        return []		
 
 def Plugins(**kwargs):
         return PluginDescriptor(name = 'Skin Selection', description = 'For changing skin of mmark', where = PluginDescriptor.WHERE_MENU, fnc=setup)	
