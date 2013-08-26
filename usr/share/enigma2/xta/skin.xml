@@ -1843,7 +1843,8 @@
 		<panel name="1ButtonsW" /> 
 		<panel name="DarkLineBox" /> 
 		<widget source="IF" render="Label" position=" 65, 90" size="440,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" />
-		<widget source="Statustext" render="Label" position=" 610, 90" size="160,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" />
+		<!-- widget source="Statustext" render="Label" position=" 610, 90" size="160,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" /-->
+		<eLabel text="Link:"  position="610,90" size="160,28" font="Regular;24" halign="left" foregroundColor="blue" backgroundColor="black" transparent="1" />
 		<widget name="statuspic" position="705, 93" size=" 35,27" pixmaps="xta/buttons/green.png,xta/buttons/grey.png" transparent="1" alphatest="on" />
   		<eLabel position="65, 120" size="530, 1" backgroundColor="#303030" />
   		<eLabel position="65, 122" size="530, 1" backgroundColor="#202020" />
@@ -2456,7 +2457,7 @@
 		<panel name="GenericLayoutLiteTemplate" /> 
 		<panel name="ScrollBarTemplate500" /> 
 		<panel name="1Buttons" /> 
-		<widget name="list" position="65,90" size="673,400" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider50.png" transparent="1" itemHeight="30" />
+		<widget name="list" position="65,90" size="673,400" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider30.png" transparent="1" itemHeight="30" />
 		<widget name="info" position="65,620" zPosition="4" size="680,25" font="Regular;20" foregroundColor="yellow" transparent="1" halign="left" backgroundColor="black" />
 	</screen>
 
@@ -2497,10 +2498,12 @@
 		<!-- panel name="ScrollBarTemplate500" /--> 
 		<panel name="1Buttons" /> 
 		<!-- widget name="text" position="100,20" size="200,30" font="Regular;20" halign="left" /-->
-		<widget name="list" position="65,90" size="673,400" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider30.png" transparent="1" itemHeight="30" zPosition="5" />
-		<widget name="info" position="65,90" zPosition="4" size="680,25" font="Regular;22" foregroundColor="yellow" transparent="1" halign="left" backgroundColor="black" />
-		<ePixmap position="65,627" size="25,25" pixmap="skin_default/buttons/button_red.png" zPosition="2" alphatest="blend" />
-		<eLabel text="= Already Installed" position="105,622" size="300,22" font="Regular;20" halign="left" backgroundColor="black" transparent="1" />
+		<ePixmap position="68,93" size="25,25" pixmap="skin_default/buttons/button_red.png" zPosition="2" alphatest="blend" />
+		<eLabel text="= Already Installed" position="105,90" size="300,22" font="Regular;20" halign="left" backgroundColor="black" transparent="1" />
+		<eLabel position="65,123" size="680,  1" backgroundColor="#303030" />
+		<eLabel position="65,125" size="680,  1" backgroundColor="#404040" />
+		<widget name="list" position="65,145" size="673,400" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider30.png" transparent="1" itemHeight="30" zPosition="5" />
+		<widget name="info" position="65,145" zPosition="4" size="680,25" font="Regular;22" foregroundColor="yellow" transparent="1" halign="left" backgroundColor="black" />
 	</screen>
  
       	<!-- XTA IPK Installer (OK) -->
@@ -2879,7 +2882,6 @@
 	<!-- Parental Control Setup (OK) -->
 	<screen name="ParentalControlSetup" position="0,0" size=" 1280,720" title="Parental control setup" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="ScrollBarTemplate450" /> 
 		<widget name="config" position="65,90" size="667,450" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
 	</screen>
   
