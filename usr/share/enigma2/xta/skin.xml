@@ -1844,7 +1844,7 @@
 		<panel name="DarkLineBox" /> 
 		<widget source="IF" render="Label" position=" 65, 90" size="440,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" />
 		<!-- widget source="Statustext" render="Label" position=" 610, 90" size="160,28" font="Regular;24" foregroundColor="blue" backgroundColor="black" transparent="1" /-->
-		<eLabel text="Link:"  position="610,90" size="160,28" font="Regular;24" halign="left" foregroundColor="blue" backgroundColor="black" transparent="1" />
+		<eLabel text=" Link:"  position="610,90" size="160,28" font="Regular;24" halign="left" foregroundColor="blue" backgroundColor="black" transparent="1" />
 		<widget name="statuspic" position="705, 93" size=" 35,27" pixmaps="xta/buttons/green.png,xta/buttons/grey.png" transparent="1" alphatest="on" />
   		<eLabel position="65, 120" size="530, 1" backgroundColor="#303030" />
   		<eLabel position="65, 122" size="530, 1" backgroundColor="#202020" />
@@ -2355,46 +2355,6 @@
 		<widget name="package" position="10,180" size="590,40"  font="Regular;20" halign="center" valign="center" backgroundColor="#25062748" transparent="1" zPosition="10" />
 	</screen>
 
-      	<!-- XTA XT Support Forum (OK) -->
-	<screen name="XtrendMain" position="0,0" size="1280,720" title="Xtrend Support Forum" flags="wfNoBorder" >
-		<panel name="GenericLayoutFullTemplate" /> 
-		<widget name="menu" position="65,90" size="1151,500" zPosition="1" scrollbarMode="showNever" selectionPixmap="xta/bars/slider50.png" backgroundColor="black" transparent="1"  />
-		<widget name="user" position="65,90" size="1151,500" backgroundColor="black" foregroundColor="white" font="Regular;20" halign="left" zPosition="1" transparent="1" />
-		<ePixmap position="50,659" size="1200,50" pixmap="xta/buttons/4colors.png" zPosition="2" alphatest="blend" />
-		<eLabel text="Favorites"      position="100,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
-		<eLabel text="Lastest Topics" position="340,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
-		<eLabel text="Background"     position="580,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
-		<eLabel text="Hide"           position="820,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
-	</screen>
-
-       	<!-- XTA Xtrend Favorite (OK) -->
-	<screen name="XtrendFav" position="0,0" size="1280,720" title="Xtrend Favoriten" flags="wfNoBorder" >
-		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="4Buttons" /> 
-		<panel name="DarkLineBox" /> 
-		<ePixmap position="65,90" size="18,48" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Xtrend/pic/buttons/red.png" alphatest="blend" zPosition="2" />
-		<widget name="favmenu" position="65,120" size="680,375" scrollbarMode="showOnDemand" zPosition="1" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
-	</screen>
-  
-      	<!-- XTA Xtrend Support Forum (OK) -->
-	<screen name="XtrendThread" position="0,0" size="1280,720" backgroundColor="un161616" title="Xtrend Support Forum" flags="wfNoBorder" >
-		<panel name="GenericLayoutFullTemplate" /> 
-		<widget name="menu" position="65,90" size="1156,500" zPosition="1" scrollbarMode="showNever" selectionPixmap="xta/bars/slider50.png" backgroundColor="black" transparent="1" />
-		<widget name="textpage" position="65,90" size="1156,400" backgroundColor="black" foregroundColor="white" font="Regular;20" halign="left" zPosition="1" transparent="1" />
-		<ePixmap position="50,659" size="1200,50" pixmap="xta/buttons/4colors.png" zPosition="2" alphatest="blend" />
-		<eLabel text="Favorites"      position="100,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
-		<eLabel text="Lastest Topics" position="340,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
-		<eLabel text="Background"     position="580,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
-		<eLabel text="Hide"           position="820,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
-	</screen>
-  
-	<!-- XTA Manual Addon Install (OK) -->
-	<screen name="AddonsFileBrowser" position="0,0" size="1280,720" title="Manual Addon Installer Filebrowser" flags="wfNoBorder" >
-		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="4Buttons" /> 
-		<widget name="filelist" position="65,110" size="680,500" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
-	</screen>
-	  
       	<!-- XTA Packet Manager(OK) -->
 	<screen name="PacketManager" position="0,0" size=" 1280,720" title="PacketManager" flags="wfNoBorder" >
 		<panel name="GenericLayoutLiteTemplate" /> 
@@ -3104,6 +3064,58 @@
 		<widget name="wizard" position="850, 400" size="400,339" pixmap="xta/menu/hat.png" zPosition="-1" transparent="1" alphatest="blend" />
 	</screen>
 
+  	<!-- XTA *** Plugin  Support Forum (OK) -->
+	<screen name="XtrendMain" position="0,0" size="1280,720" title="Xtrend Support Forum" flags="wfNoBorder" >
+  		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/xtmenufull.png" />
+  		<widget source="Title" render="Label" zPosition="1" position="60,34" size="1160,28" halign="center" font="Regular;22" foregroundColor="blue" transparent="1" backgroundColor="black" />
+  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1090,600" size="162,110" zPosition="2" alphatest="blend" />
+		<widget name="menu" position="65,90" size="1151,500" zPosition="1" scrollbarMode="showNever" selectionPixmap="xta/bars/slider50.png" backgroundColor="black" transparent="1"  />
+		<widget name="user" position="65,90" size="1151,500" backgroundColor="black" foregroundColor="white" font="Regular;20" halign="left" zPosition="1" transparent="1" />
+		<ePixmap position="50,659" size="1200,50" pixmap="xta/buttons/4colors.png" zPosition="2" alphatest="blend" />
+		<eLabel text="Favorites"      position="100,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
+		<eLabel text="Lastest Topics" position="340,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
+		<eLabel text="Background"     position="580,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
+		<eLabel text="Hide"           position="820,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
+	</screen>
+
+       	<!-- XTA *** Plugin Xtrend Support Forum Favorite (OK) -->
+	<screen name="XtrendFav" position="0,0" size="1280,720" title="Xtrend Favoriten" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" /> 
+		<panel name="4Buttons" /> 
+		<panel name="DarkLineBox" /> 
+		<ePixmap position="65,90" size="18,48" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Xtrend/pic/buttons/red.png" alphatest="blend" zPosition="2" />
+		<widget name="favmenu" position="65,120" size="680,375" scrollbarMode="showOnDemand" zPosition="1" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
+	</screen>
+
+      	<!-- XTA *** Plugin Xtrend Support Forum (OK) -->
+	<screen name="XtrendThread" position="0,0" size="1280,720" backgroundColor="un161616" title="Xtrend Support Forum" flags="wfNoBorder" >
+  		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/xtmenufull.png" />
+  		<widget source="Title" render="Label" zPosition="1" position="60,34" size="1160,28" halign="center" font="Regular;22" foregroundColor="blue" transparent="1" backgroundColor="black" />
+  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1090,600" size="162,110" zPosition="2" alphatest="blend" />
+  		<ePixmap position="1195,90" zPosition="4"  size="29,500" pixmap="xta/bars/maxbar.png" alphatest="blend" transparent="1" />
+  		<ePixmap position="1195,590" zPosition="4" size="29,3"   pixmap="xta/bars/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="menu" position="65,90" size="1154,500" zPosition="1" scrollbarMode="showNever" selectionPixmap="xta/bars/slider50.png" backgroundColor="black" transparent="1" />
+		<widget name="textpage" position="65,90" size="1154,500" backgroundColor="black" foregroundColor="white" font="Regular;20" halign="left" zPosition="1" transparent="1" />
+		<ePixmap position="50,659" size="1200,50" pixmap="xta/buttons/4colors.png" zPosition="2" alphatest="blend" />
+		<eLabel text="Favorites"      position="100,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
+		<eLabel text="Lastest Topics" position="340,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
+		<eLabel text="Background"     position="580,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
+		<eLabel text="Hide"           position="820,666" size="210,25" font="Regular;20" backgroundColor="black" foregroundColor="white" transparent="1" />
+	</screen>
+
+      	<!-- XTA *** Plugin Xtrend Support Forum (OK) -->
+        <screen name="infoXtrend" position="center,center" size="425,425" title="Xtrend Support Reader 0.1" >
+        	<ePixmap position="0,0" size="425,425" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Xtrend/pic/info.png" zPosition="1"/>
+        	<widget name="label" position="0,62" size="425,350" font="Regular;18" foregroundColor="#E5382F" backgroundColor="#161616" halign="center" valign="center" transparent="1" zPosition="2" />
+        </screen>
+
+	<!-- XTA Manual Addon Install (OK) -->
+	<screen name="AddonsFileBrowser" position="0,0" size="1280,720" title="Manual Addon Installer Filebrowser" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" /> 
+		<panel name="4Buttons" /> 
+		<widget name="filelist" position="65,110" size="680,500" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
+	</screen>
+	  
 	<!-- ***** SECTION LCD ***** -->
 
 	<!-- LCD/OLED Screens -->

@@ -846,4 +846,65 @@
 		<widget name="stars" position="710,450" size="120,20" pixmap="xta/skin_default/starsbar_filled.png" zPosition="6" transparent="1" />
 		<widget name="thumbnail" position="500,110" size="120,135" alphatest="on"/> # fake entry for dynamic thumbnail resizing, currently there is no other way doing this.
 	</screen>
+
+	<!-- ########### JobManager ############ -->
+
+      	<!-- JobManager Menu (OK) -->
+	<screen name="JobManagerFrontEnd" position="0,0" size="1280,720" title="JobManager Menu " flags="wfNoBorder" > - ( Press Menu button for Setup )
+		<panel name="GenericLayoutLiteTemplate" /> 
+	 	<widget name="menulist" position="65,90" size="680,480" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" itemHeight="30" />
+	 	<widget name="ButtonRed"    position="2265,667"  pixmap="skin_default/buttons/key_red.png"    zPosition="10" size="35,25" transparent="1" alphatest="on" />
+	 	<widget name="ButtonGreen"  position="2265,320" pixmap="skin_default/buttons/key_green.png"  zPosition="10" size="35,25" transparent="1" alphatest="on" />
+	 	<widget name="ButtonYellow" position="2210,350"  pixmap="skin_default/buttons/key_yellow.png" zPosition="10" size="35,25" transparent="1" alphatest="on" />
+	 	<widget name="ButtonBlue"   position="22265,350" pixmap="skin_default/buttons/key_blue.png"   zPosition="10" size="35,25" transparent="1" alphatest="on" />
+  		<ePixmap  position="50,659" size="1200,50" pixmap="xta/buttons/4colors.png" zPosition="2" alphatest="blend" />
+  		<widget position="100,666" size="210,22" name="TextRed"    font="Regular;20" halign="left" backgroundColor="black" transparent="1" zPosition="1" />
+  		<widget position="340,666" size="210,22" name="TextGreen"  font="Regular;20" halign="left" backgroundColor="black" transparent="1" zPosition="1" />
+  		<widget position="580,666" size="210,22" name="TextYellow" font="Regular;20" halign="left" backgroundColor="black" transparent="1" zPosition="1" />
+  		<widget position="820,666" size="210,22" name="TextBlue"   font="Regular;20" halign="left" backgroundColor="black" transparent="1" zPosition="1" />
+		<eLabel text="Press   Menu-Info  for other options" position="60,622" size="800,21" font="Regular;19" zPosition="1"  foregroundColor="yellow" backgroundColor="black" transparent="1" />
+	</screen>
+
+      	<!-- JobManager Config (OK) -->
+	<screen name="JobManagerConfigScreen" position="0,0" size="1280,720" title="JobManager - Config" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" /> 
+		<widget name="config" position="65,90" size="673,480" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" itemHeight="30" />
+  		<ePixmap  position="50,659" size="1200,50" pixmap="xta/buttons/1colors.png" zPosition="2" alphatest="blend" />
+		<widget name="ButtonGreen" position="2265,680" pixmap="xta/buttons/key_green.png" zPosition="10" size="35,25" transparent="1" alphatest="on" />
+		<widget name="TextGreen" position="100,666" size="210,20" halign="left" zPosition="10" font="Regular;20" backgroundColor="black" transparent="1" />
+	</screen>
+
+      	<!-- JobManager Error Screen (OK) -->
+	<screen name="JobManagerErrorScreen" position="0,0" size="1280,720" title="JobManager - Errors" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" /> 
+		<widget name="menulist" position="65,90" size="680,480" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" itemHeight="30" />
+		<widget name="ButtonBlue" position="2265,350" pixmap="skin_default/buttons/key_blue.png" zPosition="10" size="35,25" transparent="1" alphatest="on" />
+  		<ePixmap  position="50,659" size="1200,50" pixmap="xta/buttons/1colors.png" zPosition="2" alphatest="blend" />
+		<widget name="TextBlue" position="100,666" size="210,20" halign="left" zPosition="10" font="Regular;20" backgroundColor="black" transparent="1" />
+	</screen>
+
+      	<!-- JobManager Select Dir (OK) -->
+	<screen name="dirSelectDlg" position="0,0" size="1280,720" title="JobManager - Select Dir" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" /> 
+		<widget name="filelist" position="65,90" size="680,480" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" itemHeight="30" />
+  		<ePixmap  position="50,659" size="1200,50" pixmap="xta/buttons/2colors.png" zPosition="2" alphatest="blend" />
+		<widget name="ButtonGreen"     position="2030,270" pixmap="skin_default/buttons/button_green.png"  zPosition="10" size="35,25" transparent="1" alphatest="on" />
+		<widget name="ButtonRed"       position="2030,300" pixmap="skin_default/buttons/button_red.png"  zPosition="10" size="35,25" transparent="1" alphatest="on" />
+		<widget name="ButtonRedtext"   position="100,666" size="460,25" halign="left" zPosition="10" font="Regular;20" backgroundColor="black" transparent="1" />
+		<widget name="ButtonGreentext" position="340,666" size="460,25" halign="left" zPosition="10" font="Regular;20" backgroundColor="black" transparent="1" />
+		<widget name="ButtonOK"        position="2030,330" pixmap="skin_default/buttons/button_red.png" zPosition="10" size="35,25" transparent="1" alphatest="on" />
+		<widget name="ButtonOKtext" position="580,666" size="460,25" halign="left" zPosition="10" font="Regular;21" transparent="1" />
+	</screen>
+
+	<!-- ########### OpenWebIf ############ -->
+	
+      	<!-- OpenWebIf (OK) -->
+	<screen name="OpenWebifConfig" position="0,0" size="1280,720" title="OpenWebif Configuration" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" /> 
+		<panel name="2Buttons" />
+		<widget name="lab1" position="60,90" halign="left" size="680,24" zPosition="1" font="Regular;20" valign="top" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+		<eLabel position="60,123" size="680,1" backgroundColor="#202020" zPosition="1" />
+		<eLabel position="60,125" size="680,1" backgroundColor="#404040" zPosition="1" />
+		<widget name="config" position="60,145" size="680,300" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" transparent="1" itemHeight="30" />
+	</screen>
 </skin>
