@@ -8,11 +8,9 @@
 		<resolution xres="1280" yres="720" bpp="32" />
 	</output>
 
-	<include filename="xta/modules/skin_templates.xml" />
-	<include filename="xta/modules/skin_extplugins.xml" />
-	<include filename="xta/modules/skin_listchannel.xml" />
-	<include filename="xta/modules/skin_infobar.xml" />
-	<include filename="xta/modules/skin_extinfobar.xml" />
+	<include filename="xta/skin_templates.xml" />
+	<include filename="xta/skin_extplugins.xml" />
+	<include filename="xta/skin_listchannel.xml" />
 
 	<colors>
 		<color name="background"   value="#00000000" />
@@ -144,18 +142,15 @@
 		<widget name="help2" position="403,94" size="200,30" font="Console;22" halign="center" valign="center" />
 	</screen>
 
-	<!-- VirtualKeyBoard -->
-	<screen name="VirtualKeyBoard" position="center,center" size="800,315" zPosition="99" title="Virtual KeyBoard" backgroundColor="#20000000" >
-		<widget source="country" render="Pixmap" position="730,33" size="57,42" alphatest="on" backgroundColor="#20000000" zPosition="8" >
-			<convert type="ValueToPixmap">LanguageCode</convert>
-		</widget>
-		<ePixmap pixmap="xta/buttons/button_yellow.png" position="770,5" size="26,24" alphatest="blend" transparent="1" zPosition="8" />
-		<widget name="header" position="10, 0" size="780,26" font="Regular;20" noWrap="1" foregroundColor="yellow" backgroundColor="#101010" zPosition="6" />
-		<eLabel position="10,30" size="715,45" zPosition="0" backgroundColor="#202020" borderWidth="1" borderColor="white" />
-		<widget name="text" position="15,35" size="705,40" font="Regular;30" noWrap="1" halign="right" foregroundColor="#538eff" backgroundColor="#202020"  borderWidth="1" borderColor="#404040" zPosition="5" />
-		<widget name="list" position="10,82" size="780,223" selectionDisabled="1"  backgroundColor="#10000000" />
+	<!-- XTA VirtualKeyboard (OK) -->
+	<screen name="VirtualKeyBoard" position="center,center" size="720,395" zPosition="99" title="Virtual KeyBoard" backgroundColor="#10101010" >
+		<widget name="header" position="10,10" size="700,45" font="Regular;24" halign="center" transparent="1" noWrap="1" />
+		<eLabel position="10,80" size="700,50" zPosition="1" backgroundColor="blue" />
+		<eLabel position="12,82" size="696,46" zPosition="2" backgroundColor="black" borderWidth="1" borderColor="blue" />
+		<widget name="text" position="12,82" size="690,46" zPosition="3" font="Regular;40" noWrap="1" halign="right"  borderWidth="1" borderColor="blue" />
+		<widget name="list" position="13,155" size="696,230" selectionDisabled="1" transparent="1" />
 	</screen>
-
+  
 	<!-- Input Box (OK) -->
 	<screen name="InputBox" position="365,250" size="550,90" title="Input">
 		<widget name="text" position="30,20" size="550,25" font="Regular;23" />
@@ -233,6 +228,420 @@
 		<widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="xta/skin_default/arrowdown.png" zPosition="11" alphatest="on" />
 		<widget name="arrowup" position="-100,-100" size="37,70" pixmap="xta/skin_default/arrowup.png" zPosition="11" alphatest="on" />
 		<widget name="arrowup2" position="-100,-100" size="37,70" pixmap="xta/skin_default/arrowup.png" zPosition="11" alphatest="on" />
+	</screen>
+
+	<!-- InfoBar (OK) -->
+ 	<screen name="InfoBar" position="0,0" size="1280,720" title="InfoBar" backgroundColor="transparent" flags="wfNoBorder">
+		<ePixmap position="0,610" zPosition="-1" size="1280,90" pixmap="xta/infobar.png" />
+		<!-- Event Now -->
+		<widget source="session.Event_Now" render="Label" position="160,618" size="79,28" font="Regular;24" halign="right" foregroundColor="#f0d600" backgroundColor="black" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="263,618" size="740,30" font="Regular;24" halign="left" backgroundColor="black" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="1000,618" size="116,28" font="Regular;24" halign="right" backgroundColor="black" transparent="1">
+			<convert type="EventTime">Remaining</convert>
+			<convert type="RemainingToText">InMinutes</convert>
+		</widget>
+		<!-- Event Next -->
+		<widget source="session.Event_Next" render="Label" position="160,663" size="79,30" font="Regular;24" halign="right" foregroundColor="#404040" backgroundColor="black" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<!--
+		<widget source="session.Event_Next" render="Label" position="241,663" size="79,28" font="Regular;24" halign="left" foregroundColor="darkgrey" backgroundColor="black" transparent="1">
+		<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		-->
+		<widget source="session.Event_Next" render="Label" position="263,663" size="740,28" font="Regular;24" halign="left" foregroundColor="#404040" backgroundColor="black" transparent="1" zPosition="0">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="1000,663" size="116,28" font="Regular;24" halign="right" foregroundColor="#ffffff" backgroundColor="black" transparent="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="ClockToText">InMinutes</convert>
+		</widget>
+		<!-- Picon -->
+		<widget source="session.CurrentService" render="Picon" position="30,613" size=" 130,80" transparent="1" alphatest="blend">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<!-- ProgressBar -->
+		<widget source="session.Event_Now" render="Progress" position="263,655" size="750,2" pixmap="xta/bars/progress.png" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<!-- Record -->
+		<widget source="session.RecordState" render="Pixmap" position="1126,646" size="20,20" pixmap="xta/buttons/record-on.png" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+		<!-- Panel SatType  -->
+		<widget source="session.FrontendInfo" render="Pixmap" pixmap="xta/icons/sat.png" position="1140,614" size="105,80" zPosition="3" alphatest="on" >
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">0,0</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.FrontendInfo" render="Pixmap" pixmap="xta/icons/dtt.png" position="1160,614" size="105,80" zPosition="3" alphatest="on" >
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">2,2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.FrontendInfo" render="Pixmap" pixmap="xta/icons/cable.png" position="1160,634" size="18,18" zPosition="3" alphatest="on" >
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">1,1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+
+	<!-- Second InfoBar (OK) --> 
+	<screen name="SecondInfoBar" position="0,0" size="1280,720" title="Second InfoBar" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="InfoBar" />
+		<ePixmap position="0,6" zPosition="-1" size="1280,603" pixmap="xta/extrainfobar.png" alphatest="on" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="450,21" size="800,25" font="Regular;17" backgroundColor="black" transparent="1" halign="right" valign="center" foregroundColor="yellow">
+			<convert type="CryptoInfo">VerboseInfo</convert>
+		</widget>
+		<!-- 
+		<widget source="session.CurrentService" render="Label" position="32,21" size="826,20" font="Regular;17" backgroundColor="black" foregroundColor="yellow" transparent="1" halign="left" valign="center" zPosition="0">
+			<convert type="XTAExtraInfo">ServiceInfo</convert>
+		</widget>
+		-->
+		<eLabel name="freq" position="32,25" size="44,20" backgroundColor="#000000" halign="left" transparent="1" text="FRE" font="Regular;17" foregroundColor="#505050" />
+		<widget source="session.CurrentService" render="Label" position="80,25" size="400,20" font="Regular;17" backgroundColor="black" foregroundColor="yellow" transparent="1" halign="left" valign="center" zPosition="0">
+			<convert type="XTAExtraInfo">XTASatInfo</convert>
+		</widget>
+		<!-- TUNER Info -->
+		<eLabel name="Tuner" position="32,60" size="44,20" halign="left" text="TUN" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<widget source="session.FrontendInfo" render="FixedLabel" text="A" position="80,60" zPosition="3" size="15,22" font="Regular;17" halign="left" foregroundColor="green" backgroundColor="black" transparent="1">
+ 			<convert type="FrontendInfo">NUMBER</convert>
+ 			<convert type="ValueRange">0,0</convert>
+ 			<convert type="ConditionalShowHide" />
+ 		</widget>
+ 		<widget source="session.FrontendInfo" render="FixedLabel" text="B" position="80,60" zPosition="3" size="15,22" font="Regular;17" halign="left" foregroundColor="green" backgroundColor="black" transparent="1">
+ 			<convert type="FrontendInfo">NUMBER</convert>
+ 			<convert type="ValueRange">1,1</convert>
+ 			<convert type="ConditionalShowHide" />
+ 		</widget>
+ 		<widget source="session.FrontendInfo" render="FixedLabel" text="C" position="80,60" zPosition="3" size="15,22" font="Regular;17" halign="left" foregroundColor="green" backgroundColor="black" transparent="1">
+ 			<convert type="FrontendInfo">NUMBER</convert>
+ 			<convert type="ValueRange">2,2</convert>
+ 			<convert type="ConditionalShowHide" />
+ 		</widget>
+ 		<widget source="session.FrontendInfo" render="FixedLabel" text="D" position="80,60" zPosition="3" size="15,22" font="Regular;17" halign="left" foregroundColor="green" backgroundColor="black" transparent="1">
+ 			<convert type="FrontendInfo">NUMBER</convert>
+ 			<convert type="ValueRange">3,3</convert>
+ 			<convert type="ConditionalShowHide" />
+ 		</widget>
+		<!-- DEVICE Info -->
+		<widget source="session.FrontendInfo" render="FixedLabel" text="DVB-S" position="115,60" size="65,22" font="Regular; 17" foregroundColor="blue" backgroundColor="black" transparent="1" halign="center">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">0,0</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.FrontendInfo" render="FixedLabel" text="DVB-C" position="115,60" size="65,22" font="Regular;17" foregroundColor="blue" backgroundColor="black" transparent="1" halign="center">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">1,1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.FrontendInfo" render="FixedLabel" text="DVB-T" position="115,60" size="65,22" font="Regular;17" foregroundColor="blue" backgroundColor="black" transparent="1" halign="center">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">2,2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- LOCK Info -->
+		<eLabel name="lock" position="195,60" size="60,20"  halign="center" text="Lock:" zPosition="1" font="Regular; 17" foregroundColor="red" backgroundColor="black" transparent="1" />
+		<widget source="session.FrontendStatus" render="Pixmap" pixmap="xta/skin_default/icons/lock_on.png" position="260,55" size="38,30" alphatest="blend" transparent="1" zPosition="1" >
+			<convert type="FrontendInfo">LOCK</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.FrontendStatus" render="Pixmap" pixmap="xta/skin_default/icons/lock_off.png" position="260,55" zPosition="1" size="38,30" alphatest="blend" transparent="1" >
+			<convert type="FrontendInfo">LOCK</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<!-- SNR Info -->
+		<eLabel name="snr" position="32,95" size="44,20" halign="left" text="SNR" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<ePixmap position="75,95" zPosition="2" size="170,20" pixmap="xta/icons/slidesmall.png" alphatest="blend" transparent="1" />
+		<widget source="session.FrontendStatus" render="Progress" pixmap="xta/bars/bar_snr.png" position="80,99" size="160,12" borderWidth="0" borderColor="grey">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+		<widget source="session.FrontendStatus" render="Label" position="245,95" size="50,20" backgroundColor="#000000" transparent="1" halign="left" font="Regular;15" foregroundColor="yellow">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+		<!-- AGC Info -->
+		<eLabel name="agc" position="32,130" size="44,20" halign="left" text="AGC" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<ePixmap position="75,130" zPosition="2" size="170,20" pixmap="xta/icons/slidesmall.png" alphatest="blend" transparent="1" />
+		<widget source="session.FrontendStatus" render="Progress" pixmap="xta/bars/bar_agc.png" position="80,134" size="160,12" borderWidth="0" borderColor="grey">
+			<convert type="FrontendInfo">AGC</convert>
+		</widget>
+		<widget source="session.FrontendStatus" render="Label" position="245,130" size="52,20" backgroundColor="#000000" transparent="1" halign="left" font="Regular;15" foregroundColor="yellow">
+			<convert type="FrontendInfo">AGC</convert>
+		</widget>
+		<!-- BER Info 
+		<eLabel name="ber" position="32,190" size="44,20" backgroundColor="#000000" halign="left" transparent="1" text="BER" font="Regular;17" foregroundColor="#505050" />
+		<ePixmap position="75,190" zPosition="2" size="170,20" pixmap="xta/icons/slidesmall.png" alphatest="blend" transparent="1" />
+		<widget source="session.FrontendStatus" render="Progress" pixmap="xta/bars/bar_ber.png" position="80,194" size="160,12" borderWidth="0" borderColor="grey">
+			<convert type="FrontendInfo">BER</convert>
+		</widget>
+		<widget source="session.FrontendStatus" render="Label" position="245,190" size="52,20" backgroundColor="#000000" transparent="1" halign="left" font="Regular;15" foregroundColor="#505050">
+			<convert type="FrontendInfo">BER</convert>
+		</widget>
+		-->
+		<eLabel position="77,170" size="208,1" backgroundColor="#202020" />
+		<eLabel position="77,172" size="208,1" backgroundColor="#303030" />
+		<!-- Channel Info Info -->
+		<eLabel name="channel" position="32,190" size="44,20"  halign="left" text="CHA" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<widget source="session.CurrentService" render="ChannelNumber" position="80,188" size="88,28" font="Regular;20" halign="left" noWrap="1" backgroundColor="black" foregroundColor="red" transparent="1" />
+		<!-- Provider Info -->
+		<widget source="session.CurrentService" render="Label" position="148,190" size="145,22" zPosition="2" font="Regular;18" backgroundColor="black" halign="left" foregroundColor="yellow" transparent="1" >
+			<convert type="ServiceName">Provider</convert>
+		</widget>
+		<!-- Crypt Info -->			
+		<ePixmap position="34,235" size="28,15" zPosition="1" pixmap="xta/icons/ico_crypt_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="34,235" size="28,15" zPosition="2" pixmap="xta/icons/ico_crypt_on.png" alphatest="blend">
+			<convert type="ServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Channel Name -->
+		<widget source="session.CurrentService" render="Label" position="80,230" size="200,22" font="Regular;17" halign="left" noWrap="1" backgroundColor="background" shadowColor="black" shadowOffset="-3,-3" transparent="1" foregroundColor="#ffffff" valign="center">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<!-- RES Info -->			
+		<eLabel name="res" position="32,270" size="44,20" backgroundColor="#000000" halign="left" transparent="1" text="RES" font="Regular;17" foregroundColor="#505050" />
+		<widget source="session.CurrentService" render="Label" position="80,270" size="400,20" font="Regular;17" backgroundColor="black" foregroundColor="yellow" transparent="1" halign="left" valign="center" zPosition="0">
+			<convert type="XTAExtraInfo">XTAResInfo</convert>
+		</widget>
+		<!-- HD Info -->			
+		<ePixmap position="34,310" size="29,20" zPosition="1" pixmap="xta/icons/ico_hd_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="34,310" size="29,20" zPosition="2" pixmap="xta/icons/ico_hd_on.png" alphatest="blend">
+			<convert type="ServiceInfo">VideoWidth</convert>
+			<convert type="ValueRange">721,1980</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Wide Info -->			
+		<ePixmap position="80,310" size="36,20" zPosition="1" pixmap="xta/icons/ico_format_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="80,310" size="36,20" zPosition="2" pixmap="xta/icons/ico_format_on.png" alphatest="blend">
+			<convert type="ServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Dolby Info -->			
+		<ePixmap position="127,310" size="57,20" zPosition="1" pixmap="xta/icons/ico_dolby_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="127,310" size="57,20" zPosition="2" pixmap="xta/icons/ico_dolby_on.png" alphatest="blend">
+			<convert type="ServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- TeleText Info -->			
+		<ePixmap position="194,310" size="33,20" zPosition="1" pixmap="xta/icons/ico_txt_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="194,310" size="33,20" zPosition="2" pixmap="xta/icons/ico_txt_on.png" alphatest="blend">
+			<convert type="ServiceInfo">HasTelext</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- HBBTv Info -->			
+		<ePixmap position="238,310" size="49,20" zPosition="1" pixmap="xta/icons/ico_hbbtv_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="238,310" size="49,20" zPosition="2" pixmap="xta/icons/ico_hbbtv_on.png" alphatest="blend">
+			<convert type="ServiceInfo">HasHBBTV</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<eLabel position="77,350" size="208,1" backgroundColor="#202020" />
+		<eLabel position="77,352" size="208,1" backgroundColor="#101010" />
+		<!-- EMU Info -->
+		<eLabel name="cam" position="32,425" size="44,20" halign="left" text="CAM" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="80,425" size="220,20" font="Regular;17" zPosition="1" backgroundColor="background" transparent="1">
+			<convert type="CamName">
+			</convert>
+		</widget>
+		<!-- Crypto/Sat Info -->
+		<eLabel name="emu" position="32,455" size="44,20" halign="left" text="EMU" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="80,455" size="180,20" font="Regular;17" backgroundColor="black" foregroundColor="#505050" transparent="1" halign="left" valign="center">
+			<convert type="XTAExtraInfo">CryptoInfo</convert>
+		</widget>
+		<eLabel position="77,490" size="208,1" backgroundColor="#202020" />
+		<eLabel position="77,492" size="208,1" backgroundColor="#101010" />
+		<!-- ButtonsInfo -->
+		<ePixmap position="40,510" zPosition="1" size="20,20" pixmap="xta/buttons/bluepanel.png" alphatest="blend" transparent="1" />
+		<eLabel name="Extensions" position="80,509" size="100,20"  halign="left" text="XTA-Panel" zPosition="1" font="Regular; 17" foregroundColor="#ffffff" backgroundColor="black" transparent="1" />
+		<ePixmap position="185,510" zPosition="1" size="20,20" pixmap="xta/buttons/redpanel.png" alphatest="blend" transparent="1" />
+		<eLabel name="Record" position="215,509" size="100,20"  halign="left" text="Records" zPosition="1" font="Regular; 17" foregroundColor="#fffffff" backgroundColor="black" transparent="1" />
+		<ePixmap position="40,540" zPosition="1" size="20,20" pixmap="xta/buttons/yellowpanel.png" alphatest="blend" transparent="1" />
+		<eLabel name="Audio" position="80,539" size="60,20"  halign="left" text="Audio" zPosition="1" font="Regular; 17" foregroundColor="#ffffff" backgroundColor="black" transparent="1" />
+		<ePixmap position="185,540" zPosition="1" size="20,20" pixmap="xta/buttons/greenpanel.png" alphatest="blend" transparent="1" />
+		<eLabel name="Plugin" position="215,539" size="60,20"  halign="left" text="Plugin" zPosition="1" font="Regular; 17" foregroundColor="#ffffff" backgroundColor="black" transparent="1" />
+		<!-- DigitalDataClock -->
+		<ePixmap position="43,581" zPosition="1" size="20,20" pixmap="xta/icons/clock.png" alphatest="blend" transparent="1" />
+		<widget source="global.CurrentTime" render="Label" position="80,578" size="100,25" zPosition="4" font="Regular;17" halign="left" backgroundColor="black" foregroundColor="#f0d600" transparent="1" >
+			<convert type="ClockToText">Format:%H:%M:%S</convert>
+		</widget>	
+		<widget source="global.CurrentTime" render="Label" position="145,575" size="140,25" font="Regular;17" halign="right" backgroundColor="black" foregroundColor="yellow" transparent="1" valign="center">
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<!-- 
+		<eLabel text="Now:" position="50,174" size="62,26" zPosition="2" font="Regular; 22" transparent="1" backgroundColor="background" />
+		<eLabel text="Next:" position="660,174" size="62,26" zPosition="2" font="Regular;22" foregroundColor="white" transparent="1" backgroundColor="background" />
+		<widget source="session.Event_Now" render="Label" position="116,574" size="504,26" font="Regular;22" halign="left" foregroundColor="blue" backgroundColor="background" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="726,574" size="504,26" font="Regular;22" halign="left" foregroundColor="blue" backgroundColor="background" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="50,507" size="570,275" font="Regular;21" zPosition="1" backgroundColor="background" foregroundColor="white" transparent="1">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="660,507" size="570,275" font="Regular;21" zPosition="1" backgroundColor="background" transparent="1">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		-->
+	</screen>
+	
+	<!-- Channel selection TV (OK) --> 
+	<screen name="xxxChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder">
+		<panel name="GenericLayoutTvTemplate" />
+		<panel name="4Buttons" />
+		<panel name="SmallPigTemplate" />
+		<eLabel text="Menu - Info" position="1020,36" size="200,22" font="Regular;20"  halign="right" foregroundColor="#404040" backgroundColor="black" zPosition="0" transparent="1" />
+		<!-- Lista Canali  --> 
+		<widget name="list" position="55,90" size="570,480" scrollbarMode="showOnDemand" foregroundColorServiceNotAvail="#303030" zPosition="2" serviceItemHeight="30"
+				serviceNumberFont="Regular;20" serviceNameFont="Regular;20" serviceInfoFont="Regular;19"  colorServiceNameFont="#0x09abf1" colorServiceDescription="#a1daff" colorServiceDescriptionSelected="white" 
+				picServiceEventProgressbar="xta/bars/progress_back.png" selectionPixmap="xta/bars/slider50.png" transparent="1" />
+                <!-- ProgressBar -->
+		<ePixmap position="635,419" size="120,15" pixmap="xta/bars/ch_progressbw.png" alphatest="blend" transparent="1"  zPosition="3" />
+		<widget source="ServiceEvent" render="Progress" pixmap="xta/bars/ch_progresscl.png" position="636,419" size="119,13" zPosition="4"  backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<!-- Event Time -->
+		<widget source="ServiceEvent" render="Label" position="770,415" size="100,26" zPosition="2" halign="left" font="Regular;19" foregroundColor="white" backgroundColor="black"  transparent="1" >
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="825,415" zPosition="1" size="70,26" font="Regular;19" foregroundColor="blue" backgroundColor="black"  halign="right" transparent="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<!-- Nome Canale - Service Name -->
+		<widget source="ServiceEvent" render="Label" position="910,415" zPosition="1" size="330,26" font="Regular;19" halign="left" foregroundColor="#606060" backgroundColor="black" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="635,443" size="600,26" zPosition="2" halign="center" font="Regular;20" foregroundColor="blue" backgroundColor="transpBlack" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>	
+		<widget source="ServiceEvent" render="Label" position="625,478" zPosition="2" halign="center" size="605,140" font="Regular;19" transparent="1" foregroundColor="#a1daff" backgroundColor="transpBlack" >
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<eLabel position="65,580" size="565,1" backgroundColor="#202020" />
+		<eLabel position="65,582" size="565,1" backgroundColor="#101010" />
+		<eLabel text="Next Event :" position="65,595" size="120,22" font="Regular;19"  halign="left" foregroundColor="yellow" backgroundColor="black" zPosition="0" transparent="1" />
+		<widget source="ServiceEvent" render="TimeNextEvent" position="200,595" zPosition="3" halign="left" font="Regular;19" size="400,60" noWrap="1" foregroundColor="#f0ed00" backgroundColor="black" transparent="1" />
+		<widget source="ServiceEvent" render="NameNextEvent" position="65,620" zPosition="3" halign="left" font="Regular;20" size="670,60" noWrap="1" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+		<ePixmap pixmap="xta/icons/icon_norec_light.png" position="1030,667" size="44,26" zPosition="2" alphatest="blend" />
+		<widget source="session.RecordState" 	render="Pixmap" pixmap="xta/icons/icon_rec_light.png" position="1030,667" size="44,26" zPosition="5" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+	</screen>
+
+	<!-- Channel selection TV (OK) --> 
+	<screen name="yyyChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder">
+    		<ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/listch2.png"  />
+    		<widget source="Title" render="Label" position="65, 23" size="660,50" font="Regular;22" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1090,600" size="162,110" zPosition="2" alphatest="blend" />
+		<panel name="4Buttons" />
+		<eLabel text="Menu - Info" position="1040,23" size="200,22" font="Regular;20"  halign="right" foregroundColor="#404040" backgroundColor="black" zPosition="0" transparent="1" />
+		<!-- Lista Canali  --> 
+  		<ePixmap position="850,70" zPosition="4" size="29,450" pixmap="xta/bars/maxbar.png" alphatest="blend" transparent="1" />
+  		<ePixmap position="850,520" zPosition="4" size="29,3" pixmap="xta/bars/endbar.png" alphatest="blend" transparent="1" />
+		<eLabel position="62,54" size="102,380" backgroundColor="#20000000" />
+		<widget name="list" position="75,70" size="800,450" scrollbarMode="showOnDemand" foregroundColorServiceNotAvail="#303030" zPosition="2" serviceItemHeight="30"
+				serviceNumberFont="Regular;20" serviceNameFont="Regular;20" serviceInfoFont="Regular;19"  colorServiceNameFont="#0x09abf1" colorServiceDescription="#a1daff" colorServiceDescriptionSelected="white" 
+				picServiceEventProgressbar="xta/bars/progress_back.png" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+		<eLabel position="850,54" size="430,380" backgroundColor="#20000000" />
+		<widget source="ServiceEvent" render="Label" position="890,68" zPosition="1" size="350,26" font="Regular;24" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+                <!-- ProgressBar -->
+		<ePixmap position="890,110" size="120,15" pixmap="xta/bars/ch_progressbw.png" alphatest="blend" transparent="1"  zPosition="3" />
+		<widget source="ServiceEvent" render="Progress" pixmap="xta/bars/ch_progresscl.png" position="890,110" size="119,13" zPosition="4"  backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<!-- Event Time -->
+		<widget source="ServiceEvent" render="Label" position="1030,106" size="100,26" zPosition="2" halign="left" font="Regular;19" foregroundColor="white" backgroundColor="black"  transparent="1" >
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="1100,106" zPosition="1" size="70,26" font="Regular;19" foregroundColor="blue" backgroundColor="black"  halign="right" transparent="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="890,145" size="350,26" zPosition="2" halign="left" font="Regular;20" foregroundColor="#a1daff" backgroundColor="black" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>	
+		<eLabel position="890,180" size="350,1" backgroundColor="#202020" />
+		<eLabel position="890,182" size="350,1" backgroundColor="#101010" />
+		<eLabel text="Next Event :" position="890,210" size="120,22" font="Regular;20"  halign="left" foregroundColor="white" backgroundColor="black" zPosition="0" transparent="1" />
+		<widget source="ServiceEvent" render="TimeNextEvent" position="1020,210" zPosition="3" halign="left" font="Regular;20" size="200,60" noWrap="1" foregroundColor="#f0ed00" backgroundColor="black" transparent="1" />
+		<widget source="ServiceEvent" render="NameNextEvent" position="890,250"  zPosition="3" halign="left" font="Regular;18" size="350,90" noWrap="1" foregroundColor="#a1daff" backgroundColor="black" transparent="1" />
+		<eLabel position="890,290" size="350,1" backgroundColor="#202020" />
+		<eLabel position="890,292" size="350,1" backgroundColor="#101010" />
+		<!-- Nome Canale - Service Name -->
+		<widget source="ServiceEvent" render="Label" position="65,540" zPosition="2" halign="left" size="1180,100" font="Regular;19" transparent="1" foregroundColor="#a1daff" backgroundColor="black" >
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<ePixmap pixmap="xta/icons/icon_norec_light.png" position="1030,667" size="44,26" zPosition="2" alphatest="blend" />
+		<widget source="session.RecordState" 	render="Pixmap" pixmap="xta/icons/icon_rec_light.png" position="1030,667" size="44,26" zPosition="5" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+		<!-- Crypt Info -->			
+		<ePixmap position="890,337" size="28,15" zPosition="1" pixmap="xta/icons/ico_crypt_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="890,337" size="28,15" zPosition="2" pixmap="xta/icons/ico_crypt_on.png" alphatest="blend">
+			<convert type="ServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Provider Info -->
+		<widget source="session.CurrentService" render="Label" position="940,330" size="300,28" zPosition="2" font="Regular;22" backgroundColor="black" halign="left" foregroundColor="yellow" transparent="1" >
+			<convert type="ServiceName">Provider</convert>
+		</widget>
+		<!-- HD Info -->			
+		<ePixmap position="890,380" size="29,20" zPosition="1" pixmap="xta/icons/ico_hd_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="890,380" size="29,20" zPosition="2" pixmap="xta/icons/ico_hd_on.png" alphatest="blend">
+			<convert type="ServiceInfo">VideoWidth</convert>
+			<convert type="ValueRange">721,1980</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Wide Info -->			
+		<ePixmap position="950,380" size="36,20" zPosition="1" pixmap="xta/icons/ico_format_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="950,380" size="36,20" zPosition="2" pixmap="xta/icons/ico_format_on.png" alphatest="blend">
+			<convert type="ServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Dolby Info -->			
+		<ePixmap position="1040,380" size="57,20" zPosition="1" pixmap="xta/icons/ico_dolby_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="1040,380" size="57,20" zPosition="2" pixmap="xta/icons/ico_dolby_on.png" alphatest="blend">
+			<convert type="ServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- TeleText Info -->			
+		<ePixmap position="1120,380" size="33,20" zPosition="1" pixmap="xta/icons/ico_txt_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="1120,380" size="33,20" zPosition="2" pixmap="xta/icons/ico_txt_on.png" alphatest="blend">
+			<convert type="ServiceInfo">HasTelext</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- HBBTv Info -->			
+		<ePixmap position="1180,380" size="49,20" zPosition="1" pixmap="xta/icons/ico_hbbtv_off.png" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" position="1180,380" size="49,20" zPosition="2" pixmap="xta/icons/ico_hbbtv_on.png" alphatest="blend">
+			<convert type="ServiceInfo">HasHBBTV</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<eLabel position="890,420" size="350,1" backgroundColor="#202020" />
+		<eLabel position="890,422" size="350,1" backgroundColor="#101010" />
+		<!-- EMU Info -->
+		<eLabel name="cam" position="890,440" size="44,20" halign="left" text="CAM" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="935,440" size="310,20" font="Regular;17" zPosition="1" backgroundColor="background" transparent="1">
+			<convert type="CamName">
+			</convert>
+		</widget>
+		<!-- Crypto/Sat Info -->
+		<eLabel name="emu" position="890,470" size="44,20" halign="left" text="EMU" font="Regular;17" foregroundColor="#505050" backgroundColor="#000000" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="945,470" size="300,20" font="Regular;17" backgroundColor="black" foregroundColor="#505050" transparent="1" halign="left" valign="center">
+			<convert type="XTAExtraInfo">CryptoInfo</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="890,500" size="360,25" font="Regular;17" backgroundColor="black" transparent="1" halign="left" valign="center" foregroundColor="yellow">
+			<convert type="CryptoInfo">VerboseInfo</convert>
+		</widget>
 	</screen>
 
  	<!-- Simple channelselection (OK) -->
@@ -1134,16 +1543,16 @@
  	<screen name="ScNewSelection" position="0,0" size="1280,720" title="Softcam Setup" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
  		<panel name="3ButtonsWb" /> 
-		<panel name="DarkLineBox200" /> 
+		<panel name="DarkLineBox" /> 
  		<widget name="cam"     position="65,75"  size="675,28" font="Regular; 22" halign="left" foregroundColor="blue" backgroundColor="black" transparent="1" />
  		<widget name="server"  position="65,110" size="675,28" font="Regular; 20" halign="left" foregroundColor="blue"   backgroundColor="black" transparent="1" />
-  		<eLabel position="65, 145" size="480, 1" backgroundColor="#303030" />
-  		<eLabel position="65, 146" size="480, 1" backgroundColor="#202020" />
-      		<widget name="entries" position="65,160" size="680,180" font="Regular;20" itemHeight="30" zPosition="2" enableWrapAround="1" selectionPixmap="xta/bars/slider30.png" transparent="1" />
-  		<eLabel position="65, 350" size="480, 1" backgroundColor="#303030" />
-  		<eLabel position="65, 351" size="480, 1" backgroundColor="#202020" />
- 		<widget name="text"  position="70,340"   size="600,360" zPosition="2" font="Regular;18" enableWrapAround="1" backgroundColor="black" foregroundColor="#808080" transparent="1" />
- 		<widget name="text1" position="420,340"  size="600,360" zPosition="2" font="Regular;18" enableWrapAround="1" backgroundColor="black" transparent="1" />
+  		<eLabel position="65, 140" size="537, 1" backgroundColor="#303030" />
+  		<eLabel position="65, 141" size="537, 1" backgroundColor="#202020" />
+      		<widget name="entries" position="65,160" size="675,150" font="Regular;20" itemHeight="30" zPosition="2" enableWrapAround="1" selectionPixmap="xta/bars/slider30.png" transparent="1" />
+  		<eLabel position="65, 320" size="537, 1" backgroundColor="#303030" />
+  		<eLabel position="65, 321" size="537, 1" backgroundColor="#202020" />
+ 		<widget name="text"  position="65,360"   size="400,360" zPosition="2" font="Regular;18" enableWrapAround="1" backgroundColor="black" foregroundColor="blue" transparent="1" />
+ 		<widget name="text1" position="420,360"  size="400,360" zPosition="2" font="Regular;18" enableWrapAround="1" backgroundColor="black" transparent="1" />
   		<eLabel text="Press Menu for more options" position="65, 621" size="700, 26" font="Regular;20" halign="left" foregroundColor="yellow" backgroundColor="black" transparent="1" />
  	</screen>
   
@@ -2121,16 +2530,6 @@
 		<panel name="ScrollBarTemplate500" /> 
 		<widget name="list" position="60,90" size="673,500" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider50.png" transparent="1" />
 	</screen>
-
-	<!-- Plugin Panel (OK) -->
-	<screen name="PluginBrowser2" position="0,0" size=" 1280,720" title="Xtrend Plugins" flags="wfNoBorder">
-    		<ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/xtmenu.png"  />
-    		<widget source="Title" render="Label" position="70, 34" size="660,50" font="Regular;22" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
-  		<ePixmap pixmap="xta/menu/Xaddons.png" position="830,485" size="400,231" zPosition="2" alphatest="blend" />
-		<panel name="2ButtonsC" /> 
-		<panel name="ScrollBarTemplate500" /> 
-		<widget name="list" position="60,90" size="673,500" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider50.png" transparent="1" />
-	</screen>
   
 	<!-- Plugin Download (OK) -->
 	<screen name="PluginDownloadBrowser" position="0,0" size=" 1280,720" title="Downloadable plugins" flags="wfNoBorder">
@@ -2203,54 +2602,6 @@
 		<widget source="status" render="Label" position="65,622" size="680,50" halign="left" font="Regular;20" foregroundColor="yellow" transparent="1" />
 	</screen>
    
- 	<!-- Plugin Manager (OK) -->
-	<screen name="PluginManager2" position="0,0" size="1280,720" title="Plugin manager" flags="wfNoBorder">
-		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="4ButtonsW" /> 
-		<panel name="ScrollBarTemplate450" /> 
-		<widget source="list" render="Listbox" position="65,90" size="667,450" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider60.png" backgroundColor="black" transparent="1">
-			<convert type="TemplatedMultiContent">
-				{"templates":
-	 				{"default": (75,[
- 						MultiContentEntryPixmapAlphaTest(pos = (18, 14), size = (48, 48), png = 5), # index 5 is the status pixmap
- 						MultiContentEntryText(pos = (90, 5), size = (660, 26), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
- 						MultiContentEntryText(pos = (100, 33), size = (650, 38), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
-						]),
-		 				"category": (75,[
- 						MultiContentEntryText(pos = (15, 5), size = (660, 26), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
- 						MultiContentEntryText(pos = (15, 33), size = (660, 20), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 1 is the description
-	 					])
-	 				},
-	 				"fonts": [gFont("Regular", 22),gFont("Regular", 17)],
-	 				"itemHeight": 60
-	 			}
- 			</convert>
-		</widget>
-		<widget source="status" render="Label" position="65,622" size="680,50" halign="left" font="Regular;20" foregroundColor="yellow" transparent="1" />
-	</screen>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  	<!-- Plugin Manager (OK) -->
 	<screen name="PluginManagerInfo" position="0,0" size="1280,720" title="Plugin manager activity" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 

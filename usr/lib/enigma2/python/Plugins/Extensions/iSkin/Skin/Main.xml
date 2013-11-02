@@ -6,25 +6,13 @@
 	<eLabel  position="55,70" size="67,548" backgroundColor="#10101010" zPosition="-1" />
 	<ePixmap position="120,70" size="7,552" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/menuline.png" zPosition="2" alphatest="blend" />
 
-	<widget name="SkinSelect" position="60,90" size="685,210" itemHeight="30" backgroundColor="black" zPosition="2" scrollbarMode="showOnDemand" 
-	              selectionPixmap="/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/slider30.png" foregroundColor="#808080" transparent="1" />
+	<widget name="SkinSelect" position="60,90" size="685,300" itemHeight="30" backgroundColor="black" zPosition="2" selectionPixmap="/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/slider30.png" foregroundColor="#606060" transparent="1" />
 
-	<eLabel  position="140,330" size="590,1" backgroundColor="#202020" zPosition="1" />
-	<eLabel  position="140,332" size="590,1" backgroundColor="#404040" zPosition="1" />
+	<eLabel  position="828,448" size="394,224" backgroundColor="#606060" zPosition="1" />
+	<ePixmap position="830,450" size="390,220" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/iSkin.png" zPosition="2" alphatest="blend" />	
+    	<widget name="cover" position="830,450" size="390,220" zPosition="3" alphatest="blend" transparent="1" />
 
-	<!-- Cambia colore e un test -->
+	<ePixmap position="50,659" size="1200,50" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/1colors.png" zPosition="2" alphatest="blend" />	
+	<widget position="100,667" size="210,21" name="Key_Red" font="Regular;19" halign="left" foregroundColor="white" backgroundColor="black" zPosition="1" transparent="1" />
 
-	<ePixmap name="ButtonBlue"   position="70,348" size="30,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/key_blue.png"   zPosition="2" alphatest="blend" />	
-	<widget position="140,350" size="210,24" name="Key_Blu"    font="Regular;20" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />	
-	<widget position="320,350" size="300,24" name="Key_Region" font="Regular;20" halign="left" foregroundColor="blue" backgroundColor="black" transparent="1" />
-	<ePixmap name="ButtonYellow" position="70,388" size="30,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/key_yellow.png" zPosition="2" alphatest="blend" />	
-	<widget position="140,390" size="210,24" name="Key_Yellow" font="Regular;20" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
-
-	<eLabel  position="828,438" size="394,224" backgroundColor="#606060" zPosition="1" />
-	<ePixmap position="830,440" size="390,220" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/iSkin.png" zPosition="2" alphatest="blend" />	
-    	<widget name="cover" position="830,440" size="390,220" zPosition="3" alphatest="blend" transparent="1" />
-
-	<ePixmap position="50,659" size="1200,50" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/2colors.png" zPosition="2" alphatest="blend" />	
-	<widget position="100,665" size="210,21" name="Key_Red" font="Regular;19" halign="left" foregroundColor="white" backgroundColor="black" zPosition="1" transparent="1" />
-	<eLabel text="Weather Panel" position="340,665" size="210,21" font="Regular;19" backgroundColor="#000000" transparent="1" />
 </screen>

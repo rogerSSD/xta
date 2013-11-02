@@ -1,44 +1,28 @@
-# SkinSelect by m43c0 27-10-2013
+# SkinSelect by m43c0 23-08-2013
 from Components.Label import Label
 from Components.ConfigList import ConfigListScreen,ConfigList
-from Components.ActionMap import ActionMap
+from Components.ActionMap import ActionMap,NumberActionMap
 from Components.config import KEY_LEFT, KEY_RIGHT,config,  getConfigListEntry , ConfigSelection, ConfigSubsection
 from Components.MenuList import MenuList
 from Components.Pixmap import Pixmap
 from Components.MultiContent import MultiContentEntryText, MultiContentEntryPixmap, MultiContentEntryPixmapAlphaTest
-from enigma import  loadPic, gFont, eTimer, loadPNG, eListboxPythonMultiContent, RT_HALIGN_LEFT, eListbox, quitMainloop
+from enigma import  loadPic, gFont, eTimer, loadPNG, getDesktop, eListboxPythonMultiContent, RT_HALIGN_LEFT, eListbox, quitMainloop
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from time import *
-try:
-    from Weather.Weather import *
-except:
-    pass	
-try:
-    from Weather.Search_Id import *	
-except:
-    pass      
-	
-try:
-    from Connection.Connection import *	
-except:
-    pass      	
-	
-try:
-    from Components.Converter.TestConnection import *	
-except:
-    pass   	
+import  re, os,sys, xml.etree.cElementTree,glob
 
-import  os,sys, xml.etree.cElementTree,gettext
-
+import gettext
 def _(txt):
-        t = gettext.dgettext("iSkin", txt)
-        if t == txt:
-                t = gettext.gettext(txt)
-        return t
-
+	t = gettext.dgettext("iSkin", txt)
+	if t == txt:
+		print "[iSkin] fallback to default translation for", txt
+		t = gettext.gettext(txt)
+	return t
+	
 class ConfigSkin(Screen, ConfigListScreen):
+
         def __init__(self, session,selection):
                 self.session = session
                 self.selection = selection                               
@@ -52,7 +36,7 @@ class ConfigSkin(Screen, ConfigListScreen):
                         Size = x.get('size').split(',')
                         self.SizeY = int(Size[0]) 
                         self.SizeX = int(Size[1])                                                
-                Screen.__init__(self, session)   
+                Screen.__init__(self, session)      
                 self["Key_Red"] = Label(_("Exit"))		
                 self["Key_Green"] = Label(_("Ok"))				
                 self['title'] = Label(_("Select Skin ")+selection )                                    
@@ -66,20 +50,19 @@ class ConfigSkin(Screen, ConfigListScreen):
                 self.LoopQuit.callback.append(self.Riavvio)  				                                
                 self.configlist = []	       
                 self["config"] = ConfigList(self.configlist)	
-                self.MyConfigList()  
-                self.SetValue()		
+                self.MyConfigList()        				
                 ConfigListScreen.__init__(self, self.configlist, session = self.session)               
                 self["setupActions"] = ActionMap(["SkinActionSetup"],
-                    {
-                    "down": self.down,
-                    "up": self.up,
-                    "ok": self.keyOK,
-                    "green": self.keyOK,								
-                    "left" : self.KeyLeft,
-                    "right": self.KeyRight,
-                    "red": self.close,								
-                    "cancel": self.close
-                    }, -1)   
+                                {
+                                "down": self.down,
+                                "up": self.up,
+                                "ok": self.keyOK,
+                                "green": self.keyOK,								
+                                "left" : self.KeyLeft,
+                                "right": self.KeyRight,
+                                "red": self.close,								
+                                "cancel": self.close
+                                }, -1)   
                                 
         def MyConfigList(self):	
                 mdom = xml.etree.cElementTree.parse(os.path.dirname(sys.modules[__name__].__file__) + "/Config/SkinSetup.xml")
@@ -90,33 +73,18 @@ class ConfigSkin(Screen, ConfigListScreen):
                         root = x								
                 for x in root:
                     if x.tag == "set":  			
-                        jName = x.get("name")						
-                        jMyList = self.listaselect(x)	
-                        jlist =[]
-                        jMyValue = ''	
-                        jSetValue = self.SetValue()						
-                        if jSetValue:
-                            for x in jMyList:	                                							
-                                if str(jSetValue).find(x[2]) != -1:
-                                    jMyValue = (x[0]+'****'+x[2])				
-                                    jlist.append((jMyValue,x[1]))			   
-                        for x in jMyList:		
-                            MyValue = (x[0]+'****'+x[2])
-                            if MyValue != jMyValue:				
-                                jlist.append((MyValue,x[1]))			 
-                        config.Skin.i = ConfigSelection(choices = jlist)						
-                        self.configlist.append(getConfigListEntry(jName,config.Skin.i,jName))
-                del jlist						
+                        nome = x.get("name")						
+                        MyList = self.listaselect(x)	
+                        list =[]
+                        for x in MyList:
+                            list.append((x[0]+'****'+x[2],x[1]))			 
+                        config.Skin.i = ConfigSelection(choices = list)
+                        self.configlist.append(getConfigListEntry(nome,config.Skin.i,nome))	
+                self.configlist.sort(key=lambda t : tuple(t[0][0].lower()))						
                 self["config"].list = self.configlist		                               				
                 self["config"].l.setList(self.configlist)
-                self.Loop.start(1000,True)
-                        
-        def SetValue(self):
-		ReadSaveConf	= False
-                if os.path.exists('/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Config/SaveConf/'+str(self.selection).replace(' ','')):
-                    ReadSaveConf=open('/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Config/SaveConf/'+str(self.selection).replace(' ','')).read()
-                return ReadSaveConf										    
-				
+                self.Loop.start(100,True)
+                
         def Cover(self):
                 try:
                     self.Loop.stop()
@@ -129,7 +97,14 @@ class ConfigSkin(Screen, ConfigListScreen):
                 except:
                     pass	
                                          
-        def getCurrentConfigPath(self):				
+        def getCurrentConfigPath(self):		
+                self.File = []              				
+                for x in self["config"].list:		
+                    tipo = str(x[1].value)				
+                    if  self["config"].getCurrent()[2] == x[0]:	 
+                        self.File.append(str(tipo))						   
+                    else:
+                        self.File.append(str(tipo))							   
                 tipo = ''						   
                 for x in self["config"].list:		
                     tipo = str(x[1].value)
@@ -161,39 +136,18 @@ class ConfigSkin(Screen, ConfigListScreen):
                 if not self.isMoving:
                     self["config"].instance.moveSelection(self["config"].instance.moveDown) 						
                     self.Loop.start(100,True)                                           
-
-        def SaveConf(self):
-                jx=open('/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Config/SaveConf/'+str(self.selection).replace(' ',''),'w')
-                for x in self["config"].list:
-                       jx.write(str(x[0])+'......'+str(x[1].value)+'\n')
-                jx.close()
-                                        
-        def keyOK(self):	
-		self.SaveConf()
+                                                              
+        def keyOK(self):
                 self.session.openWithCallback(self.iKeyOk, MessageBox, _("The change requires a restart of E2, you want to proceed ?"), MessageBox.TYPE_YESNO, default = False)
-				
-        def ConfigPathOk(self):		
-                File = []              				
-                for x in self["config"].list:		
-                    tipo = str(x[1].value)				
-                    if  self["config"].getCurrent()[2] == x[0]:	 
-                        File.append(str(tipo))						   
-                    else:
-                        File.append(str(tipo))	   
-                return File
-				
+                                
         def iKeyOk(self, answer):						
-                if answer:  			
-                    try:					
-			for x in self.ConfigPathOk():
-				tipo = x.split('****')
-				os.system('cp '+tipo[1]+' '+tipo[0])
-			self.SaveConf()			
-			self.session.open(MessageBox, _("Restart E2 running!"), MessageBox.TYPE_INFO)
-			self.LoopQuit.start(3000,True)			
-                    except:
-			self.session.open(MessageBox, _("Error during transfer!"), MessageBox.TYPE_INFO)
-			
+                if answer:  		
+                    for x in self.File:
+                        tipo = x.split('****')
+                        os.system('cp '+tipo[1]+' '+tipo[0])
+                    self.session.open(MessageBox, _("Restart E2 running!"), MessageBox.TYPE_INFO)
+                    self.LoopQuit.start(3000,True)			
+
         def Riavvio(self):							
                 quitMainloop(3)				   
                                                                     
@@ -214,12 +168,14 @@ class ConfigSkin(Screen, ConfigListScreen):
                 return list
                                 
 class iMenuList(MenuList):
+
         def __init__(self, list):
                 MenuList.__init__(self, list, True, eListboxPythonMultiContent)
                 self.l.setFont(0, gFont("Regular", 20))
                 self.l.setItemHeight(44)
 
 class MenuStart(Screen):
+
         def __init__(self, session):
                 self.session = session
                 path = "/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Skin/Main.xml"                     
@@ -235,16 +191,8 @@ class MenuStart(Screen):
                 Screen.__init__(self, session)                                        
                 self["Key_Red"] = Label(_("Exit"))		
                 self["Key_Green"] = Label("")
-                self["Key_Yellow"] = Label("")
-                self['ButtonYellow'] = Pixmap()	
-		self['ButtonYellow'].hide()		
-                if os.path.exists('/usr/lib/enigma2/python/Components/Converter/TestConnection.pyo'):	
-			self['Key_Yellow'].setText(_("Config Connection"))	
-			self['ButtonYellow'].show()
-                self.Region = Label("")					
-                self["Key_Region"] = self.Region	
-                self.Key_Blu = Label("")				
-                self["Key_Blu"] = self.Key_Blu							                               
+                self["Key_Yellow"] = Label("")		
+                self["Key_Blu"] = Label("")	                                
                 self['SkinSelect'] = iMenuList([])                                
                 self.isMoving = False	
                 self['cover'] = Pixmap()				
@@ -252,44 +200,15 @@ class MenuStart(Screen):
                 self.Loop.stop()		
                 self.Loop.callback.append(self.Cover)                                   
                 self["setupActions"] = ActionMap(["SkinActionSetup"],
-                    { 
-                    "blue": self.keyBlue,	
-                    "green": self.keyGreen,	
-                    "yellow": self.keyYellow,					
-                    "ok": self.keyOK,
-                    "up" : self.up,
-                    "down":self.down,
-                    "red": self.close, 
-                    "cancel": self.close
-                    },-1)				
+                                { 
+                                "ok": self.keyOK,
+                                "up" : self.up,
+                                "down":self.down,
+                                "red": self.close, 
+                                "cancel": self.close
+                                }, -1)				
                 self.onLayoutFinish.append(self.layoutFinished)
-                self.onShown.append(self.SetButtonWeather)
                                 
-        def SetButtonWeather(self):  
-                if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Weather/Weather.pyo"):	
-                     self.Key_Blu.setText("Config Weather")
-                     if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Weather/Config/Region_id"):
-                           jRegion_id = open("/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Weather/Config/Region_id").read()					 
-                           self.Region.setText(jRegion_id)	
-						   
-        def keyYellow(self):  
-                if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Connection/Connection.pyo"):	
-                      try:				
-                            self.session.open(ConfigConnection)  
-                      except:
-                            pass					  
-        def keyBlue(self):  
-		try:
-                        self.session.open(WeatherSearch)
-		except:
-		        pass
-                
-        def keyGreen(self): 
-		try:
-                        self.session.open(MeteoMain)
-		except:
-		        pass		
-            
         def Cover(self):
                 try:
                     self.Loop.stop()
@@ -341,8 +260,8 @@ class MenuStart(Screen):
                 
 def Main(session, **kwargs):
         session.open(MenuStart)       
-
-                
+		
+    		
 def setup(menuid):
     if config.skin.primary_skin.value == 'xta/skin.xml': 
         if menuid == 'mainmenu':
@@ -354,9 +273,9 @@ def setup(menuid):
 
 def Plugins(**kwargs):
         return PluginDescriptor(name = 'Skin Selection', description = 'For changing skin of mmark', where = PluginDescriptor.WHERE_MENU, fnc=setup)	
-
+		
 """
 def Plugins(**kwargs):
         return PluginDescriptor(name = 'Skin Selection', description = 'For changing skin of mmark', icon = 'SkinSelection.png', where = [PluginDescriptor.WHERE_EXTENSIONSMENU,PluginDescriptor.WHERE_PLUGINMENU], fnc = Main)
 """
-     
+                                            
