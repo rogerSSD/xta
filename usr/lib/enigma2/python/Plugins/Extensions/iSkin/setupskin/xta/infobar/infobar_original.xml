@@ -1,0 +1,64 @@
+<skin>
+	<!-- InfoBar (OK) -->
+ 	<screen name="InfoBar" position="0,0" size="1280,720" title="InfoBar" backgroundColor="transparent" flags="wfNoBorder">
+		<ePixmap position="0,610" zPosition="-1" size="1280,90" pixmap="xta/infobar.png" />
+		<!-- Event Now -->
+		<widget source="session.Event_Now" render="Label" position="160,618" size="79,28" font="Regular;24" halign="right" foregroundColor="#f0d600" backgroundColor="black" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="263,618" size="740,30" font="Regular;24" halign="left" backgroundColor="black" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="1000,618" size="116,28" font="Regular;24" halign="right" backgroundColor="black" transparent="1">
+			<convert type="EventTime">Remaining</convert>
+			<convert type="RemainingToText">InMinutes</convert>
+		</widget>
+		<!-- Event Next -->
+		<widget source="session.Event_Next" render="Label" position="160,663" size="79,30" font="Regular;24" halign="right" foregroundColor="#404040" backgroundColor="black" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<!--
+		<widget source="session.Event_Next" render="Label" position="241,663" size="79,28" font="Regular;24" halign="left" foregroundColor="darkgrey" backgroundColor="black" transparent="1">
+		<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		-->
+		<widget source="session.Event_Next" render="Label" position="263,663" size="740,28" font="Regular;24" halign="left" foregroundColor="#404040" backgroundColor="black" transparent="1" zPosition="0">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="1000,663" size="116,28" font="Regular;24" halign="right" foregroundColor="#ffffff" backgroundColor="black" transparent="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="ClockToText">InMinutes</convert>
+		</widget>
+		<!-- Picon -->
+		<widget source="session.CurrentService" render="Picon" position="30,613" size=" 130,80" transparent="1" alphatest="blend">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<!-- ProgressBar -->
+		<widget source="session.Event_Now" render="Progress" position="263,655" size="750,2" pixmap="xta/bars/progress.png" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<!-- Record -->
+		<widget source="session.RecordState" render="Pixmap" position="1126,646" size="20,20" pixmap="xta/buttons/record-on.png" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+		<!-- Panel SatType  -->
+		<widget source="session.FrontendInfo" render="Pixmap" pixmap="xta/icons/sat.png" position="1140,614" size="105,80" zPosition="3" alphatest="on" >
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">0,0</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.FrontendInfo" render="Pixmap" pixmap="xta/icons/dtt.png" position="1160,614" size="105,80" zPosition="3" alphatest="on" >
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">2,2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.FrontendInfo" render="Pixmap" pixmap="xta/icons/cable.png" position="1160,634" size="18,18" zPosition="3" alphatest="on" >
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">1,1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+</skin>
