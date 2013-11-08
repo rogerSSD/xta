@@ -478,7 +478,7 @@
 	<screen name="EventView" position="0,0"	size="1280,720" title=" EPG Channel Event View" backgroundColor="transparent" flags="wfNoBorder">
 		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/xtmenufull.png"  />
 		<ePixmap position="100,150" size="480,375" pixmap="xta/menu/X.png" zPosition="-1" />
-		<widget source="Title" render="Label" zPosition="1" position="60,34" size="500,24" halign="center" font="Regular;22" foregroundColor="white" transparent="1" backgroundColor="transpBlack" />
+		<widget source="Title" render="Label" zPosition="1" position="60,34" size="500,28" halign="center" font="Regular;22" foregroundColor="white" transparent="1" backgroundColor="transpBlack" />
 		<panel name="4Buttons" />
 		<panel name="SmallPigTemplate" />
 		<widget source="global.CurrentTime" render="Label" position="715,37" size="80,24" font="Regular;20" halign="right" backgroundColor="black" transparent="1">
@@ -507,11 +507,9 @@
 		</widget>
 		<eLabel text="-" position="60,155" size="572,1" backgroundColor="#303030" zPosition="5" />
 		<eLabel text="-" position="60,157" size="572,1" backgroundColor="#202020" zPosition="5" />
-  		<ePixmap position="595,170" zPosition="4" size="29,440" pixmap="xta/bars/maxbar.png" alphatest="blend" transparent="1" />
-  		<ePixmap position="595,610" zPosition="4" size="29,3" pixmap="xta/bars/endbar.png" alphatest="blend" transparent="1" />
-		<widget name="epg_description" 	position="60,170" size="560,450" font="Regular;22" foregroundColor="grey" backgroundColor="black" transparent="1" zPosition="5" />
-
-
+  		<ePixmap position="595,170" zPosition="4" size="29,465" pixmap="xta/bars/maxbar.png" alphatest="blend" transparent="1" />
+  		<ePixmap position="595,635" zPosition="4" size="29,3"   pixmap="xta/bars/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="epg_description" 	position="60,170" size="560,460" font="Regular;22" foregroundColor="grey" backgroundColor="black" transparent="1" zPosition="5" />
 		<!-- Next Event -->
 		<eLabel text="Next Event :" position="635,420" size="150,24" font="Regular;22" zPosition="2" foregroundColor="blue" backgroundColor="black" transparent="1" shadowColor="black" shadowOffset="-2,-2" />
 		<widget source="session.Event_Next" render="Label" position="785,420" size="80,30" zPosition="2"   font="Regular;22" foregroundColor="white" backgroundColor="background" transparent="1" shadowColor="black" shadowOffset="-2,-2" >
@@ -522,8 +520,13 @@
 			<convert type="EventTime">Duration</convert>
 			<convert type="ClockToText">InMinutes</convert>
 		</widget>
-		<widget source="session.Event_Next" render="Label" position="635,450" size="1000,60" zPosition="2"  font="Regular;22" foregroundColor="blue" backgroundColor="black" transparent="1" noWrap="1" >
+		<widget source="session.Event_Next" render="Label" position="635,450" size="605,60" zPosition="2"  font="Regular;22" foregroundColor="blue" backgroundColor="black" transparent="1" noWrap="1" >
 			<convert type="EventName">Name</convert>
+		</widget>
+		<eLabel text="-" position="635,485" size="585,1" backgroundColor="#303030" zPosition="5" />
+		<eLabel text="-" position="635,487" size="585,1" backgroundColor="#202020" zPosition="5" />
+		<widget source="session.Event_Next" render="Label" position="635,500" size="595,140" font="Regular;19" valign="top" halign="left" foregroundColor="#606060" backgroundColor="black" transparent="1" zPosition="2" >
+			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<ePixmap pixmap="xta/icons/icon_norec_light.png" position="1040,666" size="44,26" zPosition="2" alphatest="blend" />
 		<widget source="session.RecordState" 	render="Pixmap" pixmap="xta/icons/icon_rec_light.png" position="1040,666" size="44,26" zPosition="5" alphatest="blend">
