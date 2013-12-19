@@ -175,11 +175,11 @@
 		
 		<!-- SubTitle Info -->			
 		<ePixmap position="243,310" size="42,22" zPosition="1" pixmap="xta/icons/ico_subt_off.png" alphatest="blend" />
-		<widget source="session.CurrentService" render="Pixmap" pixmap="xta/icons/ico_subt_on.png" position="243,310" size="42,22" zPosition="3" alphatest="blend">
+		<!--widget source="session.CurrentService" render="Pixmap" pixmap="xta/icons/ico_subt_on.png" position="243,310" size="42,22" zPosition="3" alphatest="blend">
 			<convert type="AudioInfo">SubtitlesAvailable</convert>
 			<convert type="ConditionalShowHide">
 			</convert>
-		</widget>
+		</widget-->
 
 		<eLabel position="77,350" size="208,1" backgroundColor="#202020" />
 		<eLabel position="77,352" size="208,1" backgroundColor="#101010" />
