@@ -2152,6 +2152,7 @@
 		<panel name="2ButtonsC" /> 
 		<panel name="ScrollBarTemplate500" /> 
 		<widget name="list" position="60,90" size="673,500" scrollbarMode="showOnDemand" backgroundColor="black" selectionPixmap="xta/bars/slider50.png" transparent="1" />
+        <eLabel text="Press Menu for Feeds options" position="65, 621" size="700, 26" font="Regular;20" halign="left" foregroundColor="yellow" backgroundColor="black" transparent="1" />
 	</screen>
 
 	<!-- Plugin Panel (OK) -->
@@ -3264,6 +3265,32 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 			</convert>
 		<!--<widget name="label1" position="251,591" size="490,25" font="Regular;20" transparent="1" halign="left" />-->
 	</screen>
+          <!--Iconmain-->
+
+  <screen name="Iconmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
+   
+    <widget name="title" position="423,460" size="400,100" zPosition="3" halign="center" foregroundColor="white" backgroundColor="white" font="Regular;50" transparent="1" />
+    <widget name="pointer" position="610,545" size="100,150" zPosition="2" alphatest="on" />
+    <widget source="label1" render="Label" position="42,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
+    <widget source="label1s" render="Label" position="42,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
+    <widget name="pixmap1" position="40,570" size="200,100" zPosition="1" transparent="1" alphatest="on" />
+    <widget source="label2" render="Label" position="242,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
+    <widget source="label2s" render="Label" position="242,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
+    <widget name="pixmap2" position="240,570" size="200,100" zPosition="1" transparent="1" alphatest="on" />
+    <widget source="label3" render="Label" position="442,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
+    <widget source="label3s" render="Label" position="442,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
+    <widget name="pixmap3" position="440,570" size="200,100" zPosition="1" transparent="1" alphatest="on" />
+    <widget source="label4" render="Label" position="642,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
+    <widget source="label4s" render="Label" position="642,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
+    <widget name="pixmap4" position="640,570" size="200,100" zPosition="1" transparent="1" alphatest="on" />
+    <widget source="label5" render="Label" position="842,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
+    <widget source="label5s" render="Label" position="842,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
+    <widget name="pixmap5" position="840,570" size="200,100" zPosition="1" transparent="1" alphatest="on" />
+    <widget source="label6" render="Label" position="1042,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
+    <widget source="label6s" render="Label" position="1042,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
+    <widget name="pixmap6" position="1040,570" size="200,100" zPosition="1" transparent="1" alphatest="on" />
+    </screen>
+  <!--end of iconmain-->
 
 </skin>
 
