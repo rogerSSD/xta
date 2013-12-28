@@ -1891,12 +1891,12 @@
 	</screen>
     
     	<!-- XTA HDD Mount (OK) -->
-	<screen name="HddMount" position="0,0" size="1280,720" title="Hard Drive Mount" flags="wfNoBorder" >
+	<!-- <screen name="HddMount" position="0,0" size="1280,720" title="Hard Drive Mount" flags="wfNoBorder" >
 		<panel name="GenericLayoutLiteTemplate" /> 
 		<panel name="4Buttons" /> 
 		<panel name="DarkLineBox" /> 
 		<widget name="menu" position="65,90" size="680,340" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
-	</screen>
+	</screen>-->
       
 	<!-- XTA XTS ListMenu (OK) -->
 	<screen name="XTStatusListMenu" position="0,0" size="1280,720" title="XT Status ListMenu IPK Uninstaller" flags="wfNoBorder">
@@ -3265,6 +3265,30 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 			</convert>
 		<!--<widget name="label1" position="251,591" size="490,25" font="Regular;20" transparent="1" halign="left" />-->
 	</screen>
+   	<screen name="HddMount" position="0,0" size="1280,720" title="Hard Drive Mount" flags="wfNoBorder" >
+		<panel name="GenericLayoutLiteTemplate" /> 
+		<panel name="4Buttons" /> 
+		<panel name="DarkLineBox" /> 
+		<!--<widget name="menu" position="65,90" size="680,340" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />-->
+		 <widget source="list" render="Listbox" position="65,90" size="680,340" font="Regular;16" scrollbarMode="showOnDemand" transparent="1">
+      <convert type="TemplatedMultiContent">
+				{"template": [
+				 MultiContentEntryText(pos = (90, 0), size = (600, 30), font=0, text = 0),
+				 MultiContentEntryText(pos = (110, 30), size = (600, 50), font=1, flags = RT_VALIGN_TOP, text = 1),
+				 MultiContentEntryPixmapAlphaBlend(pos = (0, 0), size = (80, 80), png = 2),
+				],
+				"fonts": [gFont("Regular", 24),gFont("Regular", 20)],
+				"itemHeight": 85
+				}
+			</convert>
+    </widget>
+	</screen>
+       <screen name="DevicePanelConf" position="0,0" size=" 1280,720" title="Setup Skin" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+        <panel name="2ButtonsW" />
+        <widget name="config" position="65,90" size="675,480" scrollbarMode="showOnDemand" />
+        <widget name="Linconn" position="31,525" size="675,20" font="Regular;18" halign="center" valign="center" />
+    </screen>
           <!--Iconmain-->
 
   <screen name="Iconmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
