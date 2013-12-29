@@ -3248,7 +3248,6 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 	</screen>
    	<screen name="Extraspanel" position="0,0" size=" 1280,720" title="AV Settings" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="2ButtonsW" /> 
 		<!--<widget name="Mlist" position="65,90" size="675,480" font="Regular;20"  enableWrapAround="1" selectionPixmap="xta/bars/slider30.png" transparent="1" />-->
         <widget name="Mlist" position="43,90" size="690,480" backgroundPixmap="xta/bars/selectionbw.png" selectionPixmap="xta/bars/selection3.png" transparent="1" />
          <convert type="TemplatedMultiContent">
@@ -3283,12 +3282,43 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 			</convert>
     </widget>
 	</screen>
+
        <screen name="DevicePanelConf" position="0,0" size=" 1280,720" title="Setup Skin" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" />
         <panel name="2ButtonsW" />
         <widget name="config" position="65,90" size="675,480" scrollbarMode="showOnDemand" />
         <widget name="Linconn" position="31,525" size="675,20" font="Regular;18" halign="center" valign="center" />
     </screen>
+         
+<screen name="SoftwarePanel" position="0,0" size="1280,720" title="OpenXTA Update Manager" flags="wfNoBorder">
+<widget source="Title" render="Label" zPosition="1" position="360,32" size="500,28" halign="center" font="Regular;22" foregroundColor="blue" transparent="1" backgroundColor="transpBlack" />
+  <ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/syspanel.png" />
+  <panel name="2ButtonsW" />
+ <ePixmap position="883,490" size="251,110" pixmap="xta/icons/tech9.png" alphatest="blend" transparent="1" />
+  <widget source="list" render="Listbox" position="65,90" size="680,457" font="Regular;16" scrollbarMode="showOnDemand" transparent="1">
+    <convert type="TemplatedMultiContent">
+			{"template": [
+					MultiContentEntryText(pos = (5, 1), size = (540, 28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+					MultiContentEntryText(pos = (5, 26), size = (540, 20), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+					MultiContentEntryPixmapAlphaTest(pos = (605, 2), size = (48, 48), png = 4), # index 4 is the status pixmap
+					MultiContentEntryPixmapAlphaTest(pos = (5, 50), size = (610, 2), png = 5), # index 4 is the div pixmap
+				],
+			"fonts": [gFont("Regular", 22),gFont("Regular", 14)],
+			"itemHeight": 52
+			}
+		</convert>
+  </widget>
+  <widget name="a_off" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ExtrasPanel/pics/aoff.png" position="887,175" zPosition="1" size="36,97" alphatest="on" />
+  <widget name="a_red" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ExtrasPanel/pics/ared.png" position="887,175" zPosition="1" size="36,97" alphatest="on" />
+  <widget name="a_yellow" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ExtrasPanel/pics/ayellow.png" position="887,175" zPosition="1" size="36,97" alphatest="on" />
+  <widget name="a_green" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ExtrasPanel/pics/agreen.png" position="887,175" zPosition="1" size="36,97" alphatest="on" />
+  <widget name="packagetext" position="163,572" size="250,30" zPosition="1" font="Regular;25" halign="right" transparent="1" foregroundColor="blue" />
+  <widget name="packagenr" position="420,572" size="50,30" zPosition="1" font="Regular;25" halign="right" transparent="1" foregroundColor="blue" />
+  <widget name="feedstatusRED" position="933,174" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
+  <widget name="feedstatusYELLOW" position="933,211" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
+  <widget name="feedstatusGREEN" position="932,248" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
+</screen>
+ 
           <!--Iconmain-->
 
   <screen name="Iconmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
