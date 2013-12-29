@@ -3318,6 +3318,23 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <widget name="feedstatusYELLOW" position="933,211" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
   <widget name="feedstatusGREEN" position="932,248" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
 </screen>
+
+   <screen name="FlashOnline" position="0,0" size=" 1280,720" title="Setup Skin" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" /> 
+         <panel name="3ButtonsW" /> 
+        <widget name="info-online" position="65,87" zPosition="1" size="550,150" font="Regular; 22" halign="left" valign="top" transparent="1" />
+        <widget name="info-local" position="65,261" zPosition="1" size="550,200" font="Regular; 22" halign="left" valign="top" transparent="1" />
+
+    </screen>
+
+   
+   <screen name="ImageBackup" position="0,0" size=" 1280,720" title="Setup Skin" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" /> 
+         <panel name="3ButtonsW" /> 
+        <widget name="info-hdd" position="65,87" zPosition="1" size="550,150" font="Regular; 22" halign="left" valign="top" transparent="1" />
+        <widget name="info-usb" position="65,261" zPosition="1" size="550,200" font="Regular; 22" halign="left" valign="top" transparent="1" />
+
+    </screen>
  
           <!--Iconmain-->
 
