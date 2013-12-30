@@ -226,16 +226,14 @@
  	<!-- About (OK) -->
 	<screen name="About" position="0,0" size=" 1280,720" title="About" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
- 		<panel name="1Buttons" /> 
+ 		<panel name="2ButtonsW" /> 
 		<widget name="AboutScrollLabel" font="Regular;26" position="65,110" size="680,490" halign="center" transparent="1" backgroundColor="background" />
-		<ePixmap position="500,540" size="251,110" pixmap="xta/icons/tech9.png" alphatest="blend" transparent="1" />
-		<eLabel text="Exit" position="100, 667" size="200, 25" font="Regular;19" halign="left" foregroundColor="#ffffff" backgroundColor="black" transparent="1" />
 	</screen>
 
  	<!-- About (OK) -->
 	<screen name="Subtitles" position="center,center" size=" 840,605" title="Subtitle selection" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
- 		<panel name="1Buttons" /> 
+ 		<panel name="2ButtonsW" /> 
 		<widget name="config" position="65,90" size="680,480" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
 	</screen>
 
@@ -3293,7 +3291,6 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 <screen name="SoftwarePanel" position="0,0" size="1280,720" title="OpenXTA Update Manager" flags="wfNoBorder">
 <widget source="Title" render="Label" zPosition="1" position="360,32" size="500,28" halign="center" font="Regular;22" foregroundColor="blue" transparent="1" backgroundColor="transpBlack" />
   <ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/syspanel.png" />
-  <eLabel text="Feeds Status" position="927,100" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" foregroundColor="blue" />
   <panel name="2ButtonsW" />
  <ePixmap position="883,490" size="251,110" pixmap="xta/icons/tech9.png" alphatest="blend" transparent="1" />
   <widget source="list" render="Listbox" position="65,90" size="680,457" font="Regular;16" scrollbarMode="showOnDemand" transparent="1">
@@ -3315,9 +3312,9 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <widget name="a_green" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ExtrasPanel/pics/agreen.png" position="887,175" zPosition="1" size="36,97" alphatest="on" />
   <widget name="packagetext" position="163,572" size="250,30" zPosition="1" font="Regular;25" halign="right" transparent="1" foregroundColor="blue" />
   <widget name="packagenr" position="420,572" size="50,30" zPosition="1" font="Regular;25" halign="right" transparent="1" foregroundColor="blue" />
-  <widget name="feedstatusRED" text="DO NOT UPDATE" position="933,174" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
-  <widget name="feedstatusYELLOW" text="Update to your Risk" position="933,211" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
-  <widget name="feedstatusGREEN" text="OK to Update" position="932,248" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
+  <widget name="feedstatusRED" position="933,174" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
+  <widget name="feedstatusYELLOW" position="933,211" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
+  <widget name="feedstatusGREEN" position="932,248" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
 </screen>
 
    <screen name="FlashOnline" position="0,0" size=" 1280,720" title="Setup Skin" flags="wfNoBorder">
