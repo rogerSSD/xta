@@ -3283,7 +3283,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 
        <screen name="DevicePanelConf" position="0,0" size=" 1280,720" title="Setup Skin" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" />
-        <panel name="2ButtonsW" />
+        <panel name="3ButtonsW" />
         <widget name="config" position="65,90" size="675,480" scrollbarMode="showOnDemand" />
         <widget name="Linconn" position="31,525" size="675,20" font="Regular;18" halign="center" valign="center" />
     </screen>
@@ -3291,7 +3291,8 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 <screen name="SoftwarePanel" position="0,0" size="1280,720" title="OpenXTA Update Manager" flags="wfNoBorder">
 <widget source="Title" render="Label" zPosition="1" position="360,32" size="500,28" halign="center" font="Regular;22" foregroundColor="blue" transparent="1" backgroundColor="transpBlack" />
   <ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/syspanel.png" />
-  <panel name="2ButtonsW" />
+  <panel name="3ButtonsW" />
+ <eLabel text="Latest Commits" position="595,667" size="200, 25" font="Regular;19" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
  <ePixmap position="883,490" size="251,110" pixmap="xta/icons/tech9.png" alphatest="blend" transparent="1" />
   <widget source="list" render="Listbox" position="65,90" size="680,457" font="Regular;16" scrollbarMode="showOnDemand" transparent="1">
     <convert type="TemplatedMultiContent">
@@ -3315,6 +3316,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <widget name="feedstatusRED" position="933,174" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
   <widget name="feedstatusYELLOW" position="933,211" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
   <widget name="feedstatusGREEN" position="932,248" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
+  <widget name="key_green" position="350,646" size="300,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
 </screen>
 
    <screen name="FlashOnline" position="0,0" size=" 1280,720" title="Setup Skin" flags="wfNoBorder">
