@@ -120,7 +120,7 @@
   <!--Iconmain-->
 
   <screen name="Iconmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
-    <widget name="title" position="423,480" size="450,100" zPosition="3" halign="center" foregroundColor="blue" backgroundColor="blue" font="Arial;30" transparent="1" />
+    <widget name="title" position="423,480" size="450,100" zPosition="3" halign="center" foregroundColor="#0B052B" backgroundColor="#0B052B" font="Arial;40" transparent="1" />
     <ePixmap position="center,605" zPosition="1" size="1280,125" pixmap="xta/menu/main.png" alphatest="blend" transparent="1" />
     <ePixmap pixmap="xta/menu/xtLogo.png" position="1150,600" size="162,110" zPosition="2" alphatest="blend" />
     <widget name="pointer" position="610,610" size="100,150" zPosition="2" alphatest="on" />
@@ -3347,7 +3347,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
    <!--Iconmain-->
   <screen name="Iconmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
    
-    <widget name="title" position="423,480" size="450,100" zPosition="3" halign="center" foregroundColor="blue" backgroundColor="blue" font="Regular;30" transparent="1" />
+    <widget name="title" position="423,480" size="450,100" zPosition="3" halign="center" foregroundColor="#0B052B" backgroundColor="#0B052B" font="Regular;40" transparent="1" />
     <widget name="pointer" position="610,545" size="100,150" zPosition="2" alphatest="on" />
     <widget source="label1" render="Label" position="42,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
     <widget source="label1s" render="Label" position="42,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
