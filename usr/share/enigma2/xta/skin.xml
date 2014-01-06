@@ -120,7 +120,7 @@
   <!--Iconmain-->
 
   <screen name="Iconmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
-    <widget name="title" position="423,480" size="450,100" zPosition="3" halign="center" foregroundColor="#0B052B" backgroundColor="#0B052B" font="Arial;40" transparent="1" />
+    <widget name="title" position="423,520" size="400,50" zPosition="3" halign="center" foregroundColor="white" backgroundColor="white" font="Arial;40" transparent="1" />
     <ePixmap position="center,605" zPosition="1" size="1280,125" pixmap="xta/menu/main.png" alphatest="blend" transparent="1" />
     <ePixmap pixmap="xta/menu/xtLogo.png" position="1150,600" size="162,110" zPosition="2" alphatest="blend" />
     <widget name="pointer" position="610,610" size="100,150" zPosition="2" alphatest="on" />
@@ -1096,16 +1096,8 @@
 	</screen>
    
 	<screen name="menu_system" position="0,0" size="1280,720" title="Main menu" flags="wfNoBorder">
-     <panel name="GenericLayoutLiteTemplate" />  
-		<panel name="ScrollBarTemplate480" /> 
-		<widget source="menu" render="Listbox" position="43,90" size="690,480" scrollbarMode="showOnDemand" backgroundPixmap="xta/bars/selectionbw.png" selectionPixmap="xta/bars/selection3.png" transparent="1" >
-			<convert type="TemplatedMultiContent">
-				{"template": [ MultiContentEntryText(pos = (35, 0), size = (800, 30), flags = RT_HALIGN_LEFT, text = 0) ],
-				"fonts": [gFont("Regular", 22)],
-				"itemHeight": 40
-				}
-			</convert>
-         </widget>
+		<panel name="ScreenMenuTemplate" />
+		<ePixmap position="470,310" size="300,300" pixmap="xta/menu/setup.png" alphatest="blend" />
 	</screen>
    
 	<screen name="menu_harddisk" position="0,0" size="1280,720" title="Main menu" flags="wfNoBorder">
@@ -1974,16 +1966,15 @@
 	</screen>
 
       	<!-- XTA Update Image  (OK) -->
-	<screen name="UpdatePluginx" position="center,center" size=" 615,247" title="Software Update..." flags="wfNoBorder" >
-		<ePixmap position="0,0" zPosition="-1" size="612,247" pixmap="xta/menu/fr_download.png" />
-		<eLabel text="Software Update..." position="10,15" size="590,25" font="Regular;20" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
-		<widget name="status" position="20,20" size="570,100" font="Regular;20" halign="center" valign="center" foregroundColor="#538eff" backgroundColor="#25062748" transparent="1"  zPosition="10" />
-		<ePixmap position="95,140" zPosition="1" size="635,21" pixmap="xta/bars/br_downgr.png" alphatest="blend" transparent="1" />
-		<widget name="slider" position="95,140" zPosition="2" size="635,10" pixmap="xta/bars/upd_cl.png" transparent="1" />
-		<widget name="activityslider" position="95,140" zPosition="3" size="635,21" pixmap="xta/bars/br_downco.png" transparent="1" />
-		<widget name="package" position="10,180" size="590,40"  font="Regular;20" halign="center" valign="center" backgroundColor="#25062748" transparent="1" zPosition="10" />
-	</screen>
 
+    		<screen name="UpdatePlugin" position="center,center" size="615,247" flags="wfNoBorder">
+             <ePixmap position="0,0" zPosition="-1" size="612,247" pixmap="xta/menu/fr_download.png" />
+             <eLabel text="Software Update..." position="10,15" size="590,25" font="Regular;20" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+             <widget name="slider" position="95,140" zPosition="2" size="635,10" pixmap="xta/bars/upd_cl.png" transparent="1" />
+		     <widget name="activityslider" position="95,140" zPosition="3" size="635,29" pixmap="xta/bars/br_downco.png" transparent="1" />
+			<widget source="package" render="Label" position="10,180" size="590,40"  font="Regular;20" halign="center" valign="center" backgroundColor="#25062748" transparent="1" zPosition="10" />
+			<widget source="status" render="Label"  position="20,20" size="570,100" font="Regular;20" halign="center" valign="center" foregroundColor="#538eff" backgroundColor="#25062748" transparent="1"  zPosition="10" />
+       </screen>
       	<!-- XTA Packet Manager(OK) -->
 	<screen name="PacketManager" position="0,0" size=" 1280,720" title="PacketManager" flags="wfNoBorder" >
 		<panel name="GenericLayoutLiteTemplate" /> 
@@ -3324,7 +3315,6 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <widget name="feedstatusRED" position="933,174" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
   <widget name="feedstatusYELLOW" position="933,211" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
   <widget name="feedstatusGREEN" position="932,248" size="200,30" zPosition="1" font="Regular;25" halign="left" transparent="1" />
-  <widget name="key_green" position="350,646" size="300,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
 </screen>
 
    <screen name="FlashOnline" position="0,0" size=" 1280,720" title="Setup Skin" flags="wfNoBorder">
@@ -3343,11 +3333,12 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
         <widget name="info-usb" position="65,261" zPosition="1" size="550,200" font="Regular; 22" halign="left" valign="top" transparent="1" />
 
     </screen>
+ 
+          <!--Iconmain-->
 
-   <!--Iconmain-->
   <screen name="Iconmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
    
-    <widget name="title" position="423,480" size="450,100" zPosition="3" halign="center" foregroundColor="#0B052B" backgroundColor="#0B052B" font="Regular;40" transparent="1" />
+    <widget name="title" position="423,460" size="400,100" zPosition="3" halign="center" foregroundColor="white" backgroundColor="white" font="Regular;50" transparent="1" />
     <widget name="pointer" position="610,545" size="100,150" zPosition="2" alphatest="on" />
     <widget source="label1" render="Label" position="42,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
     <widget source="label1s" render="Label" position="42,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
@@ -3371,3 +3362,26 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <!--end of iconmain-->
 
 </skin>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
