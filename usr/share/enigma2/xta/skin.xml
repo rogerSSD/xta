@@ -3334,11 +3334,10 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 
     </screen>
  
-          <!--Iconmain-->
-
+ <!--Iconmain-->
   <screen name="Iconmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
    
-    <widget name="title" position="423,460" size="400,100" zPosition="3" halign="center" foregroundColor="white" backgroundColor="white" font="Regular;50" transparent="1" />
+    <widget name="title" position="423,480" size="450,100" zPosition="3" halign="center" foregroundColor="#0B052B" backgroundColor="#0B052B" font="Regular;40" transparent="1" />
     <widget name="pointer" position="610,545" size="100,150" zPosition="2" alphatest="on" />
     <widget source="label1" render="Label" position="42,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
     <widget source="label1s" render="Label" position="42,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
@@ -3360,6 +3359,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="pixmap6" position="1040,570" size="200,100" zPosition="1" transparent="1" alphatest="on" />
     </screen>
   <!--end of iconmain-->
+
 
 </skin>
 
