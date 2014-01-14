@@ -117,33 +117,7 @@
 		<color name="WindowTitleBackground"              color="black" />
 	</windowstyle>
 	
-  <!--Iconmain-->
 
-  <screen name="Iconmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
-    <widget name="title" position="423,520" size="400,50" zPosition="3" halign="center" foregroundColor="white" backgroundColor="white" font="Arial;40" transparent="1" />
-    <ePixmap position="center,605" zPosition="1" size="1280,125" pixmap="xta/menu/main.png" alphatest="blend" transparent="1" />
-    <ePixmap pixmap="xta/menu/xtLogo.png" position="1150,600" size="162,110" zPosition="2" alphatest="blend" />
-    <widget name="pointer" position="610,610" size="100,150" zPosition="2" alphatest="on" />
-    <widget source="label1" render="Label" position="100,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
-    <widget source="label1s" render="Label" position="100,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#00bab329" backgroundColor="#00bab329" transparent="1" />
-    <widget name="pixmap1" position="100,570" size="170,85" zPosition="1" transparent="1" alphatest="on" />
-    <widget source="label2" render="Label" position="280,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
-    <widget source="label2s" render="Label" position="280,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#00bab329" backgroundColor="#00bab329" transparent="1" />
-    <widget name="pixmap2" position="280,570" size="170,85" zPosition="1" transparent="1" alphatest="on" />
-    <widget source="label3" render="Label" position="460,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
-    <widget source="label3s" render="Label" position="460,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#00bab329" backgroundColor="#00bab329" transparent="1" />
-    <widget name="pixmap3" position="460,570" size="170,85" zPosition="1" transparent="1" alphatest="on" />
-    <widget source="label4" render="Label" position="640,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
-    <widget source="label4s" render="Label" position="640,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#00bab329" backgroundColor="#00bab329" transparent="1" />
-    <widget name="pixmap4" position="640,570" size="170,85" zPosition="1" transparent="1" alphatest="on" />
-    <widget source="label5" render="Label" position="820,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
-    <widget source="label5s" render="Label" position="820,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#00bab329" backgroundColor="#00bab329" transparent="1" />
-    <widget name="pixmap5" position="820,570" size="170,85" zPosition="1" transparent="1" alphatest="on" />
-    <widget source="label6" render="Label" position="1000,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="white" backgroundColor="white" transparent="1" />
-    <widget source="label6s" render="Label" position="1000,625" size="170,85" font="Arial;22" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#00bab329" backgroundColor="#00bab329" transparent="1" />
-    <widget name="pixmap6" position="1000,570" size="170,85" zPosition="1" transparent="1" alphatest="on" />
-    </screen>
-  <!--end of iconmain-->
 	
 
 	<!-- Volumebar (OK) -->
@@ -3358,16 +3332,21 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget source="label6s" render="Label" position="1042,570" size="180,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="red" backgroundColor="red" transparent="1" />
     <widget name="pixmap6" position="1040,570" size="200,100" zPosition="1" transparent="1" alphatest="on" />
     </screen>
-  <!--end of iconmain-->
+  <!--end of iconmain--><!--Animmain-->
+  <screen name="Animmain" position="center,center" size="1280,720" title="Mainmenu" flags="wfNoBorder" backgroundColor="transparent">
+    <widget name="title" position="400,530" size="500,40" zPosition="2" halign="center" valign="top" font="Regular;29" foregroundColor="blue" transparent="1" backgroundColor="transpBlack" />
+    <ePixmap position="center,535" zPosition="-1" size="1280,720" pixmap="xta/menu.png" />
+    <widget source="label1" render="Label" position="90,560" size="220,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#b3b3b9" backgroundColor="transpBlack" transparent="1" />
+    <widget source="label2" render="Label" position="310,560" size="220,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#b3b3b9" backgroundColor="transpBlack" transparent="1" />
+    <widget source="label3" render="Label" position="530,560" size="220,100" font="Regular;28" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="blue" transparent="1" backgroundColor="transpBlack" />
+    <widget source="label4" render="Label" position="750,560" size="220,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#b3b3b9" backgroundColor="transpBlack" transparent="1" />
+    <widget source="label5" render="Label" position="970,560" size="220,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#b3b3b9" backgroundColor="transpBlack" transparent="1" />
+    </screen>
+  <!--end of Animmain-->	
+
 
 
 </skin>
-
-
-
-
-
-
 
 
 
