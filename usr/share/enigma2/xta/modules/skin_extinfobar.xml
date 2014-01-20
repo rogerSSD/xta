@@ -206,7 +206,7 @@
 			<convert type="AudioInfo">SubtitlesAvailable</convert>
 			<convert type="ConditionalShowHide">
 			</convert>
-		</widget> -->
+		</widget>-->
 
 		<eLabel position="77,350" size="208,1" backgroundColor="#202020" />
 		<eLabel position="77,352" size="208,1" backgroundColor="#101010" />
