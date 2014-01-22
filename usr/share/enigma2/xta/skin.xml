@@ -1888,14 +1888,23 @@
 	</screen>
   
  	<!-- XTA Swapp (OK) -->
-	<screen name="Swap" position="0,0" size="1280,720" title="Swap" flags="wfNoBorder" >
-		<panel name="GenericLayoutLiteTemplate" /> 
-		<panel name="4Buttons" /> 
-		<panel name="DarkLineBox" /> 
-		<widget name="config" position="65,90" size="680,150" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
-		<widget name="status" font="Regular;20" halign="left" position="65,622" size="530,25" foregroundColor="yellow" backgroundColor="black" transparent="1"  />
-	</screen>
-  
+<screen name="Swap" position="0,0" size="1280,720" title="Swap" flags="wfNoBorder">
+  <panel name="GenericLayoutLiteTemplate" />
+  <panel name="3Buttons" />
+  <panel name="DarkLineBox" />
+  <widget name="config" position="17,126" size="680,209" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
+  <widget name="status" font="Regular;20" halign="left" position="65,622" size="530,25" foregroundColor="yellow" backgroundColor="black" transparent="1" />
+  <widget name="autostart_off" position="497,129" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32" alphatest="on" />
+  <widget name="autostart_on" position="497,129" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32" alphatest="on" />
+  <widget name="lab1" position="132,130" size="360,30" font="Regular;20" valign="center" transparent="1" />
+  <widget name="lab2" position="74,186" size="150,30" font="Regular;20" valign="center" transparent="1" />
+  <widget name="lab3" position="76,231" size="150,30" font="Regular;20" valign="center" transparent="1" />
+  <widget name="lab4" position="141,305" size="150,30" font="Regular;20" valign="center" transparent="1" />
+  <widget name="labplace" position="225,186" size="220,30" font="Regular;20" valign="center" backgroundColor="un4d5375" />
+  <widget name="labsize" position="227,231" size="220,30" font="Regular;20" valign="center" backgroundColor="un4d5375" />
+  <widget name="inactive" position="292,305" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="red" />
+  <widget name="active" position="291,305" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="green" />
+</screen>
  	<!-- XTA NFS Server (OK) -->
 	<screen name="NFSServerSetup" position="0,0" size="1280,720" title="NFS server setup" flags="wfNoBorder" >
 		<widget name="config" position="65,90" size="680,150" scrollbarMode="showOnDemand" itemHeight="30" selectionPixmap="xta/bars/slider30.png" backgroundColor="black" transparent="1" />
@@ -3394,13 +3403,12 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 			<convert type="ConditionalShowHide">Blink</convert>
 		</widget>
 	</screen>
+      <screen name="PictureInPictureZapping" flags="wfNoBorder" position="50,50" size="90,26" title="PiPZap" zPosition="-1">
+			<eLabel text="PiP-Zap" position="0,0" size="90,26" foregroundColor="#00ff66" font="Regular;26" />
+		</screen>
 
 
 </skin>
-
-
-
-
 
 
 
