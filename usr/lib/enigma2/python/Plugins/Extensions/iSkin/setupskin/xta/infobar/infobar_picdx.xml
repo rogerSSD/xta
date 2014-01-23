@@ -45,7 +45,7 @@
 		<widget source="session.RecordState" render="Pixmap" position="146,628" size="20,20" pixmap="xta/buttons/rec.png" alphatest="blend">
 			<convert type="ConditionalShowHide">Blink</convert>
 		</widget>
-		<!-- Panel SatType  -->
+		<!-- Panel SatType  
 		<widget source="session.FrontendInfo" render="Pixmap" pixmap="xta/icons/sat.png" position="1140,614" size="105,80" zPosition="3" alphatest="on" >
 			<convert type="FrontendInfo">TYPE</convert>
 			<convert type="ValueRange">0,0</convert>
@@ -61,6 +61,6 @@
 			<convert type="ValueRange">1,1</convert>
 			<convert type="ConditionalShowHide" />
 		</widget>
-		
+		-->
 	</screen>
 </skin>

@@ -6,7 +6,7 @@
   		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/xtmenufull.png" />
   		<widget source="Title" render="Label" zPosition="1" position="60,34" size="1160,28" halign="center" font="Regular;22" foregroundColor="blue" transparent="1" backgroundColor="black" />
   		<panel name="ScrollBarTemplateFull" /> 
-  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1150,600" size="162,110" zPosition="2" alphatest="blend" />
+  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1090,600" size="162,110" zPosition="2" alphatest="blend" />
   	</screen>
   	
   	<!-- Mid Template -->
@@ -14,14 +14,14 @@
   		<ePixmap  position="0,0" zPosition="-2" size="1280,720" pixmap="xta/screens/panelbk.png" />
   		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/panel.png" alphatest="blend" />
   		<widget source="Title" render="Label" zPosition="1" position="60,45" size="500,24" halign="center" font="Regular;22" foregroundColor="white" transparent="1" backgroundColor="black" />
-  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1150,600" size="162,110" zPosition="2" alphatest="blend" />
+  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1090,600" size="162,110" zPosition="2" alphatest="blend" />
   	</screen>
   	
   	<!-- Lite Template -->
   	<screen name="GenericLayoutLiteTemplate">
     		<ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/xtmenu.png"  />
     		<widget source="Title" render="Label" position="70, 34" size="660,50" font="Regular;22" halign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
-  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1150,600" size="162,110" zPosition="2" alphatest="blend" />
+  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1090,600" size="162,110" zPosition="2" alphatest="blend" />
   	</screen>
   	
   	<!-- Wizard Template -->
@@ -53,7 +53,7 @@
   		<widget source="Title" render="Label" zPosition="1" position="60,34" size="500,24" halign="center" font="Regular;22" foregroundColor="white" transparent="1" backgroundColor="transpBlack" />
   		<ePixmap position="600,90" zPosition="2" size="29,480" pixmap="xta/bars/maxbar.png" alphatest="blend" transparent="1" />
   		<ePixmap position="600,570" zPosition="2" size="29,3" pixmap="xta/bars/endbar.png" alphatest="blend" transparent="1" />
-  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1150,600" size="162,110" zPosition="2" alphatest="blend" />
+  		<ePixmap pixmap="xta/menu/xtLogo.png" position="1090,600" size="162,110" zPosition="2" alphatest="blend" />
   	</screen>
   
   	<!-- Pig Template -->
@@ -289,4 +289,3 @@
   		<widget position="100,666" size="210,22" name="red"    font="Regular;19" halign="left" backgroundColor="black" transparent="1" zPosition="1" />
   	</screen>
   </skin>
-
