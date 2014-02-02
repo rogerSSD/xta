@@ -3353,10 +3353,22 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget source="label5" render="Label" position="970,560" size="220,100" font="Regular;20" halign="center" valign="center" zPosition="2" noWrap="1" foregroundColor="#b3b3b9" backgroundColor="transpBlack" transparent="1" />
     </screen>
   <!--end of Animmain-->	
+          <screen name="Ipkuninstall" position="0,0" size=" 1280,720" title="IPK-uninstaller" flags="wfNoBorder">
+		<panel name="GenericLayoutLiteTemplate" />
+        <widget name="list" position="65,90" size="675,480" scrollbarMode="showOnDemand" />
+        <widget name="info" position="31,525" size="675,20" font="Regular;18" halign="center" valign="center" />
+    </screen>
+     	<screen name="xxxIpkuninstall" position="center,center" size="900,600" title="" >
+			<!--widget name="text" position="0,0" size="550,25" font="Regular;20" /-->
+			<widget name="list" position="50,50" size="800,500" scrollbarMode="showOnDemand" />
+			<!--widget name="pixmap" position="200,0" size="190,250" /-->
+			<!--eLabel position="70,100" zPosition="-1" size="100,69" backgroundColor="#222222" /-->
+			<widget name="info" position="150,10" zPosition="4" size="500,20" font="Regular;22" foregroundColor="#ffffff" transparent="1" halign="left" valign="center" />
+                        <!--widget name="KEY_HELP" position="75,350" size="80,40" valign="center" halign="center" zPosition="4"  foregroundColor="#ffffff" font="Regular;20" transparent="1" shadowColor="#25062748" shadowOffset="-2,-2" /-->
 
+		</screen>
 
 </skin>
-
 
 
 
