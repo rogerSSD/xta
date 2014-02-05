@@ -200,7 +200,8 @@
  	<!-- About (OK) -->
 	<screen name="About" position="0,0" size=" 1280,720" title="About" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
- 		<panel name="2ButtonsW" /> 
+ 		<panel name="2ButtonsW" />
+ 		<widget name="Commits" position="100,666" zPosition="4" size="210,22" font="Regular;19" halign="left" backgroundColor="#000000" transparent="1" />
 		<widget name="AboutScrollLabel" font="Regular;26" position="65,110" size="680,490" halign="center" transparent="1" backgroundColor="background" />
 	</screen>
 
@@ -3274,7 +3275,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 <screen name="SoftwarePanel" position="0,0" size="1280,720" title="OpenXTA Update Manager" flags="wfNoBorder">
 <widget source="Title" render="Label" zPosition="1" position="360,32" size="500,28" halign="center" font="Regular;22" foregroundColor="blue" transparent="1" backgroundColor="transpBlack" />
   <ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="xta/menu/syspanel.png" />
-  <panel name="3ButtonsW" />
+  <panel name="4ButtonsW" />
  <!--eLabel text="Latest Commits" position="595,667" size="200, 25" font="Regular;19" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" /-->
  <ePixmap position="883,490" size="251,110" pixmap="xta/icons/tech9.png" alphatest="blend" transparent="1" />
   <widget source="list" render="Listbox" position="65,90" size="680,457" font="Regular;16" scrollbarMode="showOnDemand" transparent="1">
