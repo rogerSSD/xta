@@ -293,7 +293,7 @@ class MeteoMain(Screen):
         if fileExists(localfile):
             pass
         else:
-            url = localfile.replace('/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Weather/Icon/weather', 'http://www.mysite.net/weapic/weabig')
+            url = localfile.replace('/usr/lib/enigma2/python/Plugins/Extensions/iSkin/Weather/Icon', 'http://www.mysite.net/weapic/weabig')
             handler = urlopen(url)	
             if handler:
                 content = handler.read()
