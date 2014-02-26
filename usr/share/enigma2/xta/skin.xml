@@ -3230,20 +3230,17 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 	</screen>
    	<screen name="Extraspanel" position="0,0" size=" 1280,720" title="AV Settings" flags="wfNoBorder">
 		<panel name="GenericLayoutLiteTemplate" /> 
-		<!--<widget name="Mlist" position="65,90" size="675,480" font="Regular;20"  enableWrapAround="1" selectionPixmap="xta/bars/slider30.png" transparent="1" />-->
-        <widget name="Mlist" position="43,90" size="690,480" backgroundPixmap="xta/bars/selectionbw.png" selectionPixmap="xta/bars/selection3.png" transparent="1" />
-         <convert type="TemplatedMultiContent">
+	<widget source="list" render="Listbox" position="65,90" size="675,480" backgroundPixmap="xta/bars/selectionbw.png" transparent="1">
+                        <convert type="TemplatedMultiContent">
 				{"template": [
-						MultiContentEntryText(pos = (0, 1), size = (620, 28), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_RIGHT, text = 0), # index 2 is the description
-						MultiContentEntryText(pos = (35, 30), size = (620, 22), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2), # index 2 is the description
-                        MultiContentEntryPixmapAlphaTest(pos=(0, 5), size=(100, 40), png=entry[1]))
-						# MultiContentEntryPixmapAlphaTest(pos = (2, 1), size = (100, 50), png = 3), # index 4 is the status pixmap
-						# MultiContentEntryPixmapAlphaTest(pos = (0, 54), size = (510, 2), png = 4), # index 4 is the div pixmap
+						MultiContentEntryText(pos = (25, 5), size = (620, 28), font=0, text = 0), # menu_entry
+						MultiContentEntryText(pos = (25, 35), size = (620, 22), font=1, text = 2), # menu_entry_description
 					],
-				"fonts": [gFont("Regular", 24),gFont("Regular", 18)],
-				"itemHeight": 60
+				"fonts": [gFont("Regular",24),gFont("Regular",16)],
+				"itemHeight": 70
 				}
 			</convert>
+          </widget>
 		<!--<widget name="label1" position="251,591" size="490,25" font="Regular;20" transparent="1" halign="left" />-->
 	</screen>
    	<screen name="HddMount" position="0,0" size="1280,720" title="Hard Drive Mount" flags="wfNoBorder" >
